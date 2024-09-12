@@ -1,0 +1,6 @@
+# Ignore the Stow-generated symlinks
+.stow-local-ignore
+.stow-local
+
+# mac
+.DS_Store

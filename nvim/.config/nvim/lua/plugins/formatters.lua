@@ -1,0 +1,71 @@
+--formatters.lua
+return {
+  "stevearc/conform.nvim",
+  lazy = true,
+  event = { "BufReadPre", "BufNewFile" },
+  opts = {
+    formatters_by_ft = {
+      php = { "php-cs-fixer" },
+      javascript = { "biomejs" },
+      css = { "prettier" },
+      html = { "prettier" },
+      astro = { "prettier-plugin-astro" },
+      twig = { "prettier-twig" },
+      liquid = { "prettier-liquid" },
+    },
+    formatters = {
+      biomejs = {
+        -- Use the local biome binary
+        command = "./node_modules/.bin/biome",
+        args = {
+          "format",
+          "--stdin-file-path",
+          "$FILENAME",
+        },
+        stdin = true,
+      },
+      -- Prettier for general use
+      prettier = {
+        command = "prettier",
+        args = {
+          "--stdin-filepath",
+          "$FILENAME",
+        },
+        stdin = true,
+      },
+      -- Prettier with Twig plugin
+      ["prettier-twig"] = {
+        condition = function(_, ctx)
+          return true -- Skip parser check and force formatter for Twig
+        end,
+        command = "prettier",
+        args = {
+          "--plugin=@zackad/prettier-plugin-twig",
+          "--stdin-filepath",
+          "$FILENAME",
+        },
+        stdin = true,
+      },
+      -- Prettier with Shopify Liquid plugin
+      ["prettier-liquid"] = {
+        command = "prettier",
+        args = {
+          "--plugin=@shopify/prettier-plugin-liquid",
+          "--stdin-filepath",
+          "$FILENAME",
+        },
+        stdin = true,
+      },
+      ["php-cs-fixer"] = {
+        command = "php-cs-fixer",
+        args = {
+          "fix",
+          "--rules=@PSR12", -- Formatting preset. Other presets are available, see the php-cs-fixer docs.
+          "$FILENAME",
+        },
+        stdin = false,
+      },
+    },
+    notify_on_error = true,
+  },
+}
