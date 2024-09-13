@@ -1,0 +1,33 @@
+-- lua/plugins/cmp.lua
+return {}
+-- return {
+--   "hrsh7th/nvim-cmp",
+--   config = function()
+--     local cmp = require("cmp")
+--     local copilot = require("copilot.client")
+--
+--     local function setup_cmp_sources()
+--       local sources = {
+--         { name = "buffer" },
+--         { name = "path" },
+--         { name = "nvim_lsp" },
+--           -- Conditionally include Copilot if not disabled
+--         not copilot.is_disabled() and { name = "copilot" } or nil,
+--       }
+--
+--       cmp.setup({
+--         sources = vim.tbl_filter(function(source)
+--           return source ~= nil
+--         end, sources),
+--       })
+--     end
+--
+--     setup_cmp_sources()
+--
+--     -- Reapply sources when Copilot is toggled
+--     vim.api.nvim_create_autocmd("User", {
+--       pattern = "CopilotToggle",
+--       callback = setup_cmp_sources,
+--     })
+--   end,
+-- }

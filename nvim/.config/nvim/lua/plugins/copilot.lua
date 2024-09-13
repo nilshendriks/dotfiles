@@ -4,6 +4,7 @@ return {
   event = "VeryLazy", -- Load the plugin lazily
   opts = {
     auto_start = false, -- Disable Copilot on startup
+    suggestion = { enabled = false }, -- Disable suggestions in completion
   },
   keys = {
     {
@@ -18,5 +19,5 @@ return {
       desc = "Toggle (Copilot)",
     },
   },
+  -- { "zbirenbaum/copilot-cmp", enabled = false },
 }
-
