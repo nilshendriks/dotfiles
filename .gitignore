@@ -4,3 +4,6 @@
 
 # mac
 .DS_Store
+
+# nvim
+lazy-lock.json
