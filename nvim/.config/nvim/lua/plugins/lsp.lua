@@ -9,6 +9,7 @@ return {
         "shellcheck",
         "shfmt",
         "typescript-language-server",
+        "html-lsp",
         "css-lsp",
         "twiggy-language-server",
       })
