@@ -10,12 +10,17 @@ return {
   --     }
   --   end,
   -- },
+  -- {
+  --   "folke/tokyonight.nvim",
+  --   opts = function()
+  --     return {
+  --       transparent = true,
+  --     }
+  --   end,
+  -- },
   {
-    "folke/tokyonight.nvim",
-    opts = function()
-      return {
-        transparent = true,
-      }
-    end,
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
   },
 }
