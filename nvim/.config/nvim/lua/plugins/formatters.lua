@@ -7,6 +7,7 @@ return {
         formatters_by_ft = {
             php = { "php-cs-fixer" },
             javascript = { "biomejs" },
+            typescript = { "biomejs" },
             json = { "biomejs" },
             css = { "biomejs" },
             astro = { "prettier-plugin-astro" },
@@ -18,8 +19,8 @@ return {
         -- timeout_ms = 30000, -- Timeout in milliseconds (10 seconds)
         formatters = {
             biomejs = {
-                -- Use the local biome binary
-                command = "./node_modules/.bin/biome",
+                -- Use the Mason-installed biome binary
+                command = vim.fn.stdpath("data") .. "/mason/bin/biome",
                 args = {
                     "format",
                     "--stdin-file-path",

@@ -11,7 +11,6 @@ return {
                 "selene",
                 "shellcheck",
                 "shfmt",
-                "typescript-language-server",
                 "html-lsp",
                 "css-lsp",
                 "twiggy-language-server",
@@ -24,5 +23,18 @@ return {
         opts = {
             inlay_hints = { enabled = false },
         },
+        config = function()
+            require("lspconfig").vtsls.setup({
+                on_attach = function(client, bufnr)
+                    client.server_capabilities.document_formatting = false
+                    client.server_capabilities.document_range_formatting = false
+                    client.server_capabilities.text_document_publish_diagnostics =
+                        false
+                end,
+                capabilities = {
+                    -- Your capabilities here
+                },
+            })
+        end,
     },
 }
