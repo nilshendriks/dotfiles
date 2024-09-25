@@ -12,7 +12,10 @@ return {
             astro = { "prettier-plugin-astro" },
             twig = { "djlint" },
             liquid = { "prettier-liquid" },
+            svg = { "prettier" },
         },
+        -- Setting the global timeout for formatters
+        -- timeout_ms = 30000, -- Timeout in milliseconds (10 seconds)
         formatters = {
             biomejs = {
                 -- Use the local biome binary
@@ -26,8 +29,9 @@ return {
             },
             -- Prettier for general use
             prettier = {
-                command = "prettier",
+                command = "npx",
                 args = {
+                    "prettier",
                     "--stdin-filepath",
                     "$FILENAME",
                 },
