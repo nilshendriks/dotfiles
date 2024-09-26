@@ -2,54 +2,53 @@ return {
     -- messages, cmdline and the popupmenu
     {
         "folke/noice.nvim",
-        opts = function(_, opts)
-            table.insert(opts.routes, {
-                filter = {
-                    event = "notify",
-                    find = "No information available",
+        event = "VeryLazy",
+        dependencies = {
+            -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+            "MunifTanjim/nui.nvim",
+            "rcarriga/nvim-notify",
+        },
+        opts = {
+            cmdline = {
+                view = "cmdline_popup", -- This enables the popup style for the command line
+            },
+            views = {
+                cmdline_popup = {
+                    position = {
+                        row = "50%", -- Vertically center
+                        col = "50%", -- Horizontally center
+                    },
+                    size = {
+                        width = "auto", -- Adjust width based on content
+                        height = "auto", -- Adjust height based on content
+                    },
+                    border = {
+                        style = "rounded", -- Optional, can use "none", "single", "double", etc.
+                    },
                 },
-                opts = { skip = true },
-            })
-            local focused = true
-            vim.api.nvim_create_autocmd("FocusGained", {
-                callback = function()
-                    focused = true
-                end,
-            })
-            vim.api.nvim_create_autocmd("FocusLost", {
-                callback = function()
-                    focused = false
-                end,
-            })
-            table.insert(opts.routes, 1, {
-                filter = {
-                    cond = function()
-                        return not focused
-                    end,
-                },
-                view = "notify_send",
-                opts = { stop = false },
-            })
+            },
+            -- Other options
+            presets = {
+                bottom_search = false, -- Disable bottom search to avoid conflicts
+                command_palette = true, -- Show cmdline with popup menu
+                long_message_to_split = true,
+                inc_rename = true, -- enables an input dialog for inc-rename.nvim
+                lsp_doc_border = true,
+            },
+        },
+        config = function(_, opts)
+            -- Setup Noice with options
+            require("noice").setup(opts)
 
-            opts.commands = {
-                all = {
-                    -- options for the message history that you get with `:Noice`
-                    view = "split",
-                    opts = { enter = true, format = "details" },
-                    filter = {},
-                },
-            }
+            -- LSP Border Configuration without breaking Noice
+            local border_opts = { border = "rounded" }
+            vim.lsp.handlers["textDocument/hover"] =
+                vim.lsp.with(vim.lsp.handlers.hover, border_opts)
+            vim.lsp.handlers["textDocument/signatureHelp"] =
+                vim.lsp.with(vim.lsp.handlers.signature_help, border_opts)
 
-            vim.api.nvim_create_autocmd("FileType", {
-                pattern = "markdown",
-                callback = function(event)
-                    vim.schedule(function()
-                        require("noice.text.markdown").keys(event.buf)
-                    end)
-                end,
-            })
-
-            opts.presets.lsp_doc_border = true
+            -- Set a border for the LspInfo floating window
+            require("lspconfig.ui.windows").default_options.border = "rounded"
         end,
     },
 }
