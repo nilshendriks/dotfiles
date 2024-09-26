@@ -7,3 +7,9 @@ local opts = { noremap = true, silent = true }
 
 -- Dashboard
 keymap.set("n", "<leader>db", ":Dashboard<CR>", opts)
+-- keymap.set(
+--     { "n", "v" },
+--     "<leader>cw",
+--     require("stay-centered").toggle,
+--     { desc = "Toggle stay-centered.nvim" }
+-- )
