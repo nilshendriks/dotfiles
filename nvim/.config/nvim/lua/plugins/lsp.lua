@@ -35,6 +35,30 @@ return {
                     -- Your capabilities here
                 },
             })
+
+            -- Configure HTML LSP
+            -- require("lspconfig").html.setup({
+            --     on_attach = function(client, bufnr)
+            --         -- Additional setup if needed
+            --     end,
+            --     capabilities = {
+            --         -- Your capabilities here
+            --     },
+            -- })
+            -- Configure HTML LSP with minimal setup
+            -- require("lspconfig").html.setup({})
+
+            -- Enable snippet support in capabilities
+            local capabilities = vim.lsp.protocol.make_client_capabilities()
+            capabilities.textDocument.completion.completionItem.snippetSupport =
+                true
+
+            -- Configure HTML LSP
+            require("lspconfig").html.setup({
+                capabilities = require("cmp_nvim_lsp").default_capabilities(
+                    capabilities
+                ), -- integrate with cmp
+            })
         end,
     },
 }
