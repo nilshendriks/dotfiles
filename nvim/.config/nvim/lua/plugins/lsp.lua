@@ -17,48 +17,45 @@ return {
             })
         end,
     },
-    -- inlay hints
+    -- lsp servers
     {
         "neovim/nvim-lspconfig",
         opts = {
-            inlay_hints = { enabled = false },
+            inlay_hints = { enabled = true },
+            -- servers
+            servers = {
+                cssls = {},
+                -- html = {},
+            },
         },
-        config = function()
-            require("lspconfig").vtsls.setup({
-                on_attach = function(client, bufnr)
-                    client.server_capabilities.document_formatting = false
-                    client.server_capabilities.document_range_formatting = false
-                    client.server_capabilities.text_document_publish_diagnostics =
-                        false
-                end,
-                capabilities = {
-                    -- Your capabilities here
-                },
-            })
-
-            -- Configure HTML LSP
-            -- require("lspconfig").html.setup({
-            --     on_attach = function(client, bufnr)
-            --         -- Additional setup if needed
-            --     end,
-            --     capabilities = {
-            --         -- Your capabilities here
-            --     },
-            -- })
-            -- Configure HTML LSP with minimal setup
-            -- require("lspconfig").html.setup({})
-
-            -- Enable snippet support in capabilities
-            local capabilities = vim.lsp.protocol.make_client_capabilities()
-            capabilities.textDocument.completion.completionItem.snippetSupport =
-                true
-
-            -- Configure HTML LSP
-            require("lspconfig").html.setup({
-                capabilities = require("cmp_nvim_lsp").default_capabilities(
-                    capabilities
-                ), -- integrate with cmp
-            })
-        end,
+        -- config = function()
+        --     local capabilities =
+        --         require("vim.lsp.protocol").make_client_capabilities()
+        --     capabilities.textDocument.formatting = true -- Ensure formatting is enabled
+        --     capabilities.textDocument.completion.completionItem.snippetSupport =
+        --         true -- Enable snippet support
+        --     require("lspconfig").html.setup({
+        --         capabilities = capabilities,
+        --         settings = {
+        --             html = {
+        --                 format = {
+        --                     enable = true,
+        --                     indentInnerHtml = true,
+        --                     tabSize = 4,
+        --                     useTabs = false,
+        --                 },
+        --             },
+        --         },
+        --         on_attach = function(client, bufnr)
+        --             -- Format on save
+        --             vim.api.nvim_create_autocmd("BufWritePre", {
+        --                 buffer = bufnr,
+        --                 callback = function()
+        --                     vim.lsp.buf.format() -- Use the correct format function
+        --                 end,
+        --             })
+        --         end,
+        --     })
+        -- end,
     },
 }

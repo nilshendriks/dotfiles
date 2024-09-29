@@ -1,0 +1,3 @@
+fnction myFunc() {
+	alrt("hello");
+}
