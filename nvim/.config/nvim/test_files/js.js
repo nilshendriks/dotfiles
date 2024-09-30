@@ -1,3 +1,0 @@
-fnction myFunc() {
-	alrt("hello");
-}

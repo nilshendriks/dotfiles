@@ -5,39 +5,30 @@ return {
     event = { "BufReadPre", "BufNewFile" },
     opts = {
         formatters_by_ft = {
-            php = { "php-cs-fixer" },
-            javascript = { "biomejs" },
-            typescript = { "biomejs" },
-            json = { "biomejs" },
-            css = { "biomejs" },
-            astro = { "prettier-plugin-astro" },
-            twig = { "djlint" },
-            liquid = { "prettier-liquid" },
-            svg = { "prettier" },
+            -- php = { "php-cs-fixer" },
+            -- typescript = { "biomejs" },
+            -- json = { "biomejs" },
+            -- astro = { "prettier-plugin-astro" },
+            -- twig = { "djlint" },
+            -- liquid = { "prettier-liquid" },
+            -- svg = { "prettier" },
+            html = { "prettier" },
+            -- css = handled by cssl, the css-lsp
+            javascript = { "prettier" },
         },
         -- Setting the global timeout for formatters
         -- timeout_ms = 30000, -- Timeout in milliseconds (10 seconds)
         formatters = {
-            biomejs = {
-                -- Use the Mason-installed biome binary
-                command = vim.fn.stdpath("data") .. "/mason/bin/biome",
-                args = {
-                    "format",
-                    "--stdin-file-path",
-                    "$FILENAME",
-                },
-                stdin = true,
-            },
             -- Prettier for general use
-            prettier = {
-                command = "npx",
-                args = {
-                    "prettier",
-                    "--stdin-filepath",
-                    "$FILENAME",
-                },
-                stdin = true,
-            },
+            -- prettier = {
+            --     command = "npx",
+            --     args = {
+            --         "prettier",
+            --         "--stdin-filepath",
+            --         "$FILENAME",
+            --     },
+            --     stdin = true,
+            -- },
             -- Prettier with Shopify Liquid plugin
             ["prettier-liquid"] = {
                 command = "prettier",
