@@ -10,7 +10,7 @@ return {
             -- json = { "biomejs" },
             -- astro = { "prettier-plugin-astro" },
             -- twig = { "djlint" },
-            -- liquid = { "prettier-liquid" },
+            liquid = { "prettier-liquid" },
             -- svg = { "prettier" },
             html = { "prettier" },
             -- css = handled by cssl, the css-lsp
