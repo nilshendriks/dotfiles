@@ -1,0 +1,3 @@
+return {
+    "SalOrak/whaler",
+}

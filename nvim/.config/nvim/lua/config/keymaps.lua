@@ -7,13 +7,13 @@ local opts = { noremap = true, silent = true }
 
 -- Dashboard
 keymap.set("n", "<leader>db", ":Dashboard<CR>", opts)
--- keymap.set(
---     { "n", "v" },
---     "<leader>cw",
---     require("stay-centered").toggle,
---     { desc = "Toggle stay-centered.nvim" }
--- )
 
 -- thanks theprimeagen
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
+-- disable arrow keys
+keymap.set("n", "<Up>", "<Nop>", opts)
+keymap.set("n", "<Down>", "<Nop>", opts)
+keymap.set("n", "<Left>", "<Nop>", opts)
+keymap.set("n", "<Right>", "<Nop>", opts)

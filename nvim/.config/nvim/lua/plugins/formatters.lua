@@ -8,7 +8,7 @@ return {
             -- php = { "php-cs-fixer" },
             -- typescript = { "biomejs" },
             -- json = { "biomejs" },
-            -- astro = { "prettier-plugin-astro" },
+            astro = { "prettier-plugin-astro" },
             -- twig = { "djlint" },
             liquid = { "prettier-liquid" },
             -- svg = { "prettier" },

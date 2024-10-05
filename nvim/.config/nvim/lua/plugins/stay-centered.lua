@@ -1,28 +1,28 @@
-local stay_centered_enabled = true -- Track the initial state (enabled)
-
 return {
     {
         "arnamak/stay-centered.nvim",
+        lazy = false,
+        name = "stay-centered",
+        opts = {
+            -- The filetype is determined by the vim filetype, not the file extension. In order to get the filetype, open a file and run the command:
+            -- :lua print(vim.bo.filetype)
+            --  skip_filetypes = {},
+            -- Set to false to disable by default
+            enabled = true,
+            -- allows scrolling to move the cursor without centering, default recommended
+            --allow_scroll_move = true,
+            -- temporarily disables plugin on left-mouse down, allows natural mouse selection
+            -- try disabling if plugin causes lag, function uses vim.on_key
+            -- disable_on_mouse = true,
+        },
         keys = {
             {
-                "<leader>cw",
+                "<leader>lc",
                 function()
-                    local stay_centered = require("stay-centered")
-                    stay_centered.toggle()
-
-                    -- Update the tracking variable
-                    stay_centered_enabled = not stay_centered_enabled
-
-                    -- Show notification
-                    local status = stay_centered_enabled and "enabled"
-                        or "disabled" -- Invert status message
-                    require("notify")("Stay-centered is now " .. status, "info")
+                    require("stay-centered").toggle()
                 end,
                 desc = "Toggle stay-centered.nvim",
             },
         },
-        config = function()
-            -- Optional: Configure additional settings for the stay-centered plugin if needed
-        end,
     },
 }
