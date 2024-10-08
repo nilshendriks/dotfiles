@@ -5,7 +5,7 @@ return {
     event = { "BufReadPre", "BufNewFile" },
     opts = {
         formatters_by_ft = {
-            -- php = { "php-cs-fixer" },
+            php = { "php-cs-fixer" },
             -- typescript = { "biomejs" },
             -- json = { "biomejs" },
             astro = { "prettier-plugin-astro" },

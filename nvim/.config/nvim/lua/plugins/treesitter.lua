@@ -1,5 +1,5 @@
 return {
-    { "nvim-treesitter/playground", cmd = "tsplaygroundtoggle" },
+    { "nvim-treesitter/playground", cmd = "TSPlaygroundToggle" },
     {
         "nvim-treesitter/nvim-treesitter",
         opts = {
@@ -36,7 +36,7 @@ return {
             highlight = {
                 enable = true,
                 -- disable treesitter for large files
-                disable = function(lang, bufnr)
+                disable = function(lang, bufnr) --
                     -- extend this to other languages by adding `lang == "x"` where x is the language
                     return vim.api.nvim_buf_line_count(bufnr) > 50000
                         and (lang == "css" or lang == "js")
@@ -56,7 +56,7 @@ return {
             query_linter = {
                 enable = true,
                 use_virtual_text = true,
-                lint_events = { "bufwrite", "cursorhold" },
+                lint_events = { "BufWrite", "CursorHold" },
             },
             playground = {
                 enable = true,
@@ -68,10 +68,10 @@ return {
                     toggle_hl_groups = "i",
                     toggle_injected_languages = "t",
                     toggle_anonymous_nodes = "a",
-                    toggle_language_display = "i",
-                    focus_language = "f",
+                    toggle_language_display = "I",
                     unfocus_language = "f",
-                    update = "r",
+                    focus_language = "F",
+                    update = "R",
                     goto_node = "<cr>",
                     show_help = "?",
                 },
