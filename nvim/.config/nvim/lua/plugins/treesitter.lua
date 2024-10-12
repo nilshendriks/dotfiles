@@ -12,6 +12,7 @@ return {
                 "astro",
                 "bash",
                 "html",
+                "htmldjango",
                 "css",
                 "javascript",
                 "json",

@@ -13,6 +13,7 @@ return {
             liquid = { "prettier-liquid" },
             -- svg = { "prettier" },
             html = { "prettier" },
+            htmldjango = { "djlint" },
             -- css = handled by cssl, the css-lsp
             javascript = { "prettier" },
         },
@@ -20,15 +21,15 @@ return {
         -- timeout_ms = 30000, -- Timeout in milliseconds (10 seconds)
         formatters = {
             -- Prettier for general use
-            -- prettier = {
-            --     command = "npx",
-            --     args = {
-            --         "prettier",
-            --         "--stdin-filepath",
-            --         "$FILENAME",
-            --     },
-            --     stdin = true,
-            -- },
+            prettier = {
+                command = "npx",
+                args = {
+                    "prettier",
+                    "--stdin-filepath",
+                    "$FILENAME",
+                },
+                stdin = true,
+            },
             -- Prettier with Shopify Liquid plugin
             ["prettier-liquid"] = {
                 command = "prettier",
