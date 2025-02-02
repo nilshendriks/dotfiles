@@ -17,7 +17,6 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls -G $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls -G $realpath'
 
-
 # Enable completion system
 autoload -Uz compinit
 # -C to prevent overwriting of previous completions
@@ -83,10 +82,10 @@ unsetopt auto_list
 
 
 # Custom prompt with current directory and Git branch on the first line
-# PROMPT='%F{$(echo $NIRUSU_BLUE)}%~ %f
+# PROMPT='%F{$(echo $NIRUSU_BLUE)}%~ %f %L
 # ❯ '
 
-PROMPT='%F{$(echo $NIRUSU_BLUE)}%B%~%b%f
+PROMPT='%F{$(echo $NIRUSU_BLUE)}%B%~%b%f %L
 ❯ '
 
 # Right prompt if in git directory
@@ -155,7 +154,9 @@ set -o vi
 
 # Aliases
 # Enable color support for `ls` command
-alias ls='ls -aGhC'
+alias ls='ls -AGhC'
+# alias lsl='ls -lAGFh'
+
 # nvim switcher
 alias nvim-lazy="NVIM_APPNAME=LazyVim nvim"
 alias nvim-kick="NVIM_APPNAME=kickstart nvim"
