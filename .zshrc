@@ -41,9 +41,6 @@ source ~/dotfiles/zsh/plugins/fzf-tab/fzf-tab.plugin.zsh
 
 # After compinit, customize fzf colors
 # https://minsw.github.io/fzf-color-picker/
-# export FZF_DEFAULT_OPTS="-e \
-#     --color 16,fg:${NIRUSU_BLUE},bg:-1,hl:1,hl+:1,bg+:7,fg+:-1:regular:underline \
-#     --color prompt:4,pointer:13,marker:13,spinner:3,info:3"
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS' --color=fg:#e0e0e0,bg:-1,hl:#83cdf5 --color=fg+:#ffffff,bg+:#089cec,hl+:#f2ff00 --color=info:#83cdf5,prompt:#83cdf5,pointer:#089cec --color=marker:#f2ff00,spinner:#ff5e00,header:#089cec,border:#83cdf5'
 # After sourcing fzf-tab, customize its colors
 zstyle ':fzf-tab:*' fzf-flags $(echo $FZF_DEFAULT_OPTS)
@@ -80,11 +77,9 @@ unsetopt auto_list
 
 # Prompt Customization
 
-
 # Custom prompt with current directory and Git branch on the first line
 # PROMPT='%F{$(echo $NIRUSU_BLUE)}%~ %f %L
 # ❯ '
-
 PROMPT='%F{$(echo $NIRUSU_BLUE)}%B%~%b%f %L
 ❯ '
 
@@ -129,10 +124,6 @@ precmd() {
 }
 
 # fcd: change directory with fzf, exclude restricted directories like .Trash
-# function fcd() {
-#     local dir
-#     dir=$(find ~ -mindepth 1 -maxdepth 2 -type d \( ! -path '*/.Trash/*' \) 2>/dev/null | fzf) && cd "$dir"
-# }
 function fcd() {
   local dirs=("$HOME/Sites" "$HOME/dotfiles" "$HOME/.config")  # Add your folders here
   local dir
@@ -159,7 +150,23 @@ alias ls='ls -AGhC'
 
 # nvim switcher
 alias nvim-lazy="NVIM_APPNAME=LazyVim nvim"
+alias nvim-nirusu="NVIM_APPNAME=NirusuVim nvim"
 alias nvim-kick="NVIM_APPNAME=kickstart nvim"
+alias nvim-nvchad="NVIM_APPNAME=NvChad nvim"
+alias nvim-astro="NVIM_APPNAME=AstroNvim nvim"
+
+
+function nvims() {
+  items=("default" "kickstart" "LazyVim" "NirusuVim" "NvChad" "AstroNvim")
+  config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config  " --height=~50% --layout=reverse --border --exit-0)
+  if [[ -z $config ]]; then
+    echo "Nothing selected"
+    return 0
+  elif [[ $config == "default" ]]; then
+    config=""
+  fi
+  NVIM_APPNAME=$config nvim $@
+}
 
 # History Settings
 HISTSIZE=5000
