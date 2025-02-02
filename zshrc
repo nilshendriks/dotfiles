@@ -145,8 +145,9 @@ set -o vi
 
 # Aliases
 # Enable color support for `ls` command
-alias ls='ls -AGhC'
+# alias ls='ls -AGhC'
 # alias lsl='ls -lAGFh'
+alias ls='ls -lAGFh'
 
 # nvim switcher
 alias nvim-lazy="NVIM_APPNAME=LazyVim nvim"
