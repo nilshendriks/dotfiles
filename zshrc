@@ -4,6 +4,10 @@ if [[ -o login ]]; then
   touch ~/.hushlogin
 fi
 
+# SET VARIABLES
+# Set syntax highlighting for man pages 
+export MANPAGER="sh -c 'sed -u -e \"s/\\x1B\[[0-9;]*m//g; s/.\\x08//g\" | bat -p -lman'"
+
 # Set terminal color capabilities (if necessary)
 export TERM=xterm-256color
 
@@ -51,6 +55,7 @@ source ~/dotfiles/zsh/plugins/zsh-completions/zsh-completions.plugin.zsh
 # Autosuggestions
 source ~/dotfiles/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+# ADD LOCATIONS TO $PATH VARIABLE
 # Set default path to ensure user binaries are included first
 export PATH="$HOME/bin:$PATH"
 
@@ -60,11 +65,16 @@ export PATH="$PATH:$HOME/.npm-global/bin"
 # Add WezTerm binary (if needed)
 export PATH="$PATH:/Applications/WezTerm.app/Contents/MacOS"
 
+# Add Visual Studio Code (code)
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+
+# export PATH="/nix/store/0bijgrbc3m0s7vg8fgp7wbq74jd5wc17-php-with-extensions-8.2.22/bin:$PATH"
+
 # Load NVM (Node Version Manager)
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
-# export PATH="/nix/store/0bijgrbc3m0s7vg8fgp7wbq74jd5wc17-php-with-extensions-8.2.22/bin:$PATH"
+# WRITE HANDY FUNCTIONS
 
 # Enable command auto-correction (optional)
 setopt correct
