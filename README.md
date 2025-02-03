@@ -8,9 +8,9 @@
 - mission control preferences
 - finder show path bar
 - trackpad 
-- .zshrc 
+- .zshrc +
 - git (config and ssh)
-- homebrew install 
+- homebrew install +
 
 
 
