@@ -7,6 +7,7 @@ fi
 # SET VARIABLES
 # Set syntax highlighting for man pages 
 export MANPAGER="sh -c 'sed -u -e \"s/\\x1B\[[0-9;]*m//g; s/.\\x08//g\" | bat -p -lman'"
+export HOMEBREW_CASK_OPTS="--no-quarantine"
 
 # Set terminal color capabilities (if necessary)
 export TERM=xterm-256color
@@ -154,10 +155,9 @@ bindkey -s ^a "nvims\n"
 set -o vi
 
 # Aliases
-# Enable color support for `ls` command
-# alias ls='ls -AGhC'
 # alias lsl='ls -lAGFh'
-alias ls='ls -lAGFh'
+# alias ls='ls -lAGFh'
+alias ls='eza -lahF --git'
 
 # nvim switcher
 alias nvim-lazy="NVIM_APPNAME=LazyVim nvim"

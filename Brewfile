@@ -4,7 +4,7 @@ tap "homebrew/bundle"
 # Brews (Packages)
 brew "bat"
 brew "httpie"
-# brew "exa"
+brew "eza"
 
 # Casks (Applications)
 cask "firefox@developer-edition"
