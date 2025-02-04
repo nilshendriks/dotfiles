@@ -5,7 +5,7 @@ if [[ -o login ]]; then
 fi
 
 # SET VARIABLES
-# Set syntax highlighting for man pages 
+# Set syntax highlighting for man pages
 export MANPAGER="sh -c 'sed -u -e \"s/\\x1B\[[0-9;]*m//g; s/.\\x08//g\" | bat -p -lman'"
 export HOMEBREW_CASK_OPTS="--no-quarantine"
 
@@ -25,7 +25,7 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls -G $realpath'
 # Enable completion system
 autoload -Uz compinit
 # -C to prevent overwriting of previous completions
-compinit -C  
+compinit -C
 
 # Load complist for enhanced menu selection completion
 zmodload -i zsh/complist
@@ -39,7 +39,7 @@ autoload -Uz cdablevars
 # Define custom colors (hex values)
 NIRUSU_BLUE="#089cec"
 NIRUSU_BLUE_DARK="#067cbc"
-COLOR_2="#FFA500"  # Orange 
+COLOR_2="#FFA500"  # Orange
 COLOR_3="#FFFFFF"  # White
 
 source ~/dotfiles/zsh/plugins/fzf-tab/fzf-tab.plugin.zsh
@@ -72,8 +72,8 @@ export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/b
 # export PATH="/nix/store/0bijgrbc3m0s7vg8fgp7wbq74jd5wc17-php-with-extensions-8.2.22/bin:$PATH"
 
 # Load NVM (Node Version Manager)
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 # WRITE HANDY FUNCTIONS
 

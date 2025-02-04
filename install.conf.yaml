@@ -2,17 +2,17 @@
     link:
       relink: true
 
-- clean: ['~']
+- clean: ["~"]
 
 - link:
     ~/.zshrc:
     ~/.gitconfig:
+    ~/.wezterm.lua:
 
 - create:
     - ~/Work
 
 - shell:
-    - 
-      command: ./setup_homebrew.sh
+    - command: ./setup_homebrew.sh
       stdout: true
       stderr: true
