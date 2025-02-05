@@ -4,15 +4,52 @@
 
 - clean: ["~"]
 
-- link:
-    ~/.zshrc:
-    ~/.gitconfig:
-    ~/.wezterm.lua:
-
-- create:
-    - ~/Work
-
 - shell:
     - command: ./setup_homebrew.sh
       stdout: true
       stderr: true
+    - command: |
+        if [ ! -d "$HOME/.config/kickstart" ]; then
+          echo "Cloning Kickstart..."
+          git clone https://github.com/nvim-lua/kickstart.nvim.git "$HOME/.config/kickstart"
+          rm -rf "$HOME/.config/kickstart/.git" "$HOME/.config/kickstart/.github" "$HOME/.config/kickstart/.gitignore"
+          echo "Kickstart installation complete."
+        else
+          echo "Kickstart already installed."
+        fi
+      stdout: true
+      stderr: true
+      quiet: true
+    - command: |
+        if [ ! -d "$HOME/.config/LazyVim" ]; then
+          echo "Cloning LazyVim..."
+          git clone https://github.com/LazyVim/starter "$HOME/.config/LazyVim"
+          rm -rf "$HOME/.config/LazyVim/.git" "$HOME/.config/LazyVim/.github" "$HOME/.config/LazyVim/.gitignore"
+          echo "LazyVim installation complete."
+        else
+          echo "LazyVim already installed."
+        fi
+      stdout: true
+      stderr: true
+      quiet: true
+    - command: |
+        if [ ! -d "$HOME/dotfiles/NirusuVim" ]; then
+          echo "Cloning NirusuVim..."
+          git clone https://github.com/LazyVim/starter "$HOME/dotfiles/NirusuVim"
+          rm -rf "$HOME/dotfiles/NirusuVim/.git" "$HOME/dotfiles/NirusuVim/.github" "$HOME/dotfiles/NirusuVim/.gitignore"
+          echo "NirusuVim installation complete."
+        else
+          echo "NirusuVim already installed."
+        fi
+      stdout: true
+      stderr: true
+      quiet: true
+
+- link:
+    ~/.zshrc:
+    ~/.gitconfig:
+    ~/.wezterm.lua:
+    ~/.config/NirusuVim: ~/dotfiles/NirusuVim
+
+- create:
+    - ~/Work
