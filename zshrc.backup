@@ -56,8 +56,6 @@ source ~/dotfiles/zsh/plugins/zsh-completions/zsh-completions.plugin.zsh
 # Autosuggestions
 source ~/dotfiles/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# Add Homebrew to $PATH
-export PATH="/opt/homebrew/bin:$PATH"
 # ADD LOCATIONS TO $PATH VARIABLE
 # Set default path to ensure user binaries are included first
 export PATH="$HOME/bin:$PATH"
