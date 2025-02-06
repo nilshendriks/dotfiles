@@ -3,6 +3,7 @@ return {
     "nvim-treesitter/nvim-treesitter",
     opts = {
       ensure_installed = {
+        "astro",
         "html",
         "css",
         "javascript",
@@ -16,9 +17,9 @@ return {
         "toml",
         "tsx",
         "typescript",
+        "vue",
         "xml",
         "yaml",
-        "twig", -- for twig files
       },
     },
   },
