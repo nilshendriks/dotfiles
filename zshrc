@@ -57,7 +57,16 @@ source ~/dotfiles/zsh/plugins/zsh-completions/zsh-completions.plugin.zsh
 source ~/dotfiles/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Add Homebrew to $PATH
-export PATH="/opt/homebrew/bin:$PATH"
+# export PATH="/opt/homebrew/bin:$PATH"
+# Check architecture and add the appropriate Homebrew path
+if [[ $(uname -m) == "arm64" ]]; then
+  # Apple Silicon (M1/M2)
+  export PATH="/opt/homebrew/bin:$PATH"
+else
+  # Intel Mac
+  export PATH="/usr/local/bin:$PATH"
+fi
+
 # ADD LOCATIONS TO $PATH VARIABLE
 # Set default path to ensure user binaries are included first
 export PATH="$HOME/bin:$PATH"
@@ -165,12 +174,11 @@ alias ls='eza -lahF --git'
 alias nvim-lazy="NVIM_APPNAME=LazyVim nvim"
 alias nvim-nirusu="NVIM_APPNAME=NirusuVim nvim"
 alias nvim-kick="NVIM_APPNAME=kickstart nvim"
-alias nvim-nvchad="NVIM_APPNAME=NvChad nvim"
-alias nvim-astro="NVIM_APPNAME=AstroNvim nvim"
+alias nvim-henk="NVIM_APPNAME=HENKVim nvim"
 
 
 function nvims() {
-  items=("default" "kickstart" "LazyVim" "NirusuVim" "NvChad" "AstroNvim")
+  items=("default" "kickstart" "LazyVim" "NirusuVim" "HENKVim")
   config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config  " --height=~50% --layout=reverse --border --exit-0)
   if [[ -z $config ]]; then
     echo "Nothing selected"

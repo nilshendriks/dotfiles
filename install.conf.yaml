@@ -44,12 +44,25 @@
       stdout: true
       stderr: true
       quiet: true
+    - command: |
+        if [ ! -d "$HOME/dotfiles/HENKVim" ]; then
+          echo "Cloning HENKVim..."
+          git clone https://github.com/LazyVim/starter "$HOME/dotfiles/HENKVim"
+          rm -rf "$HOME/dotfiles/HENKVim/.git" "$HOME/dotfiles/HENKVim/.github" "$HOME/dotfiles/HENKVim/.gitignore"
+          echo "HENKVim installation complete."
+        else
+          echo "HENKVim already installed."
+        fi
+      stdout: true
+      stderr: true
+      quiet: true
 
 - link:
     ~/.zshrc:
     ~/.gitconfig:
     ~/.wezterm.lua:
     ~/.config/NirusuVim: ~/dotfiles/NirusuVim
-
+    ~/.config/HENKVim: ~/dotfiles/HENKVim
+  
 - create:
     - ~/Work

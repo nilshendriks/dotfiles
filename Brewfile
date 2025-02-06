@@ -7,6 +7,7 @@ brew "httpie"
 brew "eza"
 brew "fzf"
 brew "neovim"
+brew "lazygit"
 
 # Casks (Applications)
 # cask "firefox@developer-edition"
