@@ -8,6 +8,9 @@
     - command: ./setup_homebrew.sh
       stdout: true
       stderr: true
+    - command: ./setup_node.sh
+      stdout: true
+      stderr: true
     - command: |
         if [ ! -d "$HOME/.config/kickstart" ]; then
           echo "Cloning Kickstart..."
