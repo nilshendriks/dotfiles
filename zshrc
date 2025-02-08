@@ -84,6 +84,8 @@ export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/b
 
 # n for node
 export PATH="$PATH:$N_PREFIX/bin"
+# try this one when there are conflicting node paths 
+# export PATH="$N_PREFIX/bin:$PATH"
 
 # export PATH="/nix/store/0bijgrbc3m0s7vg8fgp7wbq74jd5wc17-php-with-extensions-8.2.22/bin:$PATH"
 
@@ -173,6 +175,7 @@ set -o vi
 # Aliases
 # alias ls='ls -lAGFh'
 alias ls='eza -lahF --git'
+alias trail='<<<${(F)path}'
 alias rm=trash
 
 # nvim switcher
