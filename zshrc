@@ -8,6 +8,8 @@ fi
 # Set syntax highlighting for man pages
 export MANPAGER="sh -c 'sed -u -e \"s/\\x1B\[[0-9;]*m//g; s/.\\x08//g\" | bat -p -lman'"
 export HOMEBREW_CASK_OPTS="--no-quarantine"
+export N_PREFIX="$HOME/.n"
+export PREFIX="$N_PREFIX"
 
 # Set terminal color capabilities (if necessary)
 export TERM=xterm-256color
@@ -79,6 +81,9 @@ export PATH="$PATH:/Applications/WezTerm.app/Contents/MacOS"
 
 # Add Visual Studio Code (code)
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+
+# n for node
+export PATH="$PATH:$N_PREFIX/bin"
 
 # export PATH="/nix/store/0bijgrbc3m0s7vg8fgp7wbq74jd5wc17-php-with-extensions-8.2.22/bin:$PATH"
 
