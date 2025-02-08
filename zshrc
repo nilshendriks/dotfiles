@@ -171,9 +171,9 @@ bindkey -s ^a "nvims\n"
 set -o vi
 
 # Aliases
-# alias lsl='ls -lAGFh'
 # alias ls='ls -lAGFh'
 alias ls='eza -lahF --git'
+alias rm=trash
 
 # nvim switcher
 alias nvim-lazy="NVIM_APPNAME=LazyVim nvim"
