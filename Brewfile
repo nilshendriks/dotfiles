@@ -9,6 +9,8 @@ brew "fzf"
 brew "neovim"
 brew "lazygit"
 brew "n"
+brew "ripgrep"
+brew "fd"
 
 # Casks (Applications)
 # cask "google-chrome""
