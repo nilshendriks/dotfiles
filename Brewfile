@@ -23,4 +23,6 @@ brew "php@8.3"
 # cask "tower"
 # cask 1password
 # cask ghostty
+# cask alfred
 cask "wezterm"
+cask "dash"
