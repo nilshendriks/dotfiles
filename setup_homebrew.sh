@@ -1,5 +1,7 @@
 #!/usr/bin/env zsh
 
+source ~/.zshenv
+
 echo "\n<<< Starting Homebrew Setup >>>\n"
 
 if exists brew; then
