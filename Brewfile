@@ -11,6 +11,9 @@ brew "lazygit"
 brew "n"
 brew "ripgrep"
 brew "fd"
+# brew "php"
+brew "php@8.3"
+
 
 # Casks (Applications)
 # cask "google-chrome""

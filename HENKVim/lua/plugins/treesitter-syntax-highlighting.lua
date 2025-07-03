@@ -18,7 +18,8 @@ return {
         "typescript",
         "xml",
         "yaml",
-        "twig", -- for twig files
+        "twig",
+        "php",
       },
     },
   },
