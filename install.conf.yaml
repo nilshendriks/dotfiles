@@ -24,6 +24,18 @@
       stderr: true
       quiet: true
     - command: |
+        if [ ! -d "$HOME/dotfiles/NirusuAstro" ]; then
+          echo "Cloning Kickstart to NirusuAstro..."
+          git clone https://github.com/nvim-lua/kickstart.nvim.git "$HOME/dotfiles/NirusuAstro"
+          rm -rf "$HOME/dotfiles/NirusuAstro/.git" "$HOME/dotfiles/NirusuAstro/.github" "$HOME/dotfiles/NirusuAstro/.gitignore"
+          echo "NirusuAstro installation complete."
+        else
+          echo "NirusuAstro already installed."
+        fi
+      stdout: true
+      stderr: true
+      quiet: true
+    - command: |
         if [ ! -d "$HOME/.config/LazyVim" ]; then
           echo "Cloning LazyVim..."
           git clone https://github.com/LazyVim/starter "$HOME/.config/LazyVim"
@@ -67,6 +79,7 @@
     ~/.wezterm.lua:
     ~/.config/NirusuVim: ~/dotfiles/NirusuVim
     ~/.config/HENKVim: ~/dotfiles/HENKVim
-  
+    ~/.config/NirusuAstro: ~/dotfiles/NirusuAstro
+
 - create:
     - ~/Work

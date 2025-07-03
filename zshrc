@@ -84,7 +84,7 @@ export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/b
 
 # n for node
 export PATH="$PATH:$N_PREFIX/bin"
-# try this one when there are conflicting node paths 
+# try this one when there are conflicting node paths
 # export PATH="$N_PREFIX/bin:$PATH"
 
 # export PATH="/nix/store/0bijgrbc3m0s7vg8fgp7wbq74jd5wc17-php-with-extensions-8.2.22/bin:$PATH"
@@ -179,17 +179,17 @@ set -o vi
 # alias ls='ls -lAGFh'
 alias ls='eza -lahF --git'
 alias trail='<<<${(F)path}'
-alias rm=trash
+# alias rm=trash
 
 # nvim switcher
 alias nvim-lazy="NVIM_APPNAME=LazyVim nvim"
 alias nvim-nirusu="NVIM_APPNAME=NirusuVim nvim"
 alias nvim-kick="NVIM_APPNAME=kickstart nvim"
 alias nvim-henk="NVIM_APPNAME=HENKVim nvim"
-
+alias nvim-astro="NVIM_APPNAME=NirusuAstro nvim"
 
 function nvims() {
-  items=("default" "kickstart" "LazyVim" "NirusuVim" "HENKVim")
+  items=("default" "kickstart" "LazyVim" "NirusuVim" "HENKVim" "NirusuAstro")
   config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config  " --height=~50% --layout=reverse --border --exit-0)
   if [[ -z $config ]]; then
     echo "Nothing selected"
