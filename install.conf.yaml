@@ -90,6 +90,7 @@
     ~/.config/NirusuVim: ~/dotfiles/NirusuVim
     ~/.config/HENKVim: ~/dotfiles/HENKVim
     ~/.config/NirusuAstro: ~/dotfiles/NirusuAstro
+    "~/Library/Application Support/com.mitchellh.ghostty/config": ~/dotfiles/ghostty/config
 
 - create:
     - ~/Sites

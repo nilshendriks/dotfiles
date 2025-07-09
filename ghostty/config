@@ -1,0 +1,35 @@
+background = 000000
+background-opacity = 0.75
+background-blur-radius = 20
+
+cursor-color = 099dec
+cursor-style = block
+
+# cursor-style = underline
+
+shell-integration-features = no-cursor
+
+font-family = JetBrainsMono Nerd Font
+font-size = 16
+
+# theme = catppuccin-mocha
+
+theme = tokyonight
+
+window-theme = dark
+window-width = 80
+window-height = 69
+window-padding-x = 0
+window-padding-y = 0
+window-decoration = true
+window-colorspace = "display-p3"
+window-save-state = always
+
+# macos-titlebar-style = transparent
+
+macos-titlebar-style = tabs
+
+# adjust-cell-height = 35%
+
+bold-is-bright = true
+keybind = global:cmd+grave_accent=toggle_quick_terminal
