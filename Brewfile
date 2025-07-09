@@ -14,15 +14,15 @@ brew "fd"
 # brew "php"
 brew "php@8.3"
 
-
 # Casks (Applications)
-# cask "google-chrome""
+# cask "google-chrome"
+# cask "alfred"
 # cask "firefox@developer-edition"
 # cask "visual-studio-code"
-# cask "zed"
+cask "zed"
 # cask "tower"
 # cask 1password
 # cask alfred
-# cask "wezterm"
-# cask ghostty
+cask "wezterm"
+cask ghostty
 cask "dash"
