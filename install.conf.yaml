@@ -77,6 +77,9 @@
       stdout: true
       stderr: true
       quiet: true
+    - command: ./setup_shopify.sh
+      stdout: true
+      stderr: true
 
 - link:
     ~/.zprofile:
