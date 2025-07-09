@@ -5,10 +5,16 @@
 - clean: ["~"]
 
 - shell:
+    - command: chmod +x ./setup_homebrew.sh ./setup_node.sh ./setup_ssh.sh
+      stdout: true
+      stderr: true
     - command: ./setup_homebrew.sh
       stdout: true
       stderr: true
     - command: ./setup_node.sh
+      stdout: true
+      stderr: true
+    - command: ./setup_ssh.sh
       stdout: true
       stderr: true
     - command: |
