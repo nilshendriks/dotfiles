@@ -1,5 +1,4 @@
 # Taps
-tap "homebrew/bundle"
 
 # Brews (Packages)
 brew "bat"
@@ -24,5 +23,5 @@ cask "zed"
 # cask 1password
 # cask alfred
 cask "wezterm"
-cask ghostty
+cask "ghostty"
 cask "dash"

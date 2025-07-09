@@ -89,8 +89,11 @@ export PATH="$PATH:$N_PREFIX/bin"
 
 # export PATH="/nix/store/0bijgrbc3m0s7vg8fgp7wbq74jd5wc17-php-with-extensions-8.2.22/bin:$PATH"
 
-# PHP 8.3 
 eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# PHP 8.3
+export PATH="/opt/homebrew/opt/php@8.3/bin:$PATH"
+export PATH="/opt/homebrew/opt/php@8.3/sbin:$PATH"
 # export PATH="/usr/local/opt/php@8.3/bin:$PATH"
 # export PATH="/usr/local/opt/php@8.3/sbin:$PATH"
 # Load NVM (Node Version Manager)
