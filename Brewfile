@@ -13,6 +13,8 @@ brew "fd"
 # brew "php"
 brew "php@8.3"
 brew "ruby"
+tap "shopify/shopify"
+brew "shopify-cli"
 
 # Casks (Applications)
 # cask "google-chrome"

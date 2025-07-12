@@ -5,7 +5,7 @@
 - clean: ["~"]
 
 - shell:
-    - command: chmod +x ./setup_homebrew.sh ./setup_node.sh ./setup_ssh.sh
+    - command: chmod +x ./setup_homebrew.sh ./setup_node.sh ./setup_ssh.sh ./setup_finalize.sh
       stdout: true
       stderr: true
     - command: ./setup_homebrew.sh
@@ -77,7 +77,7 @@
       stdout: true
       stderr: true
       quiet: true
-    - command: ./setup_shopify.sh
+    - command: ./setup_finalize.sh
       stdout: true
       stderr: true
 

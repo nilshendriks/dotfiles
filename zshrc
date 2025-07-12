@@ -94,8 +94,14 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # PHP 8.3
 export PATH="/opt/homebrew/opt/php@8.3/bin:$PATH"
 export PATH="/opt/homebrew/opt/php@8.3/sbin:$PATH"
-# export PATH="/usr/local/opt/php@8.3/bin:$PATH"
-# export PATH="/usr/local/opt/php@8.3/sbin:$PATH"
+
+# Homebrew Ruby
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+
+# ruby gems?
+export GEM_BIN_PATH="$(gem env gemdir)/bin"
+export PATH="$GEM_BIN_PATH:$PATH"
+
 # Load NVM (Node Version Manager)
 # export NVM_DIR="$HOME/.nvm"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
