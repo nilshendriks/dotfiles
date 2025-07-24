@@ -198,6 +198,10 @@ alias nvim-kick="NVIM_APPNAME=kickstart nvim"
 alias nvim-henk="NVIM_APPNAME=HENKVim nvim"
 alias nvim-astro="NVIM_APPNAME=NirusuAstro nvim"
 
+# shopify HENK 
+alias themepull='shopify theme pull --environment=surf-turf-2-0 --nodelete'
+alias themepush='shopify theme push --environment=surf-turf-2-0 --nodelete'
+
 function nvims() {
   items=("default" "kickstart" "LazyVim" "NirusuVim" "HENKVim" "NirusuAstro")
   config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config  " --height=~50% --layout=reverse --border --exit-0)
