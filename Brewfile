@@ -16,6 +16,10 @@ brew "ruby"
 tap "shopify/shopify"
 brew "shopify-cli"
 
+# Image tools for conversion & optimization
+brew "imagemagick"     # powerful image processing CLI (supports many formats incl. AVIF if compiled with support)
+brew "cavif"           # dedicated AVIF encoder CLI tool
+
 # Casks (Applications)
 # cask "google-chrome"
 # cask "alfred"
