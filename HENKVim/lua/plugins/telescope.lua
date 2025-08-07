@@ -1,53 +1,44 @@
-return {
-    {
-        "nvim-telescope/telescope.nvim",
-        opts = {
-            defaults = {
-                hidden = true,
-            },
-        },
-        keys = {
-            {
-                "<leader>ff",
-                function()
-                    require("telescope.builtin").find_files({ hidden = true })
-                end,
-                desc = "Find files (including hidden)",
-            },
-            {
-                "<leader>fh",
-                function()
-                    require("telescope.builtin").find_files({ hidden = true })
-                end,
-                desc = "Find hidden files",
-            },
-        },
-    },
-}
-
+return {}
 -- return {
---     {
---         "nvim-telescope/telescope.nvim",
---         opts = {
---             defaults = {
---                 hidden = true,
---                 -- keep your other options here
---             },
---         },
---     },
--- }
-
--- local telescope = require('telescope')
-
--- telescope.setup {
-
---     pickers = {
-
+--   {
+--     "nvim-telescope/telescope.nvim",
+--     opts = {
+--       defaults = {
+--         hidden = true,
+--       },
+--       pickers = {
 --         find_files = {
-
---             hidden = true
-
---         }
-
---     }
+--           find_command = {
+--             "fd",
+--             "--type",
+--             "f",
+--             "--hidden",
+--             "--exclude",
+--             "node_modules",
+--             "--exclude",
+--             ".git",
+--             "--color",
+--             "never",
+--             "--no-require-git",
+--           },
+--         },
+--       },
+--     },
+--     keys = {
+--       {
+--         "<leader>ff",
+--         function()
+--           require("telescope.builtin").find_files()
+--         end,
+--         desc = "Find files (including hidden, excluding node_modules)",
+--       },
+--       {
+--         "<Space><Space>",
+--         function()
+--           require("telescope.builtin").find_files()
+--         end,
+--         desc = "Find files (including hidden, excluding node_modules)",
+--       },
+--     },
+--   },
 -- }
