@@ -23,7 +23,8 @@ brew "imagemagick"     # powerful image processing CLI (supports many formats in
 
 brew "viu"
 brew "chafa"
-brew "ueberzugpp"
+brew "ghostscript"      # provides `gs` – needed to render PDF files
+brew "tectonic"         # OR use pdflatex via MacTeX, but tectonic is simpler
 
 # Casks (Applications)
 # cask "google-chrome"
