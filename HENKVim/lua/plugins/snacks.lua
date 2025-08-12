@@ -11,7 +11,7 @@ return {
           doc = {
             enabled = true,
             inline = false, -- or false to try floating window
-            float = true,
+            float = false,
             max_width = 80, -- limits image width in chars
             max_height = 40, -- limits image height in chars
             conceal = function(lang, type)

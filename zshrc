@@ -203,6 +203,13 @@ alias themepull='shopify theme pull --environment=surf-turf-2-0 --nodelete'
 alias themepush='shopify theme push --environment=surf-turf-2-0 --nodelete'
 alias themedev='shopify theme dev --environment=surf-turf-2-0'
 
+# caniuse css baseline 
+alias canuse="npx caniuse -C ~/dotfiles/.caniuse.json"
+
+baselinecss() {
+  npx doiuse --browsers "extends browserslist-config-baseline/2023" "$1" --json | jq -r ".message"
+}
+
 function nvims() {
   items=("default" "kickstart" "LazyVim" "NirusuVim" "HENKVim" "NirusuAstro")
   config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config  " --height=~50% --layout=reverse --border --exit-0)

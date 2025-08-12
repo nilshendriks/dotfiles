@@ -24,6 +24,7 @@ packages=(
   http-server
   trash-cli
   @mermaid-js/mermaid-cli
+  caniuse-cmd
 )
 
 # Install each package if not already installed
