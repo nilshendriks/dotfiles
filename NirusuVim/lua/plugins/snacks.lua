@@ -5,7 +5,17 @@ return {
       require("snacks").setup({
         dashboard = { enabled = true },
         explorer = { enabled = true },
-        -- image = { enabled = true },
+        input = { enabled = true },
+        notifier = { enabled = true },
+        picker = {
+          enabled = true,
+          ui_select = true,
+        },
+        quickfile = { enabled = true },
+        scope = { enabled = true },
+        scroll = { enabled = false },
+        statuscolumn = { enabled = false },
+        words = { enabled = true },
         image = {
           enabled = true,
           doc = {
@@ -34,41 +44,3 @@ return {
     end,
   },
 }
--- return {
---   {
---     "folke/snacks.nvim",
---     config = function()
---       require("snacks").setup({
---         -- dashboard = {
---         --   keys = {
---         --     f = {
---         --       function()
---         --         require("telescope.builtin").find_files({
---         --           find_command = {
---         --             "fd",
---         --             "--type",
---         --             "f",
---         --             "--hidden",
---         --             "--exclude",
---         --             "node_modules",
---         --             "--color",
---         --             "never",
---         --             "--no-require-git",
---         --           },
---         --         })
---         --       end,
---         --       "Find files (exclude node_modules)",
---         --     },
---         --   },
---         -- },
---         explorer = {
---           enabled = true,
---           -- You can add more explorer config options here if you want
---         },
---         image = {
---           enabled = true,
---         },
---       })
---     end,
---   },
--- }

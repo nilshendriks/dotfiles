@@ -102,6 +102,9 @@ export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 export GEM_BIN_PATH="$(gem env gemdir)/bin"
 export PATH="$GEM_BIN_PATH:$PATH"
 
+# neovim lazyvim mason 
+ export PATH="$HOME/.local/share/NirusuVim/mason/bin:$PATH"
+
 # Load NVM (Node Version Manager)
 # export NVM_DIR="$HOME/.nvm"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"

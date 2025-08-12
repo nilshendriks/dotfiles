@@ -14,10 +14,12 @@ return {
     })
 
     local lint = require("lint")
+    local lint_augroup = vim.api.nvim_create_augroup("Linting", { clear = true })
+    local lint_ns = vim.api.nvim_create_namespace("lint")
 
     lint.linters.oxlint = {
       name = "oxlint",
-      cmd = os.getenv("HOME") .. "/.local/share/HENKVim/mason/bin/oxlint",
+      cmd = os.getenv("HOME") .. "/.local/share/NirusuVim/mason/bin/oxlint",
       stdin = false,
       args = { "-f", "json" },
       stream = "stdout",
@@ -60,14 +62,12 @@ return {
       html = { "htmlhint" },
     }
 
-    local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
-
     vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost" }, {
       group = lint_augroup,
       callback = function(args)
         lint.try_lint(nil, {
           callback = function(diagnostics)
-            vim.diagnostic.set(vim.api.nvim_create_namespace("oxlint"), args.buf, diagnostics, {})
+            vim.diagnostic.set(lint_ns, args.buf, diagnostics, {})
           end,
         })
       end,
