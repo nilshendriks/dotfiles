@@ -9,7 +9,7 @@ return {
       css = { "prettier", lsp_format = "never" },
       js = { "prettier", lsp_format = "never" },
       json = { "prettier", lsp_format = "never" },
-      -- liquid = { "prettier", lsp_format = "never" },
+      liquid = { "prettier", lsp_format = "never" },
     },
   },
 }

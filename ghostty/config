@@ -12,9 +12,9 @@ shell-integration-features = no-cursor
 #font-family = JetBrainsMono Nerd Font
 font-family = "JetBrainsMono NFM"
 font-size = 16
+font-feature = "calt, liga, dlig"
 
-# theme = catppuccin-mocha
-
+# theme
 theme = tokyonight
 
 window-theme = dark
