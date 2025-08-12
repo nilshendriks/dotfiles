@@ -1,9 +1,17 @@
 return {
   {
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
+    name = "mason.nvim",
+    version = "2.0.1",
     opts = {
       ensure_installed = {
-        "css-lsp", -- Add CSS LSP
+        "astro-language-server",
+        "css-lsp",
+        "emmet-language-server",
+        "html-lsp",
+        "vtsls",
+        "marksman",
+        "css-variables-language-server",
       },
     },
   },
