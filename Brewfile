@@ -1,5 +1,3 @@
-# Taps
-
 # Brews (Packages)
 brew "bat"
 brew "httpie"
@@ -40,3 +38,6 @@ cask "wezterm"
 cask "ghostty"
 cask "dash"
 cask "blender"
+
+# Fonts
+cask "font-jetbrains-mono-nerd-font"
