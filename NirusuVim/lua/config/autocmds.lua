@@ -16,3 +16,18 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt.conceallevel = 0
   end,
 })
+
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = { ".env", ".env.*", "*.env" },
+  callback = function()
+    vim.bo.filetype = "env"
+  end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "env",
+  callback = function()
+    local ns = vim.api.nvim_create_namespace("shellcheck")
+    vim.diagnostic.enable(false, { namespace = ns })
+  end,
+})

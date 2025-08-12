@@ -25,6 +25,7 @@ brew "viu"
 brew "chafa"
 brew "ghostscript"      # provides `gs` – needed to render PDF files
 brew "tectonic"         # OR use pdflatex via MacTeX, but tectonic is simpler
+brew "wget"
 
 # Casks (Applications)
 # cask "google-chrome"
