@@ -5,6 +5,7 @@ return {
     vim.diagnostic.config({
       virtual_text = {
         prefix = "●",
+        -- prefix = "", -- or "»" or "" if you want no prefix
         spacing = 2,
       },
       signs = true,

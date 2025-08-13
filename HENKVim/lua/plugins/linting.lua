@@ -8,7 +8,8 @@ return {
     -- Configure how diagnostics are displayed globally
     vim.diagnostic.config({
       virtual_text = {
-        prefix = "●", -- or "»" or "" if you want no prefix
+        -- prefix = "●", -- or "»" or "" if you want no prefix
+        prefix = "", -- or "»" or "" if you want no prefix
         spacing = 2,
       },
       signs = true,
