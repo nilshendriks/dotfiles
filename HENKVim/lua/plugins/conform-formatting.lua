@@ -10,6 +10,7 @@ return {
       js = { "prettier", lsp_format = "never" },
       json = { "prettier", lsp_format = "never" },
       liquid = { "prettier", lsp_format = "never" },
+      svg = { "prettier" },
     },
   },
 }
