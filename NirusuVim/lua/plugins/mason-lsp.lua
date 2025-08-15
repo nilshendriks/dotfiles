@@ -9,6 +9,7 @@ return {
         "css-lsp",
         "emmet-language-server",
         "html-lsp",
+        "htmlhint",
         "vtsls",
       },
     },
