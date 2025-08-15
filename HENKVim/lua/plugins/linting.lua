@@ -62,13 +62,6 @@ return {
     lint.linters_by_ft = {
       typescript = { "oxlint" },
       javascript = { "oxlint" },
-      -- javascriptreact = { "biomejs" },
-      -- typescriptreact = { "biomejs" },
-      -- json = { "biomejs" },
-      -- jsonc = { "biomejs" },
-      -- css = { "stylelint" },
-      -- html = { "htmlhint" },
-      -- html = { "djlint", "htmlhint" },
       html = { "htmlhint" },
     }
 
@@ -83,13 +76,17 @@ return {
           end,
         })
       end,
-      -- callback = function()
-      --   print("Triggering lint...") -- Debug print
-      --   lint.try_lint()
-      -- end,
     })
-    -- vim.keymap.set("n", "<leader>l", function()
-    --     lint.try_lint()
-    -- end, { desc = "Trigger linting for current file" })
+    -- Disable diagnostics from vtsls but keep it for completions/etc
+    vim.api.nvim_create_autocmd("LspAttach", {
+      callback = function(args)
+        local client = vim.lsp.get_client_by_id(args.data.client_id)
+        if client.name == "vtsls" then
+          client.server_capabilities.diagnosticProvider = false
+          client.handlers["textDocument/publishDiagnostics"] = function() end
+          vim.diagnostic.reset(vim.api.nvim_create_namespace(client.name), args.buf)
+        end
+      end,
+    })
   end,
 }

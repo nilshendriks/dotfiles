@@ -12,6 +12,7 @@ return {
         "vtsls",
         "marksman",
         "css-variables-language-server",
+        "prettier",
       },
     },
   },
