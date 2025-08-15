@@ -12,10 +12,18 @@ else
 fi
 
 # Always eval brew shellenv to update PATH in current session
-if [[ "$(uname -m)" == "arm64" ]]; then
-  eval "$(/opt/homebrew/bin/brew shellenv)"
-else
-  eval "$(/usr/local/bin/brew shellenv)"
+# if [[ "$(uname -m)" == "arm64" ]]; then
+#   eval "$(/opt/homebrew/bin/brew shellenv)"
+# else
+#   eval "$(/usr/local/bin/brew shellenv)"
+# fi
+
+if ! command -v brew >/dev/null 2>&1; then
+  if [[ "$(uname -m)" == "arm64" ]]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+  else
+    eval "$(/usr/local/bin/brew shellenv)"
+  fi
 fi
 
 brew bundle --verbose

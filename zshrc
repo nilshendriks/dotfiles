@@ -76,9 +76,6 @@ export PATH="$HOME/bin:$PATH"
 # Include global npm binaries
 export PATH="$PATH:$HOME/.npm-global/bin"
 
-# Add WezTerm binary (if needed)
-export PATH="$PATH:/Applications/WezTerm.app/Contents/MacOS"
-
 # Add Visual Studio Code (code)
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
@@ -200,6 +197,7 @@ alias nvim-nirusu="NVIM_APPNAME=NirusuVim nvim"
 alias nvim-kick="NVIM_APPNAME=kickstart nvim"
 alias nvim-henk="NVIM_APPNAME=HENKVim nvim"
 alias nvim-astro="NVIM_APPNAME=NirusuAstro nvim"
+alias nn="NVIM_APPNAME=NeoNirusu nvim"
 
 # shopify HENK 
 alias themepull='shopify theme pull --environment=surf-turf-2-0 --nodelete'
@@ -214,7 +212,7 @@ baselinecss() {
 }
 
 function nvims() {
-  items=("default" "kickstart" "LazyVim" "NirusuVim" "HENKVim" "NirusuAstro")
+  items=("default" "kickstart" "LazyVim" "NirusuVim" "HENKVim" "NirusuAstro" "NeoNirusu")
   config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config  " --height=~50% --layout=reverse --border --exit-0)
   if [[ -z $config ]]; then
     echo "Nothing selected"

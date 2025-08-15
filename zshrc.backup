@@ -63,9 +63,6 @@ export PATH="$HOME/bin:$PATH"
 # Include global npm binaries
 export PATH="$PATH:$HOME/.npm-global/bin"
 
-# Add WezTerm binary (if needed)
-export PATH="$PATH:/Applications/WezTerm.app/Contents/MacOS"
-
 # Add Visual Studio Code (code)
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 

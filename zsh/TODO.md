@@ -1,4 +1,4 @@
-# TODO 
+# TODO
 
-- same font / font-size for ghostty, wezterm, iterm, kitty
+- same font / font-size for ghostty, iterm, kitty
 - theme?

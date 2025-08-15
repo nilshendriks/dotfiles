@@ -6,23 +6,17 @@
 - oh my posh: nix-env -iA nixpkgs.oh-my-posh
 - oh-my-posh --version
 - mkdir .config/ohmyposh
-- install fzf 
-
-
+- install fzf
 
 ## ZSH
+
 - zshrc: ~/.zshrc
 
 ## EMULATOR
-- wezterm
-  - .wezterm.lua in home folder
-  - color scheme catppuccin mocha
-  - fontsize 20
 
 - ghostty : conf?
 
 ## nvim
-
 
 ## apps
 
@@ -30,4 +24,4 @@
 - capture pro
 - chrome
 - firefox dev edition
-- 
+-

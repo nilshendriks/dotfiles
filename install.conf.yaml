@@ -77,6 +77,16 @@
       stdout: true
       stderr: true
       quiet: true
+    - command: |
+        if [ ! -d "$HOME/dotfiles/NeoNirusu" ]; then
+          mkdir -p "$HOME/dotfiles/NeoNirusu"
+          echo "NeoNirusu installation complete."
+        else
+          echo "NeoNirusu already exists."
+        fi
+      stdout: true
+      stderr: true
+      quiet: true
     - command: ./setup_finalize.sh
       stdout: true
       stderr: true
@@ -86,10 +96,10 @@
     ~/.zshrc:
     ~/.zshenv:
     ~/.gitconfig:
-    ~/.wezterm.lua:
     ~/.config/NirusuVim: ~/dotfiles/NirusuVim
     ~/.config/HENKVim: ~/dotfiles/HENKVim
     ~/.config/NirusuAstro: ~/dotfiles/NirusuAstro
+    ~/.config/NeoNirusu: ~/dotfiles/NeoNirusu
     "~/Library/Application Support/com.mitchellh.ghostty/config": ~/dotfiles/ghostty/config
 
 - create:

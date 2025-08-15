@@ -34,7 +34,6 @@ cask "zed"
 # cask "tower"
 # cask 1password
 # cask alfred
-cask "wezterm"
 cask "ghostty"
 cask "dash"
 cask "blender"
