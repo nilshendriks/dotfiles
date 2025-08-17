@@ -12,8 +12,17 @@
 [X] smear cursor
 [X] tab like buffers ?
 [X] lazygit
-[] toggle true false words, check snacks words first.
+[X] wakatime
+[X] duplicate line instead of v y p.
 
+[ ] treesitter
+[ ] mason
+[] autocomplete???
+[] linting???
+[] html preview?
+[] markdown?
+[] autocomplete - blink?
+  [] check css var issue
 [] mini - echasnovski
   [X] mini.statusline
   [X] mini diff
@@ -32,15 +41,14 @@
 [X] number
 [X] relative linenumber
 [X] clipboard setting. 
-[] autocomplete???
-[] linting???
-[] html preview?
-[] markdown?
 
 ## Keymaps
 [X] w for save?
 
 ## Cleanup
-[] move options from init to config / options file
-[] move keymaps to config / keymaps file
+[X] move options from init to config / options file
+[X] move keymaps to config / keymaps file
 
+## Later
+[ ] "kazhala/close-buffers.nvim",
+[ ] toggle true false words, check snacks words first.
