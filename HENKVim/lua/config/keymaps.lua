@@ -15,5 +15,10 @@ keymap.set(
 )
 
 -- thanks theprimeagen
+-- Move selected lines up/down in visual mode
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
+-- Normal mode: move current line up/down
+vim.keymap.set("n", "<A-j>", ":m .+1<CR>==")
+vim.keymap.set("n", "<A-k>", ":m .-2<CR>==")
