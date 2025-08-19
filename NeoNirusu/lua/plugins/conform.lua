@@ -27,11 +27,10 @@ return {
             lua = { "stylua" },
             html = { "prettierd", "prettier", lsp_format = "fallback" },
             css = { "prettierd", lsp_format = "fallback" },
-            -- js = { "prettierd", "prettier", lsp_format = "fallback" },
             javascript = { "prettierd", "prettier", lsp_format = "fallback" },
             typescript = { "prettierd", "prettier", lsp_format = "fallback" },
             json = { "prettier", lsp_format = "fallback" },
-            liquid = { "prettier", lsp_format = "fallback" },
+            liquid = { "prettierd", lsp_format = "fallback" },
         },
         -- makes sure the first formatter that works stops
         stop_after_first = true,

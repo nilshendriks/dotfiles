@@ -50,4 +50,9 @@
 ## Later
 [ ] "kazhala/close-buffers.nvim",
 [ ] toggle true false words, check snacks words first.
-
+- mdx syntax highlighting
+- keycap delete all buffers
+- pomodory plugin
+- toggle word plugin
+- liquid formatting
+- formatting embedded langs
