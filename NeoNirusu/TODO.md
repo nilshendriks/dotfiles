@@ -14,15 +14,13 @@
 [X] lazygit
 [X] wakatime
 [X] duplicate line instead of v y p.
+[X] treesitter
+[X] mason
 
-[ ] treesitter
-[ ] mason
-[] autocomplete???
 [] linting???
+[X] emmet
 [] html preview?
 [] markdown?
-[] autocomplete - blink?
-  [] check css var issue
 [] mini - echasnovski
   [X] mini.statusline
   [X] mini diff
@@ -52,3 +50,4 @@
 ## Later
 [ ] "kazhala/close-buffers.nvim",
 [ ] toggle true false words, check snacks words first.
+
