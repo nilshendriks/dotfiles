@@ -25,15 +25,16 @@ return {
         formatters_by_ft = {
             svg = { "prettier" },
             lua = { "stylua" },
-            html = { "prettierd", "prettier", lsp_format = "fallback" },
+            html = { "prettierd", "prettier", "injected", lsp_format = "fallback" },
             css = { "prettierd", lsp_format = "fallback" },
             javascript = { "prettierd", "prettier", lsp_format = "fallback" },
             typescript = { "prettierd", "prettier", lsp_format = "fallback" },
-            json = { "prettier", lsp_format = "fallback" },
-            liquid = { "prettierd", lsp_format = "fallback" },
+            json = { "prettierd", "prettier", lsp_format = "fallback" },
+            liquid = { "prettier", "injected", lsp_format = "fallback" },
         },
         -- makes sure the first formatter that works stops
-        stop_after_first = true,
+        -- stop_after_first = true,
+        stop_after_first = false,
         format_on_save = {
             -- These options will be passed to conform.format()
             timeout_ms = 500,

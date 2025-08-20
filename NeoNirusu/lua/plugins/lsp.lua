@@ -185,6 +185,7 @@ return {
             ts_ls = {},
             emmet_language_server = {},
             shopify_theme_ls = {},
+            jsonls = {},
 
             lua_ls = {
                 -- cmd = { ... },

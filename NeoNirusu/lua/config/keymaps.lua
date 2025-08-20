@@ -54,3 +54,8 @@ vim.keymap.set("v", "<", "<gv", { desc = "Outdent and stay in visual mode" })
 
 -- Reindent whole file under leader+c=
 vim.keymap.set("n", "<leader>c=", "gg=G", { desc = "Reindent whole file" })
+
+-- conform.nvim keymaps
+vim.keymap.set("n", "<leader>cF", function()
+  require("conform").format({ async = true, lsp_fallback = true, formatters = { "injected" } })
+end, { desc = "Format Injected Langs" })
