@@ -28,7 +28,7 @@ brew "wget"
 # Casks (Applications)
 # cask "google-chrome"
 # cask "alfred"
-# cask "firefox@developer-edition"
+cask "firefox@developer-edition"
 # cask "visual-studio-code"
 cask "zed"
 # cask "tower"
