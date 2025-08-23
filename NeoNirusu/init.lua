@@ -7,9 +7,11 @@ require("config.lazy")
 -- general vim options
 require("config.options")
 
+-- add filetypes (mdx)
+require("config.filetype")
+
 -- keymaps
 require("config.keymaps")
 
 -- autocmds
 require("config.autocmds")
-
