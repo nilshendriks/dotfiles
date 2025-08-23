@@ -1,4 +1,3 @@
-
 -- tabs and spaces etc
 vim.opt.expandtab = true
 vim.opt.shiftwidth = 4
@@ -7,7 +6,6 @@ vim.opt.softtabstop = 4
 vim.opt.smarttab = true
 vim.opt.smartindent = true
 vim.opt.autoindent = true
-
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = false
@@ -33,7 +31,7 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 -- Keep signcolumn on by default
-vim.opt.signcolumn = 'yes'
+vim.opt.signcolumn = "yes"
 
 -- Sets how neovim will display certain whitespace characters in the editor.
 --  See `:help 'list'`
@@ -44,10 +42,10 @@ vim.opt.signcolumn = 'yes'
 --   See `:help lua-options`
 --   and `:help lua-options-guide`
 vim.opt.list = true
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 
 -- Preview substitutions live, as you type!
-vim.opt.inccommand = 'split'
+vim.opt.inccommand = "split"
 
 -- Show which line your cursor is on
 vim.opt.cursorline = true
