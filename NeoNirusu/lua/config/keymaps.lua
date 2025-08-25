@@ -38,8 +38,11 @@ vim.keymap.set("n", "<A-j>", ":m .+1<CR>==")
 vim.keymap.set("n", "<A-k>", ":m .-2<CR>==")
 
 -- Save file with Ctrl+S in normal and insert modes
-vim.keymap.set("n", "<C-s>", ":w<CR>", { desc = "Save file" })
-vim.keymap.set("i", "<C-s>", "<Esc>:w<CR>a", { desc = "Save file" })
+-- vim.keymap.set("n", "<C-s>", ":w<CR>", { desc = "Save file" })
+-- vim.keymap.set("i", "<C-s>", "<Esc>:w<CR>a", { desc = "Save file" })
+
+vim.keymap.set("n", "<C-s>", ":w<CR>", { desc = "Save file", noremap = true, silent = true })
+vim.keymap.set("i", "<C-s>", "<Esc>:w<CR>a", { desc = "Save file", noremap = true, silent = true })
 
 -- cycle through buffers without bufferline
 vim.keymap.set("n", "<Tab>", "<cmd>bnext<CR>", { desc = "Next buffer" })
@@ -55,7 +58,28 @@ vim.keymap.set("v", "<", "<gv", { desc = "Outdent and stay in visual mode" })
 -- Reindent whole file under leader+c=
 vim.keymap.set("n", "<leader>c=", "gg=G", { desc = "Reindent whole file" })
 
+vim.keymap.set("n", "<leader>cf", function()
+    local ft = vim.bo.filetype
+    local bufnr = vim.api.nvim_get_current_buf()
+    if ft == "astro" then
+        -- Run LSP formatting first
+        vim.lsp.buf.format({ async = false })
+        -- Then run astro_formatter for script/style blocks
+        require("utils.astro_formatter").format_astro(bufnr)
+    else
+        require("conform").format({ async = true, lsp_fallback = true })
+    end
+end, { desc = "Format file (context-sensitive)" })
+-- vim.keymap.set("n", "<leader>cf", function()
+--     local ft = vim.bo.filetype
+--     if ft == "astro" then
+--         require("utils.astro_formatter").format_astro()
+--     else
+--         require("conform").format({ async = true, lsp_fallback = true })
+--     end
+-- end, { desc = "Format file (context-sensitive)" })
+
 -- conform.nvim keymaps
 vim.keymap.set("n", "<leader>cF", function()
-  require("conform").format({ async = true, lsp_fallback = true, formatters = { "injected" } })
+    require("conform").format({ async = true, lsp_fallback = true, formatters = { "injected" } })
 end, { desc = "Format Injected Langs" })

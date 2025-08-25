@@ -1,5 +1,6 @@
 return {
     "stevearc/conform.nvim",
+    lazy = false,
     keys = {
         {
             -- Customize or remove this keymap to your liking
@@ -21,6 +22,15 @@ return {
                     return {}
                 end,
             },
+            -- astro_formatter = {
+            --     command = "my_cmd",
+            --     meta = {
+            --         description = "Indent <script> and <style> blocks with 2 spaces",
+            --     },
+            --     run = function(_, bufnr)
+            --         require("utils.astro_formatter").format(bufnr)
+            --     end,
+            -- },
         },
         formatters_by_ft = {
             svg = { "prettier" },

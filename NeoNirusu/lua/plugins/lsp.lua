@@ -181,8 +181,39 @@ return {
             bashls = {},
             marksman = {},
             html = {},
-            cssls = {},
+            cssls = {
+                cmd = { "vscode-css-language-server", "--stdio" }, -- optional if different
+                filetypes = { "css", "scss", "less" }, -- optional if needed
+                capabilities = {},
+                settings = {
+                    css = {
+                        validate = true,
+                        lint = {
+                            unknownProperties = "warning",
+                            duplicateProperties = "warning", -- <-- this flags duplicates
+                            duplicateDeclarations = "warning",
+                            emptyRules = "error",
+                            importStatement = "warning",
+                        },
+                    },
+                    scss = {
+                        validate = true,
+                        lint = {
+                            unknownProperties = "warning",
+                            duplicateProperties = "warning",
+                        },
+                    },
+                    less = {
+                        validate = true,
+                        lint = {
+                            unknownProperties = "warning",
+                            duplicateProperties = "warning",
+                        },
+                    },
+                },
+            },
             ts_ls = {},
+            astro = {},
             emmet_language_server = {},
             shopify_theme_ls = {},
             jsonls = {},
