@@ -36,7 +36,7 @@ return {
             svg = { "prettier" },
             lua = { "stylua" },
             html = { "prettierd", "prettier", "injected", lsp_format = "fallback" },
-            css = { "prettierd", lsp_format = "fallback" },
+            css = { "prettierd", lsp_format = "never" },
             javascript = { "prettierd", "prettier", lsp_format = "fallback" },
             typescript = { "prettierd", "prettier", lsp_format = "fallback" },
             json = { "prettierd", "prettier", lsp_format = "fallback" },
@@ -44,11 +44,11 @@ return {
         },
         -- makes sure the first formatter that works stops
         -- stop_after_first = true,
-        stop_after_first = false,
+        stop_after_first = true,
         format_on_save = {
             -- These options will be passed to conform.format()
             timeout_ms = 500,
-            lsp_format = "fallback",
+            -- lsp_format = "fallback",
         },
     },
 }
