@@ -1,5 +1,3 @@
--- vim.notify("Loading conform.nvim config", vim.log.levels.INFO)
-
 return {
   "stevearc/conform.nvim",
   opts = {
