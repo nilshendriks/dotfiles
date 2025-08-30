@@ -2,62 +2,57 @@
 
 ## Plugins
 
-[] linting???
-[] html preview?
-[] markdown?
-[] 'folke/lazydev.nvim'
-[] snacks terminal? how?
-[] add command on save for c+F, format injected languages
-[] mini highlighting?
-
-## Later
-[ ] "kazhala/close-buffers.nvim",
-[ ] toggle true false words, check snacks words first.
-- mdx syntax highlighting
-- keycap delete all buffers
-- pomodory plugin
-- toggle word plugin
-- liquid formatting
-- formatting embedded langs
-
-[X] lazy.nvim - folke
-[X] kanagawa
-[X] which key - folke
-[X] sessions - persistence - folke
-[X] primagen line down and up
-[X] sleuth for auto detection tabs / spaces - tpope
-[X] Noice: modal command line - folke
-[X] smear cursor
-[X] tab like buffers ?
-[X] lazygit
-[X] wakatime
-[X] duplicate line instead of v y p.
-[X] treesitter
-[X] mason
-[X] emmet
-
-### mini - echasnovski
-  [X] mini.statusline
-  [X] mini diff
-  [X] mini icons
-  [X] mini git
-
-### snacks - folke
-  [X] snack dim?
-  [X] file explorer -> snacks explorer
-  [X] file picker -> snacks picker
-  [X] dashboard -> snacks dashobard
-  [X] set dashboard graphic -> NeoNirusu
+- [ ] linting???
+- [ ] html preview?
+- [x] markdown?
+- [x] 'folke/lazydev.nvim'
+- [ ] snacks terminal? how?
+- [x] lazy.nvim - folke
+- [x] kanagawa
+- [x] which key
+- [x] sessions - persistence - folke
+- [x] primagen line down and up
+- [x] sleuth for auto detection tabs / spaces - tpope
+- [x] Noice: modal command line - folke
+- [x] smear cursor
+- [x] tab like buffers ?
+- [x] lazygit
+- [x] wakatime
+- [x] duplicate line instead of v y p.
+- [x] treesitter
+- [x] mason
+- [x] emmet
+- [x] mini.statusline
+- [x] mini diff
+- [x] mini icons
+- [x] mini git
+- [x] snack dim?
+- [x] file explorer -> snacks explorer
+- [x] file picker -> snacks picker
+- [x] dashboard -> snacks dashobard
+- [x] set dashboard graphic -> NeoNirusu
 
 ## Options
-[X] number
-[X] relative linenumber
-[X] clipboard setting. 
+
+- [x] number
+- [x] relative linenumber
+- [x] clipboard setting.
 
 ## Keymaps
-[X] w for save?
+
+- [x] w for save?
 
 ## Cleanup
-[X] move options from init to config / options file
-[X] move keymaps to config / keymaps file
 
+- [x] move options from init to config / options file
+- [x] move keymaps to config / keymaps file
+
+## Later
+
+- [ ] "kazhala/close-buffers.nvim",
+- [x] mdx syntax highlighting
+- [ ] pomodory plugin
+- [ ] toggle word plugin
+- [ ] liquid formatting
+- [ ] formatting embedded langs
+- [ ] something

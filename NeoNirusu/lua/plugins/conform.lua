@@ -41,6 +41,9 @@ return {
             typescript = { "prettierd", "prettier", lsp_format = "fallback" },
             json = { "prettierd", "prettier", lsp_format = "fallback" },
             liquid = { "prettier", "injected", lsp_format = "fallback" },
+            markdown = { "prettier" },
+            -- NOTE: astro is formatted by LSP (prettier plugin sucks balls)
+            -- also runs custom function to format style and script tags with 2 spaces
         },
         -- makes sure the first formatter that works stops
         -- stop_after_first = true,
