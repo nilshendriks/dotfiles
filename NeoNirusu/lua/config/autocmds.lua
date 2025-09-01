@@ -42,7 +42,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 --     end,
 -- })
 
-
 -- vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 --     pattern = "*.astro",
 --     callback = function()
@@ -62,5 +61,14 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 
         -- Format <script> and <style> blocks with 2 spaces
         require("utils.astro_formatter").format_astro(0)
+    end,
+})
+
+-- Terminal
+vim.api.nvim_create_autocmd("TermOpen", {
+    group = vim.api.nvim_create_augroup("custom-term-open", { clear = true }),
+    callback = function()
+        vim.opt.number = false
+        vim.opt.relativenumber = false
     end,
 })

@@ -2,7 +2,6 @@ return {
     "folke/snacks.nvim",
     priority = 1000,
     lazy = false,
-    ---@type snacks.Config
     opts = {
         -- your configuration comes here
         -- or leave it empty to use the default settings
@@ -11,19 +10,44 @@ return {
         dashboard = {
             enabled = true,
             preset = {
-keys = {
-      { icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
-      { icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
-      { icon = " ", key = "g", desc = "Find Text", action = ":lua Snacks.dashboard.pick('live_grep')" },
-      { icon = " ", key = "r", desc = "Recent Files", action = ":lua Snacks.dashboard.pick('oldfiles')" },
-      { icon = " ", key = "c", desc = "Config", action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})" },
-      { icon = " ", key = "s", desc = "Restore Session", action = function()
-          require("persistence").load({ last = true })
-        end
-      },
-      { icon = "󰒲 ", key = "L", desc = "Lazy", action = ":Lazy", enabled = package.loaded.lazy ~= nil },
-      { icon = " ", key = "q", desc = "Quit", action = ":qa" },
-    },
+                keys = {
+                    { icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
+                    { icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
+                    {
+                        icon = " ",
+                        key = "g",
+                        desc = "Find Text",
+                        action = ":lua Snacks.dashboard.pick('live_grep')",
+                    },
+                    {
+                        icon = " ",
+                        key = "r",
+                        desc = "Recent Files",
+                        action = ":lua Snacks.dashboard.pick('oldfiles')",
+                    },
+                    {
+                        icon = " ",
+                        key = "c",
+                        desc = "Config",
+                        action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})",
+                    },
+                    {
+                        icon = " ",
+                        key = "s",
+                        desc = "Restore Session",
+                        action = function()
+                            require("persistence").load({ last = true })
+                        end,
+                    },
+                    {
+                        icon = "󰒲 ",
+                        key = "L",
+                        desc = "Lazy",
+                        action = ":Lazy",
+                        enabled = package.loaded.lazy ~= nil,
+                    },
+                    { icon = " ", key = "q", desc = "Quit", action = ":qa" },
+                },
                 header = [[
 ███╗   ██╗███████╗ ██████╗ ███╗   ██╗██╗██████╗ ██╗   ██╗███████╗██╗   ██╗
 ████╗  ██║██╔════╝██╔═══██╗████╗  ██║██║██╔══██╗██║   ██║██╔════╝██║   ██║
@@ -59,6 +83,7 @@ keys = {
         scroll = { enabled = true },
         statuscolumn = { enabled = true },
         words = { enabled = true },
+        terminal = { enabled = false },
     },
     keys = {
         -- Top Pickers & Explorer
@@ -499,20 +524,6 @@ keys = {
             desc = "Dismiss All Notifications",
         },
         {
-            "<c-/>",
-            function()
-                Snacks.terminal()
-            end,
-            desc = "Toggle Terminal",
-        },
-        {
-            "<c-_>",
-            function()
-                Snacks.terminal()
-            end,
-            desc = "which_key_ignore",
-        },
-        {
             "]]",
             function()
                 Snacks.words.jump(vim.v.count1)
@@ -570,19 +581,19 @@ keys = {
             desc = "Open Snacks Dashboard",
         },
     },
-dependencies = {
-    {
-      "folke/persistence.nvim",
-      event = "BufReadPre", -- lazy-load on startup
-      opts = {
-        dir = vim.fn.stdpath("data") .. "/sessions/",
-        -- autoload the last session when opening Neovim
-        autoload = false,
-        -- optionally save session automatically on exit
-        save = true,
-      },
+    dependencies = {
+        {
+            "folke/persistence.nvim",
+            event = "BufReadPre", -- lazy-load on startup
+            opts = {
+                dir = vim.fn.stdpath("data") .. "/sessions/",
+                -- autoload the last session when opening Neovim
+                autoload = false,
+                -- optionally save session automatically on exit
+                save = true,
+            },
+        },
     },
-  },
     init = function()
         vim.api.nvim_create_autocmd("User", {
             pattern = "VeryLazy",

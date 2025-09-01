@@ -80,16 +80,38 @@ vim.keymap.set("n", "<leader>cf", function()
         require("conform").format({ async = true, lsp_fallback = true })
     end
 end, { desc = "Format file (context-sensitive)" })
--- vim.keymap.set("n", "<leader>cf", function()
---     local ft = vim.bo.filetype
---     if ft == "astro" then
---         require("utils.astro_formatter").format_astro()
---     else
---         require("conform").format({ async = true, lsp_fallback = true })
---     end
--- end, { desc = "Format file (context-sensitive)" })
 
 -- conform.nvim keymaps
 vim.keymap.set("n", "<leader>cF", function()
     require("conform").format({ async = true, lsp_fallback = true, formatters = { "injected" } })
 end, { desc = "Format Injected Langs" })
+
+-- store the terminal buffer globally
+local term_buf = nil
+
+vim.keymap.set({ "n", "t" }, "<C-/>", function()
+    -- check if terminal buffer exists and is valid
+    if term_buf and vim.api.nvim_buf_is_valid(term_buf) then
+        -- check if terminal is visible
+        for _, win in ipairs(vim.api.nvim_list_wins()) do
+            if vim.api.nvim_win_get_buf(win) == term_buf then
+                -- if visible, close the split
+                vim.api.nvim_win_close(win, true)
+                return
+            end
+        end
+        -- if buffer exists but not visible, open in bottom split
+        vim.cmd("belowright split")
+        vim.api.nvim_win_set_buf(0, term_buf)
+        vim.cmd("resize 15")
+        vim.cmd("startinsert")
+    else
+        -- create a new terminal buffer
+        term_buf = vim.api.nvim_create_buf(false, true)
+        vim.cmd("belowright split")
+        vim.api.nvim_win_set_buf(0, term_buf)
+        vim.cmd("resize 15")
+        vim.fn.termopen(vim.o.shell)
+        vim.cmd("startinsert")
+    end
+end, { desc = "Toggle Bottom Terminal" })

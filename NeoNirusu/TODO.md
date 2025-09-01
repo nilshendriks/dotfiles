@@ -1,12 +1,26 @@
 # Neovim from scratch
 
+## nvim NeoNirusu
+
+- [ ] change "" to '' on a line?
+- [ ] html preview?
+- [ ] "kazhala/close-buffers.nvim",
+- [x] mdx syntax highlighting
+- [ ] pomodory plugin
+- [ ] toggle word plugin
+- [ ] liquid formatting
+- [ ] formatting embedded langs?
+
+### linting
+
+- [ ] htmlhint
+- [ ] oxlint or biome for most?
+- [ ] jose-elias-alvarez/typescript.nvim
+
 ## Plugins
 
-- [ ] linting???
-- [ ] html preview?
 - [x] markdown?
 - [x] 'folke/lazydev.nvim'
-- [ ] snacks terminal? how?
 - [x] lazy.nvim - folke
 - [x] kanagawa
 - [x] which key
@@ -46,13 +60,3 @@
 
 - [x] move options from init to config / options file
 - [x] move keymaps to config / keymaps file
-
-## Later
-
-- [ ] "kazhala/close-buffers.nvim",
-- [x] mdx syntax highlighting
-- [ ] pomodory plugin
-- [ ] toggle word plugin
-- [ ] liquid formatting
-- [ ] formatting embedded langs
-- [ ] something
