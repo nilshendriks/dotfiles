@@ -7,7 +7,7 @@ vim.opt.softtabstop = 4
 vim.opt.smarttab = true
 vim.opt.smartindent = true
 vim.opt.autoindent = true
-
+vim.opt.swapfile = false
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = false
