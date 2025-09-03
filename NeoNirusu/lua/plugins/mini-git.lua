@@ -1,1 +1,1 @@
-return { 'echasnovski/mini-git', version = false, main = 'mini.git', opts = {} }
+return { "nvim-mini/mini-git", version = false, main = "mini.git", opts = {} }

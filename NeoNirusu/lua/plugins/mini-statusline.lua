@@ -1,5 +1,5 @@
-return { 
-	'echasnovski/mini.statusline', 
-	version = false, 
-	opts = {} 
+return {
+    "nvim-mini/mini.statusline",
+    version = false,
+    opts = {},
 }
