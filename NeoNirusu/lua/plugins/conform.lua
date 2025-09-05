@@ -38,7 +38,7 @@ return {
             html = { "prettierd", "prettier", "injected", lsp_format = "fallback" },
             css = { "prettierd", lsp_format = "never" },
             javascript = { "prettierd", "prettier", lsp_format = "fallback" },
-            typescript = { "prettierd", "prettier", lsp_format = "fallback" },
+            typescript = { "prettier", lsp_format = "fallback" },
             json = { "prettierd", "prettier", lsp_format = "fallback" },
             liquid = { "prettier", "injected", lsp_format = "fallback" },
             markdown = { "prettier" },
