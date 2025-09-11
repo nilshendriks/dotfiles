@@ -101,6 +101,7 @@
     ~/.config/NirusuAstro: ~/dotfiles/NirusuAstro
     ~/.config/NeoNirusu: ~/dotfiles/NeoNirusu
     "~/Library/Application Support/com.mitchellh.ghostty/config": ~/dotfiles/ghostty/config
+    "~/Library/Application Support/PopClip/Extensions": ~/dotfiles/popclip/Extensions
 
 - create:
     - ~/Sites

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Installed Extensions</key>
+	<array>
+		<dict>
+			<key>Enabled</key>
+			<true/>
+			<key>Extension Identifier</key>
+			<string>com.pilotmoon.popclip.extension.charcount</string>
+			<key>Extension Name</key>
+			<string>Character Count</string>
+			<key>Package Name</key>
+			<string>@4hzjpg.com.pilotmoon.popclip.extension.charcount.popclipext</string>
+		</dict>
+		<dict>
+			<key>Enabled</key>
+			<true/>
+			<key>Extension Identifier</key>
+			<string>com.pilotmoon.popclip.extension.title-case</string>
+			<key>Extension Name</key>
+			<string>Title Case</string>
+			<key>Package Name</key>
+			<string>@2cr65p.com.pilotmoon.popclip.extension.title-case.popclipext</string>
+		</dict>
+		<dict>
+			<key>Enabled</key>
+			<true/>
+			<key>Extension Identifier</key>
+			<string>com.pilotmoon.popclip.extension.lowercase</string>
+			<key>Extension Name</key>
+			<string>Lowercase</string>
+			<key>Package Name</key>
+			<string>@krvyqd.com.pilotmoon.popclip.extension.lowercase.popclipext</string>
+		</dict>
+		<dict>
+			<key>Enabled</key>
+			<true/>
+			<key>Extension Identifier</key>
+			<string>com.pilotmoon.popclip.extension.uppercase</string>
+			<key>Extension Name</key>
+			<string>Uppercase</string>
+			<key>Package Name</key>
+			<string>@fzmf6w.com.pilotmoon.popclip.extension.uppercase.popclipext</string>
+		</dict>
+		<dict>
+			<key>Enabled</key>
+			<true/>
+			<key>Extension Identifier</key>
+			<string>com.pilotmoon.popclip.extension.capitalize</string>
+			<key>Extension Name</key>
+			<string>Capitalize Words</string>
+			<key>Package Name</key>
+			<string>@hvg8y3.com.pilotmoon.popclip.extension.capitalize.popclipext</string>
+		</dict>
+		<dict>
+			<key>Enabled</key>
+			<true/>
+			<key>Extension Identifier</key>
+			<string>com.pilotmoon.popclip.extension.wordcount</string>
+			<key>Extension Name</key>
+			<string>Word Count</string>
+			<key>Package Name</key>
+			<string>@p94cm7.com.pilotmoon.popclip.extension.wordcount.popclipext</string>
+		</dict>
+	</array>
+	<key>Version</key>
+	<integer>1</integer>
+</dict>
+</plist>
