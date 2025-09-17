@@ -36,7 +36,7 @@ return {
             svg = { "prettier" },
             lua = { "stylua" },
             html = { "prettierd", "prettier", "injected", lsp_format = "fallback" },
-            css = { "prettierd", lsp_format = "never" },
+            css = { "prettierd" },
             javascript = { "prettierd", "prettier", lsp_format = "fallback" },
             typescript = { "prettier", lsp_format = "fallback" },
             json = { "prettierd", "prettier", lsp_format = "fallback" },
