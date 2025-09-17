@@ -35,9 +35,8 @@ return {
         formatters_by_ft = {
             svg = { "prettier" },
             lua = { "stylua" },
-            -- html = { "prettierd", "prettier", "injected", lsp_format = "fallback" },
-            html = { "prettier", lsp_format = "fallback" },
-            css = { "prettier", lsp_format = "never" },
+            html = { "prettierd", lsp_format = "fallback" },
+            css = { "prettierd", lsp_format = "never" },
             javascript = { "prettier", lsp_format = "fallback" },
             typescript = { "prettier", lsp_format = "fallback" },
             json = { "prettier", lsp_format = "fallback" },

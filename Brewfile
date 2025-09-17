@@ -38,6 +38,7 @@ cask "zed"
 cask "ghostty"
 cask "dash"
 cask "blender"
+cask "popclip"
 
 # Fonts
 cask "font-jetbrains-mono-nerd-font"
