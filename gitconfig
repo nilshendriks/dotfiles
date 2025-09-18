@@ -12,3 +12,4 @@
   pu = push
   pl = pull
   st = status
+  la = config --get-regexp alias
