@@ -204,6 +204,9 @@ alias themepull='shopify theme pull --environment=surf-turf-2-0 --nodelete'
 alias themepush='shopify theme push --environment=surf-turf-2-0 --nodelete'
 alias themedev='shopify theme dev --environment=surf-turf-2-0'
 
+# npm
+alias rum='npm run'
+
 # caniuse css baseline 
 alias canuse="npx caniuse -C ~/dotfiles/.caniuse.json"
 
