@@ -58,8 +58,8 @@ vim.keymap.set("i", "<C-s>", "<Esc>:w<CR>a", { desc = "Save file", noremap = tru
 vim.keymap.set("n", "<Tab>", "<cmd>bnext<CR>", { desc = "Next buffer" })
 vim.keymap.set("n", "<S-Tab>", "<cmd>bprevious<CR>", { desc = "Previous buffer" })
 
-vim.keymap.set("n", "<leader>d", "yyp", { desc = "Duplicate line" })
-vim.keymap.set("v", "<leader>d", "y'>p", { desc = "Duplicate selection" })
+-- vim.keymap.set("n", "<leader>d", "yyp", { desc = "Duplicate line" })
+-- vim.keymap.set("v", "<leader>d", "y'>p", { desc = "Duplicate selection" })
 
 -- Keep visual selection after indenting
 vim.keymap.set("v", ">", ">gv", { desc = "Indent and stay in visual mode" })

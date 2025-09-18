@@ -1,3 +1,4 @@
+-- search and replace ui
 return {
     "MagicDuck/grug-far.nvim",
     opts = {},

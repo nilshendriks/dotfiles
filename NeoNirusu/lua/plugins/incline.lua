@@ -1,6 +1,7 @@
+-- shows filename in top right corner
 return {
-    'b0o/incline.nvim',
-    event = 'BufReadPre',
+    "b0o/incline.nvim",
+    event = "BufReadPre",
     priority = 1200,
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
@@ -18,7 +19,7 @@ return {
                     filename = "[+] " .. filename
                 end
                 return {
-                    { filename, guifg = "#ffffff", guibg = "#009ce1"}
+                    { filename, guifg = "#ffffff", guibg = "#009ce1" },
                 }
             end,
         })

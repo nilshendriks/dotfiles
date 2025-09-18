@@ -212,7 +212,7 @@ return {
                     },
                 },
             },
-            ts_ls = {},
+            -- ts_ls = {},
             astro = {},
             emmet_language_server = {},
             shopify_theme_ls = {},
@@ -269,5 +269,16 @@ return {
                 end,
             },
         })
+
+        -- Wrap hover to add a border
+        do
+            local orig_hover = vim.lsp.buf.hover
+            vim.lsp.buf.hover = function(opts)
+                opts = vim.tbl_deep_extend("force", opts or {}, { border = "rounded" })
+                orig_hover(opts)
+            end
+        end
+
+        vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "LSP Hover" })
     end,
 }
