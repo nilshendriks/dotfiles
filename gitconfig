@@ -3,3 +3,12 @@
 	email = 694301+nilshendriks@users.noreply.github.com
 [pull]
 	rebase = false
+[alias]
+  a = add
+  b = branch
+  cm = commit -m
+  cl = clone
+  co = checkout
+  pu = push
+  pl = pull
+  st = status
