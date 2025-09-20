@@ -16,21 +16,27 @@ return {
         ----------------------------------------------------------------
         -- Filter out base64 images from LSP hover responses (Shift-K)
         ----------------------------------------------------------------
-        local orig_hover = vim.lsp.handlers["textDocument/hover"]
-
         vim.lsp.handlers["textDocument/hover"] = function(err, result, ctx, config)
-            if result and result.contents then
-                local lines = vim.lsp.util.convert_input_to_markdown_lines(result.contents)
-                -- strip out base64 image lines
-                local filtered = vim.tbl_filter(function(line)
-                    return not line:match("^!%[.*%]%([^)]*data:image")
-                end, lines)
-
-                -- rebuild the result
-                result = { contents = table.concat(filtered, "\n") }
+            if not (result and result.contents) then
+                return
             end
 
-            return orig_hover(err, result, ctx, config)
+            local lines = vim.lsp.util.convert_input_to_markdown_lines(result.contents)
+            lines = vim.lsp.util.trim_empty_lines(lines)
+
+            -- filter: remove lines that are base64 images
+            local filtered = {}
+            for _, line in ipairs(lines) do
+                if not line:match("^!%[.-%]%([^)]*data:image") then
+                    table.insert(filtered, line)
+                end
+            end
+
+            if vim.tbl_isempty(filtered) then
+                return
+            end
+
+            return vim.lsp.util.open_floating_preview(filtered, "markdown", config)
         end
         --  This function gets run when an LSP attaches to a particular buffer.
         --    That is to say, every time a new file is opened that is associated with

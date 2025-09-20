@@ -1,34 +1,35 @@
-return {
-
-    "folke/noice.nvim",
-    -- event = "VeryLazy",
-    opts = {
-        lsp = {
-            hover = { enabled = true, opts = { border = "rounded" } },
-        },
-        routes = {
-            {
-                filter = { event = "msg_show", kind = "", find = "written" },
-                opts = { skip = true },
-            },
-        },
-    },
-    dependencies = {
-        -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-        "MunifTanjim/nui.nvim",
-        -- OPTIONAL:
-        --   `nvim-notify` is only needed, if you want to use the notification view.
-        --   If not available, we use `mini` as the fallback
-        "rcarriga/nvim-notify",
-    },
-    -- Register the debug after plugin is loaded
-    init = function()
-        vim.api.nvim_create_autocmd("User", {
-            pattern = "NoiceReady",
-            callback = function()
-                print("Noice fully loaded!")
-            end,
-            group = vim.api.nvim_create_augroup("NoiceDebug", { clear = true }),
-        })
-    end,
-}
+return {}
+-- return {
+--
+--     "folke/noice.nvim",
+--     -- event = "VeryLazy",
+--     opts = {
+--         lsp = {
+--             hover = { enabled = true, opts = { border = "rounded" } },
+--         },
+--         routes = {
+--             {
+--                 filter = { event = "msg_show", kind = "", find = "written" },
+--                 opts = { skip = true },
+--             },
+--         },
+--     },
+--     dependencies = {
+--         -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+--         "MunifTanjim/nui.nvim",
+--         -- OPTIONAL:
+--         --   `nvim-notify` is only needed, if you want to use the notification view.
+--         --   If not available, we use `mini` as the fallback
+--         "rcarriga/nvim-notify",
+--     },
+--     -- Register the debug after plugin is loaded
+--     init = function()
+--         vim.api.nvim_create_autocmd("User", {
+--             pattern = "NoiceReady",
+--             callback = function()
+--                 print("Noice fully loaded!")
+--             end,
+--             group = vim.api.nvim_create_augroup("NoiceDebug", { clear = true }),
+--         })
+--     end,
+-- }
