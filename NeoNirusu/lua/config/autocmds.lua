@@ -72,3 +72,11 @@ vim.api.nvim_create_autocmd("TermOpen", {
         vim.opt.relativenumber = false
     end,
 })
+
+-- vim.api.nvim_create_autocmd("User", {
+--     pattern = "NoiceReady",
+--     group = vim.api.nvim_create_augroup("NoiceDebug", { clear = true }),
+--     callback = function()
+--         print("Noice fully loaded!")
+--     end,
+-- })

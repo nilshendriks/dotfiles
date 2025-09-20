@@ -1,9 +1,11 @@
 return {
 
     "folke/noice.nvim",
-    event = "VeryLazy",
+    -- event = "VeryLazy",
     opts = {
-        -- add any options here
+        lsp = {
+            hover = { enabled = true, opts = { border = "rounded" } },
+        },
         routes = {
             {
                 filter = { event = "msg_show", kind = "", find = "written" },
@@ -19,4 +21,14 @@ return {
         --   If not available, we use `mini` as the fallback
         "rcarriga/nvim-notify",
     },
+    -- Register the debug after plugin is loaded
+    init = function()
+        vim.api.nvim_create_autocmd("User", {
+            pattern = "NoiceReady",
+            callback = function()
+                print("Noice fully loaded!")
+            end,
+            group = vim.api.nvim_create_augroup("NoiceDebug", { clear = true }),
+        })
+    end,
 }

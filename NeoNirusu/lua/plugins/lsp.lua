@@ -13,6 +13,25 @@ return {
         { "j-hui/fidget.nvim", opts = {} },
     },
     config = function()
+        ----------------------------------------------------------------
+        -- Filter out base64 images from LSP hover responses (Shift-K)
+        ----------------------------------------------------------------
+        local orig_hover = vim.lsp.handlers["textDocument/hover"]
+
+        vim.lsp.handlers["textDocument/hover"] = function(err, result, ctx, config)
+            if result and result.contents then
+                local lines = vim.lsp.util.convert_input_to_markdown_lines(result.contents)
+                -- strip out base64 image lines
+                local filtered = vim.tbl_filter(function(line)
+                    return not line:match("^!%[.*%]%([^)]*data:image")
+                end, lines)
+
+                -- rebuild the result
+                result = { contents = table.concat(filtered, "\n") }
+            end
+
+            return orig_hover(err, result, ctx, config)
+        end
         --  This function gets run when an LSP attaches to a particular buffer.
         --    That is to say, every time a new file is opened that is associated with
         --    an lsp (for example, opening `main.rs` is associated with `rust_analyzer`) this
@@ -269,16 +288,5 @@ return {
                 end,
             },
         })
-
-        -- Wrap hover to add a border
-        do
-            local orig_hover = vim.lsp.buf.hover
-            vim.lsp.buf.hover = function(opts)
-                opts = vim.tbl_deep_extend("force", opts or {}, { border = "rounded" })
-                orig_hover(opts)
-            end
-        end
-
-        vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "LSP Hover" })
     end,
 }
