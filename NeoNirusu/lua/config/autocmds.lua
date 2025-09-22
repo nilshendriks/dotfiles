@@ -1,27 +1,43 @@
+-- autocmds.lua
+local augroup = vim.api.nvim_create_augroup("CustomFiletypes", { clear = true })
+
+-- JSON / Markdown: disable conceal
+vim.api.nvim_create_autocmd("FileType", {
+    group = augroup,
+    pattern = { "json", "jsonc", "markdown" },
+    callback = function()
+        vim.wo.conceallevel = 0
+        vim.opt.conceallevel = 0
+    end,
+})
+
+-- .env filetype detection
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+    group = augroup,
+    pattern = { ".env", ".env.*", "*.env" },
+    callback = function()
+        vim.bo.filetype = "env"
+    end,
+})
+
+-- Disable diagnostics for .env files
+vim.api.nvim_create_autocmd("FileType", {
+    group = augroup,
+    pattern = "env",
+    callback = function()
+        local ns = vim.api.nvim_create_namespace("shellcheck")
+        vim.diagnostic.enable(false, { namespace = ns })
+    end,
+})
+
 -- Line numbers after filetype detection
+-- I did this cause sometimes they would disappear...?
 vim.api.nvim_create_autocmd("FileType", {
     callback = function()
         vim.opt.number = true
         vim.opt.relativenumber = true
     end,
 })
-
--- vim.api.nvim_create_autocmd("LspAttach", {
---     callback = function(args)
---         local client = vim.lsp.get_client_by_id(args.data.client_id)
---         if client and client.server_capabilities.documentFormattingProvider then
---             vim.api.nvim_create_autocmd("BufWritePre", {
---                 buffer = args.buf,
---                 callback = function()
---                     vim.lsp.buf.format({ async = false })
---                     if vim.bo[args.buf].filetype == "astro" then
---                         require("utils.astro_formatter").format_astro(args.buf)
---                     end
---                 end,
---             })
---         end
---     end,
--- })
 
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode
@@ -34,35 +50,16 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     end,
 })
 
--- vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
---     pattern = "*.astro",
---     callback = function(args)
---         local c = require("conform")
---         c.format_on_save_attach(args.buf) -- attach save hook to this buffer
---     end,
--- })
-
--- vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+-- vim.api.nvim_create_autocmd("BufWritePre", {
 --     pattern = "*.astro",
 --     callback = function()
---         local c = require("conform")
---         -- This forces Conform to attach to the buffer
---         if c.attach_to_buffer then
---             c.attach_to_buffer(0)
---         end
+--         -- Format the whole buffer with LSP
+--         vim.lsp.buf.format({ async = false })
+--
+--         -- Format <script> and <style> blocks with 2 spaces
+--         require("utils.astro_formatter").format_astro(0)
 --     end,
 -- })
-
-vim.api.nvim_create_autocmd("BufWritePre", {
-    pattern = "*.astro",
-    callback = function()
-        -- Format the whole buffer with LSP
-        vim.lsp.buf.format({ async = false })
-
-        -- Format <script> and <style> blocks with 2 spaces
-        require("utils.astro_formatter").format_astro(0)
-    end,
-})
 
 -- Terminal
 vim.api.nvim_create_autocmd("TermOpen", {
@@ -72,11 +69,3 @@ vim.api.nvim_create_autocmd("TermOpen", {
         vim.opt.relativenumber = false
     end,
 })
-
--- vim.api.nvim_create_autocmd("User", {
---     pattern = "NoiceReady",
---     group = vim.api.nvim_create_augroup("NoiceDebug", { clear = true }),
---     callback = function()
---         print("Noice fully loaded!")
---     end,
--- })

@@ -2,20 +2,79 @@
 
 ## nvim NeoNirusu
 
-- [ ] change "" to '' on a line?
+### LSPs
+
+- [x] html
+- [x] css
+- [x] js -> vtsls
+- [x] ts -> vtsls
+- [x] python
+
+### Formatting
+
+- [x] html -> prettierd
+  - [x] embedded languages -> prettierd
+- [x] css -> prettierd
+- [x] json -> prettierd
+- [x] lua
+- [x] ts -> prettierd
+- [x] js -> prettierd
+- [x] markdown -> prettierd
+- [x] python -> with black and isort. leader c= for indenting
+- [x] svg -> as html -> prettier (mason? or in project?)
+- [ ] astro
+- [ ] vue
+- [ ] tsx
+- [ ] HTMX
+- [ ] liquid formatting
+
+## diagnostics
+
+- [x] diagnostics
+- [ ] astro
+  - [ ] lint -> markuplint + plugin
+- [ ] HTMX
+  - [ ] lint -> markuplint + plugin
+- [ ] json-lsp
+  - [ ] format
+  - [ ] lint
+  - [ ] completion
+  - [ ] hover
+  - [ ] getColorPresentations returns available color formats for a color symbol
+- [ ] write: formatter for svg, like html?
+- [ ] try removing lazydev -> vim global, new way?
+- [ ] add TODO: comments thing list back, plugin?
+- [ ] check opencode. works with ollama?
+- [ ] astro
+  - [ ] formatting
+    - [ ] https://dprint.dev/
+  - [ ] linting?
+  - [ ] browserlist
+- [ ] mdx formatting?
+- [ ] https://github.com/wuelnerdotexe/vim-astro
+- [ ] find and replace in modal?
+
+### Linting
+
+- [] css linting -> not yet. maybe stylelint?
+- [x] markuplint -> lint html
+- [ ] oxlint or biome for most?
+- [ ] jose-elias-alvarez/typescript.nvim
+
+## Other
+
 - [ ] html preview?
 - [ ] "kazhala/close-buffers.nvim",
 - [x] mdx syntax highlighting
 - [ ] pomodory plugin
 - [ ] toggle word plugin
-- [ ] liquid formatting
-- [ ] formatting embedded langs?
 
-### linting
+## learn
 
-- [ ] htmlhint
-- [ ] oxlint or biome for most?
-- [ ] jose-elias-alvarez/typescript.nvim
+- [ ] change "" to '' on a line?
+- [ ] jump to end of {
+- [ ] jump to end of block?
+- [x] Capitalize word
 
 ## Plugins
 
