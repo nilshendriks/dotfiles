@@ -99,7 +99,11 @@ export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 export GEM_BIN_PATH="$(gem env gemdir)/bin"
 export PATH="$GEM_BIN_PATH:$PATH"
 
-# neovim lazyvim mason 
+# go
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+
+# neovim lazyvim mason
  export PATH="$HOME/.local/share/NirusuVim/mason/bin:$PATH"
 
 # Load NVM (Node Version Manager)
@@ -199,7 +203,7 @@ alias nvim-henk="NVIM_APPNAME=HENKVim nvim"
 alias nvim-astro="NVIM_APPNAME=NirusuAstro nvim"
 alias nn="NVIM_APPNAME=NeoNirusu nvim"
 
-# shopify HENK 
+# shopify HENK
 alias themepull='shopify theme pull --environment=surf-turf-2-0 --nodelete'
 alias themepush='shopify theme push --environment=surf-turf-2-0 --nodelete'
 alias themedev='shopify theme dev --environment=surf-turf-2-0'
@@ -207,7 +211,7 @@ alias themedev='shopify theme dev --environment=surf-turf-2-0'
 # npm
 alias rum='npm run'
 
-# caniuse css baseline 
+# caniuse css baseline
 alias canuse="npx caniuse -C ~/dotfiles/.caniuse.json"
 
 baselinecss() {
