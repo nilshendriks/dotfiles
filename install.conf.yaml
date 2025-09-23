@@ -91,6 +91,9 @@
       stdout: true
       stderr: true
 
+- create:
+  - ~/Sites
+
 - link:
     ~/.zprofile:
     ~/.zshrc:
@@ -102,6 +105,5 @@
     ~/.config/NeoNirusu: ~/dotfiles/NeoNirusu
     "~/Library/Application Support/com.mitchellh.ghostty/config": ~/dotfiles/ghostty/config
     "~/Library/Application Support/PopClip/Extensions": ~/dotfiles/popclip/Extensions
+    ~/Sites/.editorconfig: ~/dotfiles/.editorconfig
 
-- create:
-    - ~/Sites

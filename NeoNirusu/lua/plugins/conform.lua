@@ -15,17 +15,17 @@ return {
     opts = {
         formatters_by_ft = {
             -- good
-            html = { "prettierd", "injected", stop_after_first = false },
-            css = { "prettierd", lsp_format = "never" },
-            javascript = { "prettierd", lsp_format = "never" },
-            typescript = { "prettierd", lsp_format = "never" },
+            html = { "prettier", "injected", stop_after_first = false },
+            css = { "prettier", lsp_format = "never" },
+            javascript = { "prettier", lsp_format = "never" },
+            typescript = { "prettier", lsp_format = "never" },
             python = { "isort", "black" },
             lua = { "stylua" },
             -- dubious
             markdown = { "prettierd", lsp_format = "never" },
             svg = { "prettier", lsp_format = "never", stop_after_first = true },
-            json = { "prettierd", lsp_format = "fallback" },
-            jsonc = { "prettierd", lsp_format = "fallback" },
+            json = { "prettier", lsp_format = "fallback" },
+            jsonc = { "prettier", lsp_format = "fallback" },
             liquid = { "prettier", lsp_format = "fallback" },
             -- NOTE: astro is formatted by LSP (prettier plugin sucks balls)
             -- also runs custom function to format style and script tags with 2 spaces

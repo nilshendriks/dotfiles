@@ -8,6 +8,7 @@ end_of_line = lf
 charset = utf-8
 trim_trailing_whitespace = true
 insert_final_newline = true
+max_line_length = 80
 
 # Languages / formats that conventionally or technically require 2 spaces
 [*.{js,jsx,ts,tsx,css,scss,less,json,jsonc,json5,yml,yaml,md,mdx,markdown,liquid}]

@@ -2,6 +2,10 @@
 
 ## nvim NeoNirusu
 
+- [x] mason tools:
+  - [x] black and isort
+  - [x] prettier
+
 ### LSPs
 
 - [x] html
@@ -26,7 +30,7 @@
 - [ ] vue
 - [ ] tsx
 - [ ] HTMX
-- [ ] liquid formatting
+- [x] liquid formatting
 
 ## diagnostics
 
@@ -56,8 +60,9 @@
 
 ### Linting
 
-- [] css linting -> not yet. maybe stylelint?
+- [ ] css linting -> not yet. maybe stylelint?
 - [x] markuplint -> lint html
+- [ ] Liquid : try https://www.curlylint.org
 - [ ] oxlint or biome for most?
 - [ ] jose-elias-alvarez/typescript.nvim
 

@@ -15,6 +15,7 @@ return {
                 "cssls",
                 "basedpyright",
                 "vtsls",
+                "shopify_theme_ls",
                 -- "ts_ls", -- TypeScript / JavaScript
                 -- "rust_analyzer", -- Rust
                 -- "clangd", -- C / C++
@@ -25,6 +26,15 @@ return {
     -- nvim-lspconfig: connects Neovim to installed LSP servers
     {
         "neovim/nvim-lspconfig",
+        dependencies = {
+            "WhoIsSethDaniel/mason-tool-installer.nvim",
+
+            -- Useful status updates for LSP.
+            { "j-hui/fidget.nvim", opts = {} },
+
+            -- Allows extra capabilities provided by blink.cmp
+            "saghen/blink.cmp",
+        },
         config = function()
             -- local lspconfig = require("lspconfig")
             -- local server_defs= vim.lsp.config
@@ -123,6 +133,9 @@ return {
                             },
                         },
                     },
+                },
+                shopify_theme_ls = {
+                    filetypes = { "liquid" },
                 },
                 -- rust_analyzer = {},
                 -- clangd = {},

@@ -20,6 +20,7 @@ return {
             -- css = { "biomejs" },
             -- typescript = { "oxlint" },
             -- javascript = { "oxlint" },
+            liquid = { "markuplint" },
         }
 
         diag.setup_lint()

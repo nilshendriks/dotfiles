@@ -73,11 +73,11 @@ end
 -- bootstrap lazy.nvim if not installed
 require("config.lazy")
 
+-- add filetypes (mdx, etc)
+require("config.filetype")
+
 -- general vim options
 require("config.options")
-
--- add filetypes (mdx)
-require("config.filetype")
 
 -- keymaps
 require("config.keymaps")
