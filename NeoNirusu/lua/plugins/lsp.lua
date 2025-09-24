@@ -16,6 +16,7 @@ return {
                 "basedpyright",
                 "vtsls",
                 "shopify_theme_ls",
+                "gopls",
                 -- "ts_ls", -- TypeScript / JavaScript
                 -- "rust_analyzer", -- Rust
                 -- "clangd", -- C / C++
@@ -137,6 +138,7 @@ return {
                 shopify_theme_ls = {
                     filetypes = { "liquid" },
                 },
+                gopls = {},
                 -- rust_analyzer = {},
                 -- clangd = {},
             }
