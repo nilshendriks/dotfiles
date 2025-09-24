@@ -100,8 +100,8 @@ export GEM_BIN_PATH="$(gem env gemdir)/bin"
 export PATH="$GEM_BIN_PATH:$PATH"
 
 # go
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
+# export GOPATH=$HOME/go
+# export PATH=$PATH:$GOPATH/bin
 
 # neovim lazyvim mason
  export PATH="$HOME/.local/share/NirusuVim/mason/bin:$PATH"
