@@ -13,3 +13,5 @@
   pl = pull
   st = status
   la = config --get-regexp alias
+[init]
+	defaultBranch = main

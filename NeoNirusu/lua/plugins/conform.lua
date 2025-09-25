@@ -18,7 +18,7 @@ return {
             html = { "prettier", "injected", stop_after_first = false },
             css = { "prettier", lsp_format = "never" },
             javascript = { "prettier", lsp_format = "never" },
-            typescript = { "prettier", lsp_format = "never" },
+            typescript = { "prettier", "injected", lsp_format = "never", stop_after_first = false },
             python = { "isort", "black" },
             lua = { "stylua" },
             -- dubious
