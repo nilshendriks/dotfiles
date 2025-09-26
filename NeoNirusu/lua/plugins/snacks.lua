@@ -8,7 +8,7 @@ return {
         -- refer to the configuration section below
         bigfile = { enabled = true },
         dashboard = {
-            enabled = true,
+            enabled = false,
             preset = {
                 keys = {
                     { icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
@@ -452,34 +452,38 @@ return {
             desc = "LSP Workspace Symbols",
         },
         -- Other
+        -- {
+        --     "<leader>u",
+        --     group = "UI",
+        -- },
         {
-            "<leader>z",
+            "<leader>uz",
             function()
                 Snacks.zen()
             end,
             desc = "Toggle Zen Mode",
         },
         {
-            "<leader>Z",
+            "<leader>uZ",
             function()
                 Snacks.zen.zoom()
             end,
             desc = "Toggle Zoom",
         },
-        {
-            "<leader>.",
-            function()
-                Snacks.scratch()
-            end,
-            desc = "Toggle Scratch Buffer",
-        },
-        {
-            "<leader>S",
-            function()
-                Snacks.scratch.select()
-            end,
-            desc = "Select Scratch Buffer",
-        },
+        -- {
+        --     "<leader>.",
+        --     function()
+        --         Snacks.scratch()
+        --     end,
+        --     desc = "Toggle Scratch Buffer",
+        -- },
+        -- {
+        --     "<leader>S",
+        --     function()
+        --         Snacks.scratch.select()
+        --     end,
+        --     desc = "Select Scratch Buffer",
+        -- },
         {
             "<leader>n",
             function()
@@ -573,27 +577,12 @@ return {
             end,
             desc = "Open Snacks Dashboard",
         },
-        {
-            "<leader>H",
-            function()
-                Snacks.dashboard.open()
-            end,
-            desc = "Open Snacks Dashboard",
-        },
     },
-    dependencies = {
-        {
-            "folke/persistence.nvim",
-            event = "BufReadPre", -- lazy-load on startup
-            opts = {
-                dir = vim.fn.stdpath("data") .. "/sessions/",
-                -- autoload the last session when opening Neovim
-                autoload = false,
-                -- optionally save session automatically on exit
-                save = true,
-            },
-        },
-    },
+    -- dependencies = {
+    --     {
+    --         "folke/persistence.nvim",
+    --     },
+    -- },
     init = function()
         vim.api.nvim_create_autocmd("User", {
             pattern = "VeryLazy",

@@ -5,6 +5,11 @@
 - [x] mason tools:
   - [x] black and isort
   - [x] prettier
+- [ ] check tokyonight transparency
+- [ ] check lazygit, not installed?
+- [x] check who does indent guides?
+- [x] turn off dashboard 
+- [x] how to start wirh lastest session and have a keymap
 
 ### LSPs
 
