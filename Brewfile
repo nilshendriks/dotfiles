@@ -8,11 +8,12 @@ brew "lazygit"
 brew "n"
 brew "ripgrep"
 brew "fd"
-# brew "php"
 brew "php@8.3"
 brew "ruby"
 tap "shopify/shopify"
 brew "shopify-cli"
+tap "sst/tap"
+brew "opencode"
 
 # Image tools for conversion & optimization
 brew "imagemagick"     # powerful image processing CLI (supports many formats incl. AVIF if compiled with support)
@@ -26,6 +27,7 @@ brew "tectonic"         # OR use pdflatex via MacTeX, but tectonic is simpler
 brew "wget"
 brew "python"
 brew "go"
+brew "tree-sitter-cli"
 
 # Casks (Applications)
 # cask "google-chrome"
