@@ -17,9 +17,6 @@ return {
                 "vtsls",
                 "shopify_theme_ls",
                 "gopls",
-                -- "ts_ls", -- TypeScript / JavaScript
-                -- "rust_analyzer", -- Rust
-                -- "clangd", -- C / C++
             },
         },
     },
@@ -31,7 +28,10 @@ return {
             "WhoIsSethDaniel/mason-tool-installer.nvim",
 
             -- Useful status updates for LSP.
-            { "j-hui/fidget.nvim", opts = {} },
+            {
+                "j-hui/fidget.nvim",
+                opts = {},
+            },
 
             -- Allows extra capabilities provided by blink.cmp
             "saghen/blink.cmp",

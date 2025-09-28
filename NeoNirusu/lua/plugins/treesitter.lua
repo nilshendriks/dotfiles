@@ -52,6 +52,11 @@ return {
                 "vue",
                 "yaml",
                 "xml",
+                "regex",
+                "latex",
+                "norg",
+                "svelte",
+                "typst",
             },
             sync_install = false,
             auto_install = true,
@@ -69,19 +74,5 @@ return {
                 },
             },
         })
-        -- defer mapping using vim.defer_fn
-        -- vim.defer_fn(function()
-        --     local parsers = require("nvim-treesitter.parsers")
-        --     if parsers.filetype_to_parsername then
-        --         parsers.filetype_to_parsername.mdx = "markdown"
-        --     end
-        -- end, 0)
-        -- safely map mdx filetype to TSX parser for JSX highlighting
-        -- vim.defer_fn(function()
-        --     local ok, parsers = pcall(require, "nvim-treesitter.parsers")
-        --     if ok and parsers.filetype_to_parsername then
-        --         parsers.filetype_to_parsername.mdx = "tsx"
-        --     end
-        -- end, 0)
-    end
+    end,
 }

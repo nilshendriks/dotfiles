@@ -6,21 +6,11 @@ return {
         lsp = {
             hover = {
                 enabled = false,
-                -- opts = {
-                --     on_open = function(win)
-                --         local buf = vim.api.nvim_win_get_buf(win)
-                --         local lines = vim.api.nvim_buf_get_lines(buf, 0, -1, false)
-                --
-                --         -- filter out base64 icons
-                --         lines = vim.tbl_filter(function(line)
-                --             return not line:match("^!%[.*%]%([^)]*data:image")
-                --         end, lines)
-                --
-                --         vim.api.nvim_buf_set_lines(buf, 0, -1, false, lines)
-                --     end,
-                --     border = "rounded",
-                -- },
             },
+            -- override = {
+            --     ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+            --     ["vim.lsp.util.stylize_markdown"] = true,
+            -- },
         },
         routes = {
             {

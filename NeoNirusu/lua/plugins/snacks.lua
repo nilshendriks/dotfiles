@@ -8,46 +8,46 @@ return {
         -- refer to the configuration section below
         bigfile = { enabled = true },
         dashboard = {
-            enabled = false,
+            enabled = true,
             preset = {
-                keys = {
-                    { icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
-                    { icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
-                    {
-                        icon = " ",
-                        key = "g",
-                        desc = "Find Text",
-                        action = ":lua Snacks.dashboard.pick('live_grep')",
-                    },
-                    {
-                        icon = " ",
-                        key = "r",
-                        desc = "Recent Files",
-                        action = ":lua Snacks.dashboard.pick('oldfiles')",
-                    },
-                    {
-                        icon = " ",
-                        key = "c",
-                        desc = "Config",
-                        action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})",
-                    },
-                    {
-                        icon = " ",
-                        key = "s",
-                        desc = "Restore Session",
-                        action = function()
-                            require("persistence").load({ last = true })
-                        end,
-                    },
-                    {
-                        icon = "󰒲 ",
-                        key = "L",
-                        desc = "Lazy",
-                        action = ":Lazy",
-                        enabled = package.loaded.lazy ~= nil,
-                    },
-                    { icon = " ", key = "q", desc = "Quit", action = ":qa" },
-                },
+                -- keys = {
+                --     { icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
+                --     { icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
+                --     {
+                --         icon = " ",
+                --         key = "g",
+                --         desc = "Find Text",
+                --         action = ":lua Snacks.dashboard.pick('live_grep')",
+                --     },
+                --     {
+                --         icon = " ",
+                --         key = "r",
+                --         desc = "Recent Files",
+                --         action = ":lua Snacks.dashboard.pick('oldfiles')",
+                --     },
+                --     {
+                --         icon = " ",
+                --         key = "c",
+                --         desc = "Config",
+                --         action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})",
+                --     },
+                --     {
+                --         icon = " ",
+                --         key = "s",
+                --         desc = "Restore Session",
+                --         action = function()
+                --             require("persistence").load({ last = true })
+                --         end,
+                --     },
+                --     {
+                --         icon = "󰒲 ",
+                --         key = "L",
+                --         desc = "Lazy",
+                --         action = ":Lazy",
+                --         enabled = package.loaded.lazy ~= nil,
+                --     },
+                --     { icon = " ", key = "q", desc = "Quit", action = ":qa" },
+                -- },
                 header = [[
 ███╗   ██╗███████╗ ██████╗ ███╗   ██╗██╗██████╗ ██╗   ██╗███████╗██╗   ██╗
 ████╗  ██║██╔════╝██╔═══██╗████╗  ██║██║██╔══██╗██║   ██║██╔════╝██║   ██║
@@ -83,7 +83,7 @@ return {
         scroll = { enabled = true },
         statuscolumn = { enabled = true },
         words = { enabled = true },
-        terminal = { enabled = false },
+        terminal = { enabled = true },
     },
     keys = {
         -- Top Pickers & Explorer
@@ -578,11 +578,12 @@ return {
             desc = "Open Snacks Dashboard",
         },
     },
-    -- dependencies = {
-    --     {
-    --         "folke/persistence.nvim",
-    --     },
-    -- },
+    dependencies = {
+        {
+            "folke/persistence.nvim",
+            lazy = false,
+        },
+    },
     init = function()
         vim.api.nvim_create_autocmd("User", {
             pattern = "VeryLazy",
@@ -612,6 +613,11 @@ return {
                 Snacks.toggle.inlay_hints():map("<leader>uh")
                 Snacks.toggle.indent():map("<leader>ug")
                 Snacks.toggle.dim():map("<leader>uD")
+
+                -- Terminal / Opencode navigation mappings
+                vim.api.nvim_set_keymap("t", "<Esc><Esc>", "<C-\\><C-n>", { noremap = true, silent = true }) -- double Esc exits terminal
+                vim.api.nvim_set_keymap("t", "<C-h>", "<C-\\><C-n><C-w>h", { noremap = true, silent = true }) -- jump to buffer
+                vim.api.nvim_set_keymap("n", "<C-l>", "<Cmd>wincmd w<CR>", { noremap = true, silent = true })
             end,
         })
     end,
