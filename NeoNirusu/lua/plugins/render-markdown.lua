@@ -11,4 +11,10 @@ return {
             "t",
         },
     },
+    -- config = function()
+    --     require("render-markdown").setup({
+    --         render_modes = { "n", "c", "t" },
+    --         checkbox = { checked = { scope_highlight = "@markup.strikethrough" } },
+    --     })
+    -- end,
 }
