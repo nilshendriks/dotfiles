@@ -17,6 +17,8 @@ return {
             -- good
             html = { "prettier", "injected", stop_after_first = false },
             css = { "prettier", lsp_format = "never" },
+            astro = { "prettier", lsp_format = "never" },
+            -- astro = { "prettier", "injected", stop_after_first = false },
             javascript = { "prettier", lsp_format = "never" },
             typescript = { "prettier", "injected", lsp_format = "never", stop_after_first = false },
             python = { "isort", "black" },
