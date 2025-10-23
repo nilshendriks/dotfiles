@@ -5,9 +5,7 @@ background-blur-radius = 30
 cursor-color = 099dec
 cursor-style = bar
 
-# cursor-style = underline
-
-shell-integration-features = no-cursor
+# shell-integration-features = no-cursor
 
 #font-family = JetBrainsMono Nerd Font
 font-family = "JetBrainsMono NFM"
@@ -15,12 +13,12 @@ font-size = 16
 font-feature = "calt, liga, dlig"
 
 # theme
-theme = tokyonight
+theme = tokyonight night
 
 window-theme = dark
 window-width = 80
 window-height = 69
-window-padding-x = 0
+window-padding-x = 8
 window-padding-y = 0
 window-decoration = true
 window-colorspace = "display-p3"
@@ -28,11 +26,19 @@ window-save-state = always
 window-subtitle = working-directory
 
 # macos-titlebar-style = transparent
-
 macos-titlebar-style = tabs
-
-# adjust-cell-height = 35%
 
 bold-is-bright = true
 keybind = global:cmd+grave_accent=toggle_quick_terminal
 
+macos-icon = official
+#macos-icon = blueprint
+#macos-icon = chalkboard
+#macos-icon = microchip
+#macos-icon = glass
+#macos-icon = holographic
+#macos-icon = paper
+#macos-icon = retro
+#macos-icon = xray
+
+macos-icon-frame = chrome

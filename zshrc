@@ -230,6 +230,14 @@ function nvims() {
   NVIM_APPNAME=$config nvim $@
 }
 
+# z directory jumper
+alias cd="z"
+
+# Change directory and update kitty tab title
+# function cd() {
+#   builtin cd "$@" && kitty @ set-tab-title -m index:0 "NVIM - $(basename $(pwd))"
+# }
+
 # History Settings
 HISTSIZE=5000
 HISTFILE=~/.zsh_history
@@ -245,6 +253,7 @@ setopt hist_find_no_dups
 
 # Shell Integrations
 eval "$(fzf --zsh)"
+eval "$(zoxide init zsh)"
 
 # Syntax Highlighting (must be at the end)
 source ~/dotfiles/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
