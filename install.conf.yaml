@@ -106,4 +106,4 @@
     "~/Library/Application Support/com.mitchellh.ghostty/config": ~/dotfiles/ghostty/config
     "~/Library/Application Support/PopClip/Extensions": ~/dotfiles/popclip/Extensions
     ~/Sites/.editorconfig: ~/dotfiles/.editorconfig
-
+    ~/.hammerspoon: ~/dotfiles/hammerspoon
