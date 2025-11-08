@@ -45,6 +45,7 @@ cask "kitty"
 cask "dash"
 cask "blender"
 cask "popclip"
+cask "hammerspoon"
 
 # Fonts
 cask "font-jetbrains-mono-nerd-font"
