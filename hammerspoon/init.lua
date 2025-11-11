@@ -170,6 +170,12 @@ hs.hotkey.bind(superShift, "B", function()
     hs.execute('open "https://example.com"', true)
 end)
 
+-- Super + Shift + F: finder
+hs.hotkey.bind(superShift, "F", function()
+    hs.alert.show("Hotkey fired!")
+    hs.application.launchOrFocus("Finder")
+end)
+
 -- 6️⃣ Auto-reload config on save
 function reloadConfig(files)
     local doReload = false
