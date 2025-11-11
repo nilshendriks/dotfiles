@@ -15,6 +15,11 @@ tap "shopify/shopify"
 brew "shopify-cli"
 tap "sst/tap"
 brew "opencode"
+tap "FelixKratz/formulae"
+brew "borders"
+brew "fastfetch"
+tap "homeport/tap"
+brew "termshot"
 
 # Image tools for conversion & optimization
 brew "imagemagick"     # powerful image processing CLI (supports many formats incl. AVIF if compiled with support)
@@ -41,7 +46,6 @@ cask "zed"
 # cask 1password
 # cask alfred
 cask "ghostty"
-cask "kitty"
 cask "dash"
 cask "blender"
 cask "popclip"
