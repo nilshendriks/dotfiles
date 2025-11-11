@@ -1,4 +1,5 @@
 -- init.lua for Omarchy-style workflow on macOS
+local windowcount = require("windowcount")
 -- Caps Lock mapped to Hyper (Ctrl+Alt+Cmd) in Karabiner
 
 -- 1️⃣ Hyper / Super definition
@@ -9,21 +10,60 @@ hs.window.animationDuration = 0.2
 
 -- Hotkey to show window count on main screen
 hs.hotkey.bind(super, "C", function()
-    local screen = hs.screen.mainScreen()
-    local count = 0
-
-    for _, win in ipairs(hs.window.visibleWindows()) do
-        if
-            win:screen() == screen
-            and win:isStandard()
-            and not win:isMinimized()
-        then
-            count = count + 1
-        end
-    end
-
-    hs.alert.show("Number of windows on screen: " .. count)
+    windowcount.showCountAlert()
 end)
+
+-- Create a window filter that only tracks *visible* standard windows
+local wf = hs.window.filter.new()
+wf:setDefaultFilter({
+    visible = true,
+    -- currentSpace = true,
+    -- allowRoles = { "AXStandardWindow" },
+})
+
+local function handleNewWindow(win, appName, event)
+    if not win or not win:isVisible() or not win:isStandard() then
+        return
+    end
+    -- small delay to ensure window is fully initialized
+    hs.timer.doAfter(0.2, function()
+        if win:isVisible() then
+            windowcount.showCountAlert(win:screen())
+        end
+    end)
+end
+
+-- Subscribe to multiple events so “reused” windows still trigger
+wf:subscribe({
+    hs.window.filter.windowCreated,
+    hs.window.filter.windowVisible,
+    hs.window.filter.windowUnhidden,
+}, handleNewWindow)
+
+-- Subscribe to new visible window events
+-- wf:subscribe(hs.window.filter.windowCreated, function(win, appName)
+--     hs.alert.show("Window created: " .. (win:title() or "Untitled"))
+--     if not win or not win:isStandard() or win:isMinimized() then
+--         return
+--     end
+--     -- Optional: slight delay for some apps (like Slack) that need time to render
+--     hs.timer.doAfter(0.2, function()
+--         if win:isVisible() then
+--             windowcount.showCountAlert(win:screen())
+--         end
+--     end)
+-- end)
+
+-- wf:subscribe(hs.window.filter.windowDestroyed, function(win, appName)
+--     windowcount.showCountAlert(hs.screen.mainScreen())
+-- end)
+
+wf:subscribe(
+    { hs.window.filter.windowDestroyed, hs.window.filter.windowHidden },
+    function(win)
+        windowcount.showCountAlert(hs.screen.mainScreen())
+    end
+)
 
 -- 2️⃣ Window Focus (H/J/K/L)
 hs.hotkey.bind(super, "H", function()
@@ -52,28 +92,34 @@ hs.hotkey.bind(super, "L", function()
 end)
 
 -- 3️⃣ Window Move (Super+Shift + arrows)
-hs.hotkey.bind(superShift, "Left", function()
+hs.layout.up50 = hs.geometry.unitrect(0, 0, 1, 0.5)
+hs.layout.down50 = hs.geometry.unitrect(0, 0.5, 1, 0.5)
+
+hs.hotkey.bind(superShift, "left", function()
+    -- hs.alert.show("hotkey fired")
     local win = hs.window.focusedWindow()
     if win then
-        win:moveOneScreenWest()
+        win:moveToUnit(hs.layout.left50)
+    else
+        hs.alert.show("No focused window!")
     end
 end)
 hs.hotkey.bind(superShift, "Right", function()
     local win = hs.window.focusedWindow()
     if win then
-        win:moveOneScreenEast()
+        win:moveToUnit(hs.layout.right50)
     end
 end)
 hs.hotkey.bind(superShift, "Up", function()
     local win = hs.window.focusedWindow()
     if win then
-        win:moveOneScreenNorth()
+        win:moveToUnit(hs.layout.up50)
     end
 end)
 hs.hotkey.bind(superShift, "Down", function()
     local win = hs.window.focusedWindow()
     if win then
-        win:moveOneScreenSouth()
+        win:moveToUnit(hs.layout.down50)
     end
 end)
 
