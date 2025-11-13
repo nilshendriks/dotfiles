@@ -15,47 +15,49 @@ local function showFocusedAppName()
     end
 end
 
--- local appWatcher = hs.application.watcher.new(function(appName, eventType, app)
---     if eventType == hs.application.watcher.launched then
---         app:newWatcher(function(_, event)
---             if event == hs.uielement.watcher.windowCreated then
---                 hs.alert.show("New window in " .. appName)
---             end
---         end):start({ hs.uielement.watcher.windowCreated })
---     end
--- end)
---
--- appWatcher:start()
+hs.hotkey.bind({ "shift" }, "S", function()
+    hs.timer.doAfter(0, function() -- run next event loop tick
+        -- local win = hs.window.focusedWindow()
+        local win = hs.window.frontmostWindow()
+        if win then
+            local screen = win:screen():next()
+            win:moveToScreen(screen)
+            hs.alert.show("Moved window: " .. win:title())
+        else
+            hs.alert.show("No focused window")
+        end
+    end)
+end)
 
 -- 2️⃣ Window Focus (H/J/K/L)
--- hs.hotkey.bind(super, "H", function()
---     local win = hs.window.focusedWindow()
---     if win then
---         win:focusWindowWest()
---         showFocusedAppName()
---     end
--- end)
--- hs.hotkey.bind(super, "J", function()
---     local win = hs.window.focusedWindow()
---     if win then
---         win:focusWindowSouth()
---         showFocusedAppName()
---     end
--- end)
--- hs.hotkey.bind(super, "K", function()
---     local win = hs.window.focusedWindow()
---     if win then
---         win:focusWindowNorth()
---         showFocusedAppName()
---     end
--- end)
--- hs.hotkey.bind(super, "L", function()
---     local win = hs.window.focusedWindow()
---     if win then
---         win:focusWindowEast()
---         showFocusedAppName()
---     end
--- end)
+hs.hotkey.bind(super, "H", function()
+    local win = hs.window.focusedWindow()
+    if win then
+        win:focusWindowWest()
+        showFocusedAppName()
+    end
+end)
+hs.hotkey.bind(super, "J", function()
+    local win = hs.window.focusedWindow()
+    if win then
+        win:focusWindowSouth()
+        showFocusedAppName()
+    end
+end)
+hs.hotkey.bind(super, "K", function()
+    local win = hs.window.focusedWindow()
+    if win then
+        win:focusWindowNorth()
+        showFocusedAppName()
+    end
+end)
+hs.hotkey.bind(super, "L", function()
+    local win = hs.window.focusedWindow()
+    if win then
+        win:focusWindowEast()
+        showFocusedAppName()
+    end
+end)
 
 -- 3️⃣ Window Move (Super+Shift + arrows)
 -- hs.layout.up50 = hs.geometry.unitrect(0, 0, 1, 0.5)
@@ -112,74 +114,6 @@ end)
 hs.hotkey.bind(super, "T", function()
     hs.application.launchOrFocus("Activity Monitor")
 end)
-
--- Super + Shift + T → new ghostty instance, resize, run fastfetch
--- hs.hotkey.bind(superShift, "T", function()
---     hs.application.launchOrFocusByBundleID("com.mitchellh.ghostty")
---
---     hs.timer.doAfter(0.5, function()
---         local app = hs.application.get("ghostty")
---         if not app then
---             hs.alert.show("ghostty not running")
---             return
---         end
---
---         app:activate()
---
---         -- Capture existing windows before creating new one
---         local oldWindows = app:allWindows()
---         local oldWindowIDs = {}
---         for _, w in ipairs(oldWindows) do
---             oldWindowIDs[w:id()] = true
---         end
---
---         hs.timer.doAfter(0.3, function()
---             hs.eventtap.keyStroke({ "cmd" }, "n") -- Cmd+N new window
---
---             hs.timer.doAfter(0.5, function()
---                 -- Get all windows again
---                 local newWindows = app:allWindows()
---
---                 -- Find the new window by excluding old IDs
---                 local newWindow = nil
---                 for _, w in ipairs(newWindows) do
---                     if not oldWindowIDs[w:id()] then
---                         newWindow = w
---                         break
---                     end
---                 end
---
---                 -- Fallback to frontmost window if can't find new one
---                 if not newWindow then
---                     newWindow = hs.window.frontmostWindow()
---                     if newWindow:application() ~= app then
---                         newWindow = nil
---                     end
---                 end
---
---                 if not newWindow then
---                     hs.alert.show("Couldn't find new ghostty window")
---                     return
---                 end
---
---                 local screen = newWindow:screen()
---                 local frame = screen:frame()
---                 local newFrame = {
---                     x = frame.x + frame.w * 0.25,
---                     y = frame.y + frame.h * 0.125,
---                     w = frame.w * 0.5,
---                     h = frame.h * 0.75,
---                 }
---                 newWindow:setFrame(newFrame)
---                 newWindow:focus()
---
---                 -- Send fastfetch + Enter
---                 hs.eventtap.keyStrokes("fastfetch")
---                 hs.eventtap.keyStroke({}, "return")
---             end)
---         end)
---     end)
--- end)
 
 -- Super + Return → Ghostty (via bundle ID)
 hs.hotkey.bind(super, "return", function()

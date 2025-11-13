@@ -90,9 +90,19 @@
     - command: ./setup_finalize.sh
       stdout: true
       stderr: true
+    - command: |
+        echo "Ensuring JankyBorders (borders) service is started..."
+        if brew list --formula | grep -q '^borders$'; then
+          brew services start borders || echo "⚠️ Failed to start borders service"
+        else
+          echo "⚠️ JankyBorders not installed via brew yet!"
+        fi
+      stdout: true
+      stderr: true
 
 - create:
   - ~/Sites
+  - ~/.config/borders
 
 - link:
     ~/.zprofile:
@@ -106,4 +116,5 @@
     "~/Library/Application Support/com.mitchellh.ghostty/config": ~/dotfiles/ghostty/config
     "~/Library/Application Support/PopClip/Extensions": ~/dotfiles/popclip/Extensions
     ~/Sites/.editorconfig: ~/dotfiles/.editorconfig
+    ~/.config/borders/bordersrc: ~/dotfiles/borders/bordersrc
     ~/.hammerspoon: ~/dotfiles/hammerspoon

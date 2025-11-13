@@ -50,6 +50,7 @@ cask "dash"
 cask "blender"
 cask "popclip"
 cask "hammerspoon"
+cask "pika"
 
 # Fonts
 cask "font-jetbrains-mono-nerd-font"
