@@ -60,37 +60,37 @@ hs.hotkey.bind(super, "L", function()
 end)
 
 -- 3️⃣ Window Move (Super+Shift + arrows)
--- hs.layout.up50 = hs.geometry.unitrect(0, 0, 1, 0.5)
--- hs.layout.down50 = hs.geometry.unitrect(0, 0.5, 1, 0.5)
---
--- hs.hotkey.bind(superShift, "left", function()
---     -- hs.alert.show("hotkey fired")
---     local win = hs.window.focusedWindow()
---     if win then
---         win:moveToUnit(hs.layout.left50)
---     else
---         hs.alert.show("No focused window!")
---     end
--- end)
+hs.layout.up50 = hs.geometry.unitrect(0, 0, 1, 0.5)
+hs.layout.down50 = hs.geometry.unitrect(0, 0.5, 1, 0.5)
 
--- hs.hotkey.bind(superShift, "right", function()
---     local win = hs.window.focusedWindow()
---     if win then
---         win:moveToUnit(hs.layout.right50)
---     end
--- end)
--- hs.hotkey.bind(superShift, "Up", function()
---     local win = hs.window.focusedWindow()
---     if win then
---         win:moveToUnit(hs.layout.up50)
---     end
--- end)
--- hs.hotkey.bind(superShift, "Down", function()
---     local win = hs.window.focusedWindow()
---     if win then
---         win:moveToUnit(hs.layout.down50)
---     end
--- end)
+hs.hotkey.bind(superShift, "left", function()
+    -- hs.alert.show("hotkey fired")
+    local win = hs.window.focusedWindow()
+    if win then
+        win:moveToUnit(hs.layout.left50)
+    else
+        hs.alert.show("No focused window!")
+    end
+end)
+
+hs.hotkey.bind(superShift, "right", function()
+    local win = hs.window.focusedWindow()
+    if win then
+        win:moveToUnit(hs.layout.right50)
+    end
+end)
+hs.hotkey.bind(superShift, "Up", function()
+    local win = hs.window.focusedWindow()
+    if win then
+        win:moveToUnit(hs.layout.up50)
+    end
+end)
+hs.hotkey.bind(superShift, "Down", function()
+    local win = hs.window.focusedWindow()
+    if win then
+        win:moveToUnit(hs.layout.down50)
+    end
+end)
 
 -- 4️⃣ App Launcher (Super + Space)
 hs.hotkey.bind(super, "space", function()
