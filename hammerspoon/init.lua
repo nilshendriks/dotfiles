@@ -15,19 +15,19 @@ local function showFocusedAppName()
     end
 end
 
-hs.hotkey.bind({ "shift" }, "S", function()
-    hs.timer.doAfter(0, function() -- run next event loop tick
-        -- local win = hs.window.focusedWindow()
-        local win = hs.window.frontmostWindow()
-        if win then
-            local screen = win:screen():next()
-            win:moveToScreen(screen)
-            hs.alert.show("Moved window: " .. win:title())
-        else
-            hs.alert.show("No focused window")
-        end
-    end)
-end)
+-- hs.hotkey.bind({ "shift" }, "S", function()
+--     hs.timer.doAfter(0, function() -- run next event loop tick
+--         -- local win = hs.window.focusedWindow()
+--         local win = hs.window.frontmostWindow()
+--         if win then
+--             local screen = win:screen():next()
+--             win:moveToScreen(screen)
+--             hs.alert.show("Moved window: " .. win:title())
+--         else
+--             hs.alert.show("No focused window")
+--         end
+--     end)
+-- end)
 
 -- 2️⃣ Window Focus (H/J/K/L)
 hs.hotkey.bind(super, "H", function()
