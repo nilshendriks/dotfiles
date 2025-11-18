@@ -50,6 +50,15 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     end,
 })
 
+-- in lua/autocmds.lua (or wherever you load your autocmds)
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "liquid",
+    callback = function()
+        -- Set commentstring for Liquid
+        vim.bo.commentstring = "{% comment %} %s {% endcomment %}"
+    end,
+})
+
 -- vim.api.nvim_create_autocmd("BufWritePre", {
 --     pattern = "*.astro",
 --     callback = function()

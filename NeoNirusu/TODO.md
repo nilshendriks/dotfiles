@@ -52,7 +52,6 @@
   - [ ] getColorPresentations returns available color formats for a color symbol
 - [ ] write: formatter for svg, like html?
 - [ ] try removing lazydev -> vim global, new way?
-- [ ] add TODO: comments thing list back, plugin?
 - [ ] check opencode. works with ollama?
 - [ ] astro
   - [ ] formatting

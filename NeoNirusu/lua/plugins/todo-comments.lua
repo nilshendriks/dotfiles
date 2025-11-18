@@ -1,7 +1,13 @@
 return {
+    --TODO: test this
     "folke/todo-comments.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
-    opts = {},
+    opts = {
+        highlight = {
+            comments_only = true,
+        },
+    },
+    event = "VeryLazy",
     keys = {
         {
             "<leader>st",
