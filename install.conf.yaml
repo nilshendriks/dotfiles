@@ -104,6 +104,7 @@
 - create:
   - ~/Sites
   - ~/.config/borders
+  # - ~/Pictures/wallpapers
 
 - link:
     ~/.zprofile:
@@ -120,6 +121,7 @@
     ~/.config/borders/bordersrc: ~/dotfiles/borders/bordersrc
     ~/.hammerspoon: ~/dotfiles/hammerspoon
     ~/.config/karabiner: ~/dotfiles/karabiner
+    ~/Pictures/wallpapers: ~/dotfiles/images/wallpapers
 
 - shell:
     - command: |
