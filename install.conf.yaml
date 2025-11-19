@@ -99,6 +99,7 @@
         fi
       stdout: true
       stderr: true
+      quiet: true
 
 - create:
   - ~/Sites
@@ -118,3 +119,16 @@
     ~/Sites/.editorconfig: ~/dotfiles/.editorconfig
     ~/.config/borders/bordersrc: ~/dotfiles/borders/bordersrc
     ~/.hammerspoon: ~/dotfiles/hammerspoon
+    ~/.config/karabiner: ~/dotfiles/karabiner
+
+- shell:
+    - command: |
+        if ! pgrep -x "Karabiner-Menu" > /dev/null && ! pgrep -x "Karabiner-NotificationWindow" > /dev/null; then
+          echo "Starting Karabiner-Elements..."
+          open -a "Karabiner-Elements"
+        else
+          echo "Karabiner-Elements is already running."
+        fi
+      stdout: true
+      stderr: true
+      quiet: true

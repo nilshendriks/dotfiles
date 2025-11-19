@@ -54,3 +54,5 @@ cask "pika"
 
 # Fonts
 cask "font-jetbrains-mono-nerd-font"
+cask "karabiner-elements"
+cask "chatgpt"
