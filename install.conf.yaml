@@ -122,6 +122,7 @@
     ~/.hammerspoon: ~/dotfiles/hammerspoon
     ~/.config/karabiner: ~/dotfiles/karabiner
     ~/Pictures/wallpapers: ~/dotfiles/images/wallpapers
+    "~/Library/Screen Savers/ghostty.saver": ~/dotfiles/screensavers/ghostty.saver
 
 - shell:
     - command: |
