@@ -40,22 +40,55 @@ end)
 hs.layout.up50 = hs.geometry.unitrect(0, 0, 1, 0.5)
 hs.layout.down50 = hs.geometry.unitrect(0, 0.5, 1, 0.5)
 
+-- Move left with margins
 hs.hotkey.bind(keys.superShift, "left", function()
-    -- hs.alert.show("hotkey fired")
     local win = hs.window.focusedWindow()
     if win then
-        win:moveToUnit(hs.layout.left50)
+        local margin = 8
+        local screenFrame = win:screen():frame()
+
+        local newFrame = {
+            x = screenFrame.x + margin,
+            y = screenFrame.y + margin,
+            w = (screenFrame.w / 2) - 2 * margin,
+            h = screenFrame.h - 2 * margin,
+        }
+
+        win:setFrame(newFrame)
+    else
+        hs.alert.show("No focused window!")
+    end
+end)
+-- hs.hotkey.bind(keys.superShift, "left", function()
+--     -- hs.alert.show("hotkey fired")
+--     local win = hs.window.focusedWindow()
+--     if win then
+--         win:moveToUnit(hs.layout.left50)
+--     else
+--         hs.alert.show("No focused window!")
+--     end
+-- end)
+
+-- Move right with margins
+hs.hotkey.bind(keys.superShift, "right", function()
+    local win = hs.window.focusedWindow()
+    if win then
+        local margin = 8
+        local screenFrame = win:screen():frame()
+
+        local newFrame = {
+            x = screenFrame.x + (screenFrame.w / 2) + margin,
+            y = screenFrame.y + margin,
+            w = (screenFrame.w / 2) - 2 * margin,
+            h = screenFrame.h - 2 * margin,
+        }
+
+        win:setFrame(newFrame)
     else
         hs.alert.show("No focused window!")
     end
 end)
 
-hs.hotkey.bind(keys.superShift, "right", function()
-    local win = hs.window.focusedWindow()
-    if win then
-        win:moveToUnit(hs.layout.right50)
-    end
-end)
 hs.hotkey.bind(keys.superShift, "Up", function()
     local win = hs.window.focusedWindow()
     if win then
@@ -79,6 +112,34 @@ hs.hotkey.bind(keys.super, "W", function()
     local win = hs.window.focusedWindow()
     if win then
         win:close()
+    end
+end)
+
+-- fullscreen
+hs.hotkey.bind(keys.super, "F", function()
+    hs.alert.show("Toggling fullscreen")
+    local win = hs.window.focusedWindow()
+    if win then
+        win:toggleFullScreen()
+    end
+end)
+
+-- Super + Shift + M → fill window / maximize with margins
+hs.hotkey.bind(keys.superShift, "M", function()
+    hs.alert.show("Filling window")
+    local win = hs.window.focusedWindow()
+    if win then
+        local margin = 8 -- pixels
+        local screenFrame = win:screen():frame()
+
+        local newFrame = {
+            x = screenFrame.x + margin,
+            y = screenFrame.y + margin,
+            w = screenFrame.w - 2 * margin,
+            h = screenFrame.h - 2 * margin,
+        }
+
+        win:setFrame(newFrame)
     end
 end)
 
@@ -133,7 +194,7 @@ hs.hotkey.bind(keys.super, "K", function()
         end
 
         local screenFrame = candidateWin:screen():frame()
-        local newWidth = screenFrame.w * 0.5
+        local newWidth = screenFrame.w * 0.75
         local newHeight = screenFrame.h * 0.75
 
         local newFrame = {
@@ -159,12 +220,12 @@ hs.hotkey.bind(keys.super, "C", function()
     local margin = 8
     local screenFrame = win:screen():frame()
 
-    local newWidth = screenFrame.w * 0.5
-    local newHeight = screenFrame.h * 0.75
+    local newWidth = screenFrame.w * 0.75
+    local newHeight = screenFrame.h * 0.85
 
     local newFrame = {
-        x = screenFrame.x + (screenFrame.w - newWidth) / 2,
-        y = screenFrame.y + (screenFrame.h - newHeight) / 2,
+        x = screenFrame.x + (screenFrame.w - newWidth) / 2 + margin,
+        y = screenFrame.y + (screenFrame.h - newHeight) / 2 + margin,
         w = newWidth - 2 * margin,
         h = newHeight - 2 * margin,
     }
@@ -227,12 +288,6 @@ hs.hotkey.bind(keys.superShift, "N", function()
             win:focus()
         end)
     end)
-end)
-
--- Super + Shift + F: finder
-hs.hotkey.bind(keys.superShift, "F", function()
-    hs.alert.show("Hotkey fired!")
-    hs.application.launchOrFocus("Finder")
 end)
 
 hs.hotkey.bind(keys.superShift, "\\", function()

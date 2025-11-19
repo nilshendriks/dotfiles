@@ -2,6 +2,9 @@
 
 ## dotfiles
 
+- [ ] add wallpaper folder to home folder via dotfiles / symlink
+- [ ] screensaver ghostty?
+
 ## FIGMA
 
 - [ ] research slots
