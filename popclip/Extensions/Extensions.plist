@@ -28,16 +28,6 @@
 			<key>Enabled</key>
 			<true/>
 			<key>Extension Identifier</key>
-			<string>com.pilotmoon.popclip.extension.lowercase</string>
-			<key>Extension Name</key>
-			<string>Lowercase</string>
-			<key>Package Name</key>
-			<string>@krvyqd.com.pilotmoon.popclip.extension.lowercase.popclipext</string>
-		</dict>
-		<dict>
-			<key>Enabled</key>
-			<true/>
-			<key>Extension Identifier</key>
 			<string>com.pilotmoon.popclip.extension.uppercase</string>
 			<key>Extension Name</key>
 			<string>Uppercase</string>
@@ -63,6 +53,26 @@
 			<string>Word Count</string>
 			<key>Package Name</key>
 			<string>@p94cm7.com.pilotmoon.popclip.extension.wordcount.popclipext</string>
+		</dict>
+		<dict>
+			<key>Enabled</key>
+			<true/>
+			<key>Extension Identifier</key>
+			<string>com.popclip.extension.instant-translate</string>
+			<key>Extension Name</key>
+			<string>Instant Translate</string>
+			<key>Package Name</key>
+			<string>@08hhdb.com.popclip.extension.instant-translate.popclipext</string>
+		</dict>
+		<dict>
+			<key>Enabled</key>
+			<true/>
+			<key>Extension Identifier</key>
+			<string>com.pilotmoon.popclip.extension.lowercase</string>
+			<key>Extension Name</key>
+			<string>Lowercase</string>
+			<key>Package Name</key>
+			<string>@krvyqd.com.pilotmoon.popclip.extension.lowercase.popclipext</string>
 		</dict>
 	</array>
 	<key>Version</key>

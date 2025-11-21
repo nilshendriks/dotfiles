@@ -290,7 +290,7 @@ hs.hotkey.bind(keys.superShift, "N", function()
     end)
 end)
 
-hs.hotkey.bind(keys.superShift, "\\", function()
+hs.hotkey.bind(keys.superShift, "Z", function()
     hs.alert.show("Hotkey fired for WhichKey!")
     utils.showKeybindingsGUI()
 end)
