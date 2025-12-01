@@ -28,21 +28,21 @@
 			<key>Enabled</key>
 			<true/>
 			<key>Extension Identifier</key>
-			<string>com.pilotmoon.popclip.extension.uppercase</string>
-			<key>Extension Name</key>
-			<string>Uppercase</string>
-			<key>Package Name</key>
-			<string>@fzmf6w.com.pilotmoon.popclip.extension.uppercase.popclipext</string>
-		</dict>
-		<dict>
-			<key>Enabled</key>
-			<true/>
-			<key>Extension Identifier</key>
 			<string>com.pilotmoon.popclip.extension.capitalize</string>
 			<key>Extension Name</key>
 			<string>Capitalize Words</string>
 			<key>Package Name</key>
 			<string>@hvg8y3.com.pilotmoon.popclip.extension.capitalize.popclipext</string>
+		</dict>
+		<dict>
+			<key>Enabled</key>
+			<true/>
+			<key>Extension Identifier</key>
+			<string>com.pilotmoon.popclip.extension.uppercase</string>
+			<key>Extension Name</key>
+			<string>Uppercase</string>
+			<key>Package Name</key>
+			<string>@fzmf6w.com.pilotmoon.popclip.extension.uppercase.popclipext</string>
 		</dict>
 		<dict>
 			<key>Enabled</key>
