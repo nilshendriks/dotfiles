@@ -1,0 +1,20 @@
+schema_version = "1.0.0"
+
+id = "open_linked"
+version = "1.0.1"
+name = "Open Linked"
+tagline = "Open linked blends from the Outliner"
+maintainer = "polygoniq <ahoy@polygoniq.com>"
+type = "add-on"
+
+permissions = ["files"]
+website = "https://github.com/polygoniq/open_linked"
+tags = ["User Interface"]
+blender_version_min = "4.2.0"
+
+license = [
+  "SPDX:GPL-3.0-or-later",
+]
+copyright = [
+  "2018- polygoniq xyz s.r.o",
+]

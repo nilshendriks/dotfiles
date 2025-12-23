@@ -1,0 +1,10 @@
+# Blender noise
+cache/
+*.log
+crash/
+recent-files.txt
+recent-searches.txt
+
+# Machine-specific
+config/bookmarks.txt
+config/platform_support.txt
