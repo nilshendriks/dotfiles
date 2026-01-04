@@ -1,5 +1,7 @@
 # GENERAL TODO
 
+- [ ] update sip?
+
 ## dotfiles
 
 - [ ] add wallpaper folder to home folder via dotfiles / symlink

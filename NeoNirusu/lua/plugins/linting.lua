@@ -17,7 +17,7 @@ return {
         -- linters
         lint.linters_by_ft = {
             html = { "markuplint" },
-            -- css = { "biomejs" },
+            -- css = { "biomjs" },
             -- typescript = { "oxlint" },
             -- javascript = { "oxlint" },
             liquid = { "markuplint" },
