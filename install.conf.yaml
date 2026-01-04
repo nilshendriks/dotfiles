@@ -123,6 +123,8 @@
     ~/.config/karabiner: ~/dotfiles/karabiner
     ~/Pictures/wallpapers: ~/dotfiles/images/wallpapers
     "~/Library/Screen Savers/ghostty.saver": ~/dotfiles/screensavers/ghostty.saver
+    "~/Library/Application Support/Blender/5.0": ~/dotfiles/blender/5.0
+    "~/Library/Application Support/Blender/matlib": ~/dotfiles/blender/matlib
 
 - shell:
     - command: |

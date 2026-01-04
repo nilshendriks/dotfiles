@@ -1,0 +1,14 @@
+schema_version = "1.0.0"
+
+id = "momo_dark"
+version = "5.0.2"
+name = "Momo Dark"
+tagline = "Momo Dark - theme inspired by Modo"
+maintainer = "TimoShch"
+type = "theme"
+website = "https://github.com/TimoShch/Momo"
+tags = ["Dark", "Inspired By"]
+blender_version_min = "5.0.0"
+license = [
+  "SPDX:GPL-2.0-or-later",
+]

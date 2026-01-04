@@ -1,0 +1,16 @@
+schema_version = "1.0.0"
+
+
+id = "node_color_tools"
+version = "1.0.3"
+name = "Node Color Tools Pie"
+tagline = "Quick, organized node colors with pie menu ease"
+maintainer = "Johannes Kollmer <johanneskollmer@posteo.de>"
+
+type = "add-on"
+
+tags = ["Node", "User Interface"]
+
+blender_version_min = "4.2.0"
+
+license = ["SPDX:GPL-3.0-or-later",]

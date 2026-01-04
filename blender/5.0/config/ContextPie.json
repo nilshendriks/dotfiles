@@ -1,0 +1,368 @@
+{
+    "use_auto_save": true,
+    "debug": false,
+    "persistent_tools": false,
+    "hotkeys": [
+        {
+            "keymap": "3D View",
+            "operator": "wm.call_menu_pie_drag_only_cpie",
+            "op_kwargs": {
+                "name": "PIE_MT_context_pie",
+                "on_drag": false
+            },
+            "key_kwargs": {
+                "type": "RIGHTMOUSE",
+                "value": "PRESS",
+                "ctrl": false,
+                "shift": true,
+                "alt": false,
+                "any": false,
+                "oskey": false,
+                "key_modifier": "NONE",
+                "active": true
+            }
+        },
+        {
+            "keymap": "3D View",
+            "operator": "wm.call_menu_pie_drag_only_cpie",
+            "op_kwargs": {
+                "name": "PIE_MT_context_pivots",
+                "on_drag": false
+            },
+            "key_kwargs": {
+                "type": "RIGHTMOUSE",
+                "value": "PRESS",
+                "ctrl": true,
+                "shift": false,
+                "alt": false,
+                "any": false,
+                "oskey": false,
+                "key_modifier": "NONE",
+                "active": true
+            }
+        },
+        {
+            "keymap": "Armature",
+            "operator": "wm.call_menu_pie_drag_only_cpie",
+            "op_kwargs": {
+                "name": "PIE_MT_context_mode",
+                "on_drag": false
+            },
+            "key_kwargs": {
+                "type": "RIGHTMOUSE",
+                "value": "PRESS",
+                "ctrl": false,
+                "shift": false,
+                "alt": false,
+                "any": false,
+                "oskey": false,
+                "key_modifier": "NONE",
+                "active": true
+            }
+        },
+        {
+            "keymap": "Curve",
+            "operator": "wm.call_menu_pie_drag_only_cpie",
+            "op_kwargs": {
+                "name": "PIE_MT_context_mode",
+                "on_drag": false
+            },
+            "key_kwargs": {
+                "type": "RIGHTMOUSE",
+                "value": "PRESS",
+                "ctrl": false,
+                "shift": false,
+                "alt": false,
+                "any": false,
+                "oskey": false,
+                "key_modifier": "NONE",
+                "active": true
+            }
+        },
+        {
+            "keymap": "Grease Pencil Edit Mode",
+            "operator": "wm.call_menu_pie_drag_only_cpie",
+            "op_kwargs": {
+                "name": "PIE_MT_context_mode",
+                "on_drag": false
+            },
+            "key_kwargs": {
+                "type": "RIGHTMOUSE",
+                "value": "PRESS",
+                "ctrl": false,
+                "shift": false,
+                "alt": false,
+                "any": false,
+                "oskey": false,
+                "key_modifier": "NONE",
+                "active": true
+            }
+        },
+        {
+            "keymap": "Grease Pencil Paint Mode",
+            "operator": "wm.call_menu_pie_drag_only_cpie",
+            "op_kwargs": {
+                "name": "PIE_MT_context_mode",
+                "on_drag": false
+            },
+            "key_kwargs": {
+                "type": "RIGHTMOUSE",
+                "value": "PRESS",
+                "ctrl": false,
+                "shift": false,
+                "alt": false,
+                "any": false,
+                "oskey": false,
+                "key_modifier": "NONE",
+                "active": true
+            }
+        },
+        {
+            "keymap": "Grease Pencil Sculpt Mode",
+            "operator": "wm.call_menu_pie_drag_only_cpie",
+            "op_kwargs": {
+                "name": "PIE_MT_context_mode",
+                "on_drag": false
+            },
+            "key_kwargs": {
+                "type": "RIGHTMOUSE",
+                "value": "PRESS",
+                "ctrl": false,
+                "shift": false,
+                "alt": false,
+                "any": false,
+                "oskey": false,
+                "key_modifier": "NONE",
+                "active": true
+            }
+        },
+        {
+            "keymap": "Image Paint",
+            "operator": "wm.call_menu_pie_drag_only_cpie",
+            "op_kwargs": {
+                "name": "PIE_MT_context_mode",
+                "on_drag": false
+            },
+            "key_kwargs": {
+                "type": "RIGHTMOUSE",
+                "value": "PRESS",
+                "ctrl": false,
+                "shift": false,
+                "alt": false,
+                "any": false,
+                "oskey": false,
+                "key_modifier": "NONE",
+                "active": true
+            }
+        },
+        {
+            "keymap": "Lattice",
+            "operator": "wm.call_menu_pie_drag_only_cpie",
+            "op_kwargs": {
+                "name": "PIE_MT_context_mode",
+                "on_drag": false
+            },
+            "key_kwargs": {
+                "type": "RIGHTMOUSE",
+                "value": "PRESS",
+                "ctrl": false,
+                "shift": false,
+                "alt": false,
+                "any": false,
+                "oskey": false,
+                "key_modifier": "NONE",
+                "active": true
+            }
+        },
+        {
+            "keymap": "Mesh",
+            "operator": "wm.call_menu_pie_drag_only_cpie",
+            "op_kwargs": {
+                "name": "PIE_MT_context_mode",
+                "on_drag": false
+            },
+            "key_kwargs": {
+                "type": "RIGHTMOUSE",
+                "value": "PRESS",
+                "ctrl": false,
+                "shift": false,
+                "alt": false,
+                "any": false,
+                "oskey": false,
+                "key_modifier": "NONE",
+                "active": true
+            }
+        },
+        {
+            "keymap": "Object Mode",
+            "operator": "wm.call_menu_pie_drag_only_cpie",
+            "op_kwargs": {
+                "name": "PIE_MT_context_mode",
+                "on_drag": false
+            },
+            "key_kwargs": {
+                "type": "RIGHTMOUSE",
+                "value": "PRESS",
+                "ctrl": false,
+                "shift": false,
+                "alt": false,
+                "any": false,
+                "oskey": false,
+                "key_modifier": "NONE",
+                "active": true
+            }
+        },
+        {
+            "keymap": "Pose",
+            "operator": "wm.call_menu_pie_drag_only_cpie",
+            "op_kwargs": {
+                "name": "PIE_MT_context_mode",
+                "on_drag": false
+            },
+            "key_kwargs": {
+                "type": "RIGHTMOUSE",
+                "value": "PRESS",
+                "ctrl": false,
+                "shift": false,
+                "alt": false,
+                "any": false,
+                "oskey": false,
+                "key_modifier": "NONE",
+                "active": true
+            }
+        },
+        {
+            "keymap": "Sculpt",
+            "operator": "wm.call_menu_pie_drag_only_cpie",
+            "op_kwargs": {
+                "name": "PIE_MT_context_pie",
+                "on_drag": false
+            },
+            "key_kwargs": {
+                "type": "RIGHTMOUSE",
+                "value": "PRESS",
+                "ctrl": false,
+                "shift": true,
+                "alt": false,
+                "any": false,
+                "oskey": false,
+                "key_modifier": "NONE",
+                "active": true
+            }
+        },
+        {
+            "keymap": "Sculpt",
+            "operator": "wm.call_menu_pie_drag_only_cpie",
+            "op_kwargs": {
+                "name": "PIE_MT_context_mode",
+                "on_drag": false
+            },
+            "key_kwargs": {
+                "type": "RIGHTMOUSE",
+                "value": "PRESS",
+                "ctrl": false,
+                "shift": false,
+                "alt": false,
+                "any": false,
+                "oskey": false,
+                "key_modifier": "NONE",
+                "active": true
+            }
+        },
+        {
+            "keymap": "UV Editor",
+            "operator": "wm.call_menu_pie_drag_only_cpie",
+            "op_kwargs": {
+                "name": "PIE_MT_context_uv",
+                "on_drag": false
+            },
+            "key_kwargs": {
+                "type": "RIGHTMOUSE",
+                "value": "PRESS",
+                "ctrl": false,
+                "shift": true,
+                "alt": false,
+                "any": false,
+                "oskey": false,
+                "key_modifier": "NONE",
+                "active": true
+            }
+        },
+        {
+            "keymap": "UV Editor",
+            "operator": "wm.call_menu_pie_drag_only_cpie",
+            "op_kwargs": {
+                "name": "PIE_MT_context_uvmode",
+                "on_drag": false
+            },
+            "key_kwargs": {
+                "type": "RIGHTMOUSE",
+                "value": "PRESS",
+                "ctrl": false,
+                "shift": false,
+                "alt": false,
+                "any": false,
+                "oskey": false,
+                "key_modifier": "NONE",
+                "active": true
+            }
+        },
+        {
+            "keymap": "UV Editor",
+            "operator": "wm.call_menu_pie_drag_only_cpie",
+            "op_kwargs": {
+                "name": "PIE_MT_context_uvpivots",
+                "on_drag": false
+            },
+            "key_kwargs": {
+                "type": "RIGHTMOUSE",
+                "value": "PRESS",
+                "ctrl": true,
+                "shift": false,
+                "alt": false,
+                "any": false,
+                "oskey": false,
+                "key_modifier": "NONE",
+                "active": true
+            }
+        },
+        {
+            "keymap": "Vertex Paint",
+            "operator": "wm.call_menu_pie_drag_only_cpie",
+            "op_kwargs": {
+                "name": "PIE_MT_context_mode",
+                "on_drag": false
+            },
+            "key_kwargs": {
+                "type": "RIGHTMOUSE",
+                "value": "PRESS",
+                "ctrl": false,
+                "shift": false,
+                "alt": false,
+                "any": false,
+                "oskey": false,
+                "key_modifier": "NONE",
+                "active": true
+            }
+        },
+        {
+            "keymap": "Weight Paint",
+            "operator": "wm.call_menu_pie_drag_only_cpie",
+            "op_kwargs": {
+                "name": "PIE_MT_context_mode",
+                "on_drag": false
+            },
+            "key_kwargs": {
+                "type": "RIGHTMOUSE",
+                "value": "PRESS",
+                "ctrl": false,
+                "shift": false,
+                "alt": false,
+                "any": false,
+                "oskey": false,
+                "key_modifier": "NONE",
+                "active": true
+            }
+        }
+    ]
+}

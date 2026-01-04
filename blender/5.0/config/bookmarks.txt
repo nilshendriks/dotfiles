@@ -1,0 +1,12 @@
+[Bookmarks]
+[Recent]
+/Users/Shared/blender_assets/
+/Users/nilshendriks/dotfiles/blender_assets/
+/Users/nilshendriks/Blender/Dev/addons/GFX Camera/
+/Users/nilshendriks/Blender/Dev/addons/GFX Camera/gfx_camera/
+/Users/nilshendriks/Blender/Assets/
+/Users/nilshendriks/Documents/3d dev/
+/Users/nilshendriks/Documents/3d dev/silo/
+/Users/nilshendriks/Blender/Projects/ProductRenders/OTTO-L/renders/
+/Users/nilshendriks/Blender/Materials/PBR-textures/KVADRAT/HALLINGDAL/65/224/
+/Users/nilshendriks/Blender/Materials/downloads/
