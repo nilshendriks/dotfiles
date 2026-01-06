@@ -99,6 +99,9 @@ export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 export GEM_BIN_PATH="$(gem env gemdir)/bin"
 export PATH="$GEM_BIN_PATH:$PATH"
 
+# node modules
+export PATH="./node_modules/.bin:$PATH"
+
 # go
 # export GOPATH=$HOME/go
 # export PATH=$PATH:$GOPATH/bin
