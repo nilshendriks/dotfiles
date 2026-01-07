@@ -1,12 +1,12 @@
 [Bookmarks]
 [Recent]
+/Users/nilshendriks/Blender/Materials/PBR-textures/DREAM/THYME/206/
+/Users/nilshendriks/Blender/Projects/ProductRenders/Hocker - BLAN50SO/MODEL/
+/Users/nilshendriks/Blender/Projects/ProductRenders/Hocker - BLAN50SO/
+/Users/nilshendriks/Blender/Projects/ProductRenders/OTTO-S/MODEL/
+/Users/nilshendriks/Blender/Projects/ProductRenders/OTTO-L/
+/Users/nilshendriks/Blender/Projects/ProductRenders/OTTO-L/Models/
+/Users/nilshendriks/Blender/Tests/DREAM-THYME-206/
+/Users/nilshendriks/Blender/Materials/tests/
+/Users/nilshendriks/Blender/Materials/PBR-textures/DREAM/THYME/206/test/
 /Users/nilshendriks/Blender/Materials/
-/Users/nilshendriks/Blender/Projects/ProductRenders/LAYER-SOFA/MODELS/
-/Users/nilshendriks/Blender/Projects/ProductRenders/LOUNGE/dxf/
-/Users/nilshendriks/Blender/Projects/ProductRenders/LOUNGE/
-/Users/nirusu/3d/Models/X100/tex/Leather031_2K-JPG/
-/Users/nirusu/3d/Models/X100/
-/Users/Shared/blender_assets/
-/Users/nilshendriks/dotfiles/blender_assets/
-/Users/nilshendriks/Blender/Dev/addons/GFX Camera/
-/Users/nilshendriks/Blender/Dev/addons/GFX Camera/gfx_camera/
