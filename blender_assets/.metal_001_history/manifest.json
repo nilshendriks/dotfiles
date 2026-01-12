@@ -1,0 +1,18 @@
+{
+    "parent_file": "/Users/Shared/blender_assets/metal_001.blend",
+    "versions": [
+        {
+            "id": "autosave",
+            "timestamp": "2026-01-11 12:04:00",
+            "note": "Auto Save",
+            "thumbnail": "autosave/thumbnail.png",
+            "blend": "autosave/snapshot.blend_snapshot",
+            "object_count": 7,
+            "file_size": 553175,
+            "is_protected": false,
+            "tag": "NONE"
+        }
+    ],
+    "schema_version": 1,
+    "project_uuid": "8d7f9bdf-b35e-4e76-8634-e15742e77a75"
+}

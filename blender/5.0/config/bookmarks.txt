@@ -1,12 +1,12 @@
 [Bookmarks]
 [Recent]
-/Users/nilshendriks/Blender/Materials/PBR-textures/DREAM/THYME/206/
-/Users/nilshendriks/Blender/Projects/ProductRenders/Hocker - BLAN50SO/MODEL/
-/Users/nilshendriks/Blender/Projects/ProductRenders/Hocker - BLAN50SO/
-/Users/nilshendriks/Blender/Projects/ProductRenders/OTTO-S/MODEL/
-/Users/nilshendriks/Blender/Projects/ProductRenders/OTTO-L/
-/Users/nilshendriks/Blender/Projects/ProductRenders/OTTO-L/Models/
-/Users/nilshendriks/Blender/Tests/DREAM-THYME-206/
-/Users/nilshendriks/Blender/Materials/tests/
-/Users/nilshendriks/Blender/Materials/PBR-textures/DREAM/THYME/206/test/
-/Users/nilshendriks/Blender/Materials/
+/Users/Shared/blender_assets/materials/
+/Users/Shared/blender_assets/
+/Users/nilshendriks/Blender/Tests/
+/Users/nilshendriks/Blender/Projects/ShowCase/
+/Users/nilshendriks/Blender/Tests/threejs/source/models/cleaned/
+/Users/nilshendriks/Blender/Tests/threejs/assets/tops/
+/Users/nilshendriks/Blender/Tests/threejs/assets/legs/
+/Users/nilshendriks/Blender/Tests/threejs/assets/
+/Users/nilshendriks/Blender/Tests/threejs/
+/Users/nilshendriks/Blender/Tests/threejs/source/

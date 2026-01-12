@@ -1,0 +1,17 @@
+schema_version = "1.0.0"
+
+id = "export_render_as_dng"
+version = "1.0.2"
+name = "Export Render as DNG"
+tagline = "Export renders and images as Bayer-style DNG files"
+maintainer = "FloBEAUG"
+type = "add-on"
+license = ["SPDX:GPL-3.0-or-later"]
+copyright = ["2022 Csaba Nagy"]
+blender_version_min = "4.2.0"
+wheels = [
+   "./wheels/pidng-4.0.9-py3-none-any.whl"
+]
+
+[permissions]
+files = "Export DNG to disk"

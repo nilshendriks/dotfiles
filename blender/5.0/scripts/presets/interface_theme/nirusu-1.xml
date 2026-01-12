@@ -489,9 +489,9 @@
       <ThemeView3D
         grid="#bfbfbf1a"
         clipping_border_3d="#460c89ff"
-        wire="#000000"
+        wire="#ffffff"
         wire_edit="#000000"
-        edge_width="1"
+        edge_width="2"
         gp_vertex="#000000"
         gp_vertex_select="#ffa440"
         gp_vertex_size="3"
@@ -504,8 +504,8 @@
         speaker="#000000"
         vertex="#000000"
         vertex_select="#ffa829"
-        vertex_size="3"
-        edge_select="#e69725"
+        vertex_size="2"
+        edge_select="#0095f2"
         edge_mode_select="#ffd800"
         face="#00000014"
         face_select="#cc8a2a3b"
@@ -544,23 +544,23 @@
         skin_root="#000000"
         view_overlay="#000000"
         transform="#ffffff"
-        outline_width="1"
+        outline_width="2"
         object_origin_size="6"
         >
         <space>
           <ThemeSpaceGradient
             title="#dddddd"
             text="#dddddd"
-            text_hi="#0095f2"
+            text_hi="#ffffff"
             header="#3a3f4200"
             header_text="#dddddd"
             header_text_hi="#0095f2"
             >
             <gradients>
               <ThemeGradientColors
-                background_type="RADIAL"
-                high_gradient="#222222"
-                gradient="#111111"
+                background_type="SINGLE_COLOR"
+                high_gradient="#666666"
+                gradient="#666666"
                 >
               </ThemeGradientColors>
             </gradients>

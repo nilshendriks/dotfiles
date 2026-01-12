@@ -1,0 +1,5 @@
+.idea/
+releases/*
+__pycache__/
+**.pyc
+sketchfab/.cache
