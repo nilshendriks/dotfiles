@@ -1,0 +1,18 @@
+{
+    "parent_file": "/Users/nilshendriks/dotfiles/blender/5.0/config/startup.blend",
+    "versions": [
+        {
+            "id": "autosave",
+            "timestamp": "2026-01-14 23:27:12",
+            "note": "Auto Save",
+            "thumbnail": "autosave/thumbnail.png",
+            "blend": "autosave/snapshot.blend_snapshot",
+            "object_count": 11,
+            "file_size": 598998,
+            "is_protected": false,
+            "tag": "NONE"
+        }
+    ],
+    "schema_version": 1,
+    "project_uuid": "f4f2f276-cd3f-4136-b922-eed80d670cd4"
+}
