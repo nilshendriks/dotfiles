@@ -47,7 +47,6 @@ cask "zed"
 # cask alfred
 cask "ghostty"
 cask "dash"
-cask "blender"
 cask "popclip"
 cask "hammerspoon"
 cask "pika"

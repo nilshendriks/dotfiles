@@ -17,3 +17,14 @@
 ## ASCII ART
 
 - [ ] research acsii animation
+
+## BLENDER
+
+- [ ] remove from dotfiles
+- gt pie menu, check shoft q also for default q
+- [ ] redo x100
+  - [ ] better letaher material
+
+## OTHER
+
+- [ ] voodoo doc
