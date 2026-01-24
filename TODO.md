@@ -1,12 +1,10 @@
 # GENERAL TODO
 
-- [ ] update sip?
+
 
 ## dotfiles
 
-- [ ] add wallpaper folder to home folder via dotfiles / symlink
-- [ ] screensaver ghostty?
-- [ ] wallpapers omarchy folder. screensave to folder, space 2
+
 
 ## FIGMA
 
@@ -20,11 +18,18 @@
 
 ## BLENDER
 
-- [ ] remove from dotfiles
-- gt pie menu, check shoft q also for default q
+- redo startup settings
+  - [ ] render settings cycles
 - [ ] redo x100
-  - [ ] better letaher material
+  - [ ] better leather material
 
 ## OTHER
 
 - [ ] voodoo doc
+- [ ] leaderkey, karabiner, hammerspoon, better touch tool
+
+## SILO 3D
+
+- keybindings to blender?
+- better own keybindings?
+- nirusu theme?
