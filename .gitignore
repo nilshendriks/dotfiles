@@ -10,3 +10,4 @@ lazy-lock.json
 
 # homebrew
 Brewfile.lock.json
+blender/
