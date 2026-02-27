@@ -213,6 +213,7 @@ alias themedev='shopify theme dev --environment=surf-turf-2-0'
 
 # npm
 alias rum='npm run'
+# alias henk-render="/Users/nilshendriks/Blender/Projects/ProductRenders/TAPER-COFFEE-TABLE/henk-render"
 
 # caniuse css baseline
 alias canuse="npx caniuse -C ~/dotfiles/.caniuse.json"
@@ -263,3 +264,9 @@ source ~/dotfiles/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 
 # Enable additional syntax highlighters
 ZSH_HIGHLIGHT_HIGHLIGHTERS+=(brackets pattern cursor)
+
+# henk-render repo
+export PATH="$HOME/Projects/henk-render/bin:$PATH"
+
+# go apps
+export PATH="$PATH:$HOME/go/bin"

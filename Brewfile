@@ -34,6 +34,7 @@ brew "wget"
 brew "python"
 brew "go"
 brew "tree-sitter-cli"
+brew "gum"
 
 # Casks (Applications)
 # cask "google-chrome"
