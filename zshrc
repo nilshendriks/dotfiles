@@ -270,3 +270,6 @@ export PATH="$HOME/Projects/henk-render/bin:$PATH"
 
 # go apps
 export PATH="$PATH:$HOME/go/bin"
+
+export EDITOR='nvim'
+export NVIM_APPNAME='NeoNirusu'

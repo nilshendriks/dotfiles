@@ -36,6 +36,15 @@ brew "go"
 brew "tree-sitter-cli"
 brew "gum"
 
+# Add the Charmbracelet repository
+tap "charmbracelet/tap"
+
+brew "gh"
+
+# Use the full path to the formula
+brew "charmbracelet/tap/crush"
+brew "glow"
+
 # Casks (Applications)
 # cask "google-chrome"
 # cask "alfred"
