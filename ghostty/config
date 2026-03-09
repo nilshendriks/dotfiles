@@ -1,11 +1,12 @@
 #background = 000000
-background-opacity = 0.80
+background-opacity = 0.90
 background-blur-radius = 30
 
 #cursor-color = 099dec
 cursor-style = bar
 
 # shell-integration-features = no-cursor
+shell-integration-features = no-title
 
 #font-family = JetBrainsMono Nerd Font
 font-family = "JetBrainsMono NFM"
