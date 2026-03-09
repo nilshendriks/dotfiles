@@ -56,6 +56,11 @@ vim.opt.clipboard:append("unnamedplus")
 
 vim.opt.encoding = "UTF-8"
 
+-- don't set terminal title
+vim.opt.title = false
+vim.opt.titlestring = ""
+vim.opt.titleold = ""
+
 -- Enable break indent
 vim.opt.breakindent = true
 
