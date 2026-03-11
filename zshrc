@@ -207,9 +207,17 @@ alias nvim-astro="NVIM_APPNAME=NirusuAstro nvim"
 alias nn="NVIM_APPNAME=NeoNirusu nvim"
 
 # shopify HENK
-alias themepull='shopify theme pull --environment=surf-turf-2-0 --nodelete'
-alias themepush='shopify theme push --environment=surf-turf-2-0 --nodelete'
-alias themedev='shopify theme dev --environment=surf-turf-2-0'
+# alias themepull='shopify theme pull --environment=surf-turf-2-0 --nodelete'
+# alias themepush='shopify theme push --environment=surf-turf-2-0 --nodelete'
+# alias themedev='shopify theme dev --environment=surf-turf-2-0'
+
+alias themepull_dev='shopify theme pull -e develop --theme 191464702296 --nodelete'
+alias themepush_dev='shopify theme push -e develop --theme 191464702296 --nodelete'
+alias themedev_dev='shopify theme dev -e develop --theme 191464702296'
+
+alias themepull_stg='shopify theme pull -e staging --theme 191464669528 --nodelete'
+alias themepush_stg='shopify theme push -e staging --theme 191464669528 --nodelete'
+alias themedev_stg='shopify theme dev -e staging --theme 191464669528'
 
 # npm
 alias rum='npm run'
