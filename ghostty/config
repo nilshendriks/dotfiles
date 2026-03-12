@@ -1,3 +1,5 @@
+title = " "
+confirm-close-surface = false
 #background = 000000
 background-opacity = 0.98
 background-blur-radius = 30
@@ -8,9 +10,8 @@ cursor-style = bar
 # shell-integration-features = no-cursor
 shell-integration-features = no-title
 
-#font-family = JetBrainsMono Nerd Font
 font-family = "JetBrainsMono NFM"
-font-size = 16
+font-size = 20
 font-feature = "calt, liga, dlig"
 
 # theme
@@ -19,15 +20,16 @@ theme = tokyonight night
 window-theme = dark
 window-width = 80
 window-height = 69
-window-padding-x = 8
+window-padding-x = 16
 window-padding-y = 0
 window-decoration = true
 window-colorspace = "display-p3"
 window-save-state = always
 window-subtitle = working-directory
 
-#macos-titlebar-style = transparent
+# macos-titlebar-style = transparent
 macos-titlebar-style = tabs
+# macos-titlebar-style = native
 
 bold-is-bright = true
 #keybind = global:cmd+grave_accent=toggle_quick_terminal
@@ -43,4 +45,18 @@ macos-icon = official
 #macos-icon = retro
 #macos-icon = xray
 
+macos-option-as-alt = true
 macos-icon-frame = chrome
+maximize = true
+
+# keybind = zellij/
+# keybind = zellij/cmd+option+left=text:\x1b[1;3D
+# keybind = zellij/cmd+option+right=text:\x1b[1;3C
+# keybind = zellij/cmd+option+up=text:\x1b[1;3A
+# keybind = zellij/cmd+option+down=text:\x1b[1;3B
+# keybind = zellij/escape=deactivate_key_table
+# keybind = zellij/catch_all=deactivate_key_table
+# keybind = cmd+option+z=activate_key_table_once:zellij
+# keybind = cmd+k=text:\x0c
+keybind = alt+left=unbind
+keybind = alt+right=unbind
