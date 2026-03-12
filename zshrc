@@ -281,3 +281,5 @@ export PATH="$PATH:$HOME/go/bin"
 
 export EDITOR='nvim'
 export NVIM_APPNAME='NeoNirusu'
+
+alias zhenk='zellij -s henk-storybook-shopify -n henk-storybook-shopify'
