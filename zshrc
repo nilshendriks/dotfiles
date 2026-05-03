@@ -107,7 +107,10 @@ export PATH="./node_modules/.bin:$PATH"
 # export PATH=$PATH:$GOPATH/bin
 
 # neovim lazyvim mason
- export PATH="$HOME/.local/share/NirusuVim/mason/bin:$PATH"
+export PATH="$HOME/.local/share/NirusuVim/mason/bin:$PATH"
+
+# blender
+export PATH="$PATH:/Applications/Blender.app/Contents/MacOS"
 
 # Load NVM (Node Version Manager)
 # export NVM_DIR="$HOME/.nvm"
