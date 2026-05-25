@@ -32,7 +32,7 @@ brew "chafa"
 brew "ghostscript"      # provides `gs` – needed to render PDF files
 brew "tectonic"         # OR use pdflatex via MacTeX, but tectonic is simpler
 brew "wget"
-brew "python"
+# brew "python"
 brew "go"
 brew "tree-sitter-cli"
 brew "gum"

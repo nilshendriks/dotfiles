@@ -1,10 +1,6 @@
 # GENERAL TODO
 
-
-
 ## dotfiles
-
-
 
 ## FIGMA
 
@@ -26,10 +22,24 @@
 ## OTHER
 
 - [ ] voodoo doc
-- [ ] leaderkey, karabiner, hammerspoon, better touch tool
+- test new motion graphics tool
+- test fusion 360 -> export 3d, blender
+
+## CLI tools - bash, python, gym, go
+- transcribe tool
+- website pivot to tools
+- other tool ideas
+  - finance?
+  - tool launcher?
 
 ## SILO 3D
 
 - keybindings to blender?
 - better own keybindings?
-- nirusu theme?
+- nirusu theme
+
+## redesign / pivot nilshendriks.com
+
+- terminal cli pivot, less web oriented
+- terminal look
+- 3d wireframes , polygonal look?
