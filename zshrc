@@ -289,3 +289,7 @@ export NVIM_APPNAME='NeoNirusu'
 alias zhenk='zellij -s henk-storybook-shopify -n henk-storybook-shopify'
 
 export PATH="$HOME/Projects/transcribe-cli/bin:$PATH"
+
+if [[ "$(hostname -s)" == "HENK3Ds-Mac-mini" ]]; then
+    export PS1="%n@%m:%~%# "
+fi
