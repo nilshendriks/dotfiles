@@ -67,6 +67,12 @@ return {
                     if vim.bo.filetype == "svg" then
                         return { "--parser", "html" }
                     end
+                    -- if vim.bo.filetype == "astro" then
+                    --     return {
+                    --         "--plugin",
+                    --         "/Users/nirusu/Sites/nilshendriks.com/node_modules/prettier-plugin-astro/dist/index.js",
+                    --     }
+                    -- end
                     return {}
                 end,
             },
