@@ -105,6 +105,11 @@ return {
                                 functionLikeReturnTypes = { enabled = true },
                                 enumMemberValues = { enabled = true },
                             },
+                            tsserver = {
+                                experimental = {
+                                    enableProjectDiagnostics = true,
+                                },
+                            },
                         },
                         -- enable JS type checking
                         -- checkJs = true,
@@ -116,6 +121,11 @@ return {
                                 propertyDeclarationTypes = { enabled = true },
                                 functionLikeReturnTypes = { enabled = true },
                                 enumMemberValues = { enabled = true },
+                            },
+                            tsserver = {
+                                experimental = {
+                                    enableProjectDiagnostics = true,
+                                },
                             },
                         },
                     },
