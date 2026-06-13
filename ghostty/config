@@ -60,3 +60,4 @@ maximize = true
 # keybind = cmd+k=text:\x0c
 keybind = alt+left=unbind
 keybind = alt+right=unbind
+keybind = global:cmd+backquote=toggle_quick_terminal

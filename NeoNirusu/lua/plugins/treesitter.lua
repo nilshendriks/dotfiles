@@ -1,7 +1,9 @@
 return {
     "nvim-treesitter/nvim-treesitter",
+    -- branch = "master",
     build = ":TSUpdate",
     config = function()
+        -- local configs = require("nvim-treesitter.configs")
         local configs = require("nvim-treesitter.configs")
 
         -- add custom parser for Liquid

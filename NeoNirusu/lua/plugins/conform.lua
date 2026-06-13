@@ -24,7 +24,8 @@ return {
             python = { "isort", "black" },
             lua = { "stylua" },
             -- dubious
-            markdown = { "prettierd", lsp_format = "never" },
+            -- markdown = { "prettierd", lsp_format = "never" },
+            markdown = { "prettier", lsp_format = "never" },
             svg = { "prettier", lsp_format = "never", stop_after_first = true },
             json = { "prettier", lsp_format = "fallback" },
             jsonc = { "prettier", lsp_format = "fallback" },

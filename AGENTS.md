@@ -14,7 +14,7 @@ This repository is a personal dotfiles setup managed by Dotbot. The root `instal
 - `install` / `install.conf.yaml`: Dotbot entrypoint + configuration.
 - `zshrc`, `zshenv`, `zprofile`: shell setup and PATH configuration.
 - `hammerspoon/`: Hammerspoon config (`init.lua` loads `keys`, `utils`, and `keymaps`).
-- `karabiner/`, `ghostty/`, `borders/`, `popclip/`: app configs.
+- `karabiner/`, `ghostty/`, `popclip/`: app configs.
 - Neovim configs:
   - `NirusuVim/`, `HENKVim/`, `NirusuAstro/`, `NeoNirusu/` each have `init.lua` and `lua/`.
 - `dotbot/`: Dotbot submodule (Python project with its own tooling).
