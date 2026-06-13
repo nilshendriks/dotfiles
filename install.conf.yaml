@@ -93,6 +93,7 @@
 
 - create:
   - ~/Sites
+  - ~/Library/Application Support/dooit
   # - ~/Pictures/wallpapers
 
 - link:
@@ -107,8 +108,8 @@
     "~/Library/Application Support/com.mitchellh.ghostty/config": ~/dotfiles/ghostty/config
     "~/Library/Application Support/PopClip/Extensions": ~/dotfiles/popclip/Extensions
     ~/Sites/.editorconfig: ~/dotfiles/.editorconfig
-    ~/.hammerspoon: ~/dotfiles/hammerspoon
     ~/.config/karabiner: ~/dotfiles/karabiner
+    "~/Library/Application Support/dooit/config.py": ~/dotfiles/dooit/config.py
     ~/Pictures/wallpapers: ~/dotfiles/images/wallpapers
     "~/Library/Screen Savers/ghostty.saver": ~/dotfiles/screensavers/ghostty.saver
 
