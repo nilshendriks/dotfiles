@@ -26,4 +26,7 @@ if ! command -v brew >/dev/null 2>&1; then
   fi
 fi
 
+brew trust charmbracelet/tap 2>/dev/null || true
+brew trust shopify/shopify 2>/dev/null || true
+
 brew bundle --verbose
