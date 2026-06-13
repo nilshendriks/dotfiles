@@ -63,6 +63,7 @@ return {
             replace_netrw = true,
         },
         indent = { enabled = true },
+        image = { enabled = false },
         input = { enabled = true },
         picker = {
             enabled = true,

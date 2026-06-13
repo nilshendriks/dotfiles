@@ -5,10 +5,22 @@ return {
         "nvim-mini/mini.icons",
     },
     opts = {
+        enabled = false,
         render_modes = {
             "n",
             "c",
             "t",
+        },
+        injections = {
+            gitcommit = {
+                enabled = false,
+            },
+        },
+        patterns = {
+            markdown = {
+                disable = true,
+                directives = {},
+            },
         },
     },
     -- config = function()
