@@ -22,6 +22,8 @@ wezterm.on("gui-startup", function(cmd)
 	left1:send_text("crush\n")
 	right1:send_text("nn .\n")
 
+	left1:activate()
+
 	local git1 = win1:spawn_tab({ cwd = wezterm.home_dir .. "/Sites/storybook-henk" })
 	git1:active_pane():send_text("git status\n")
 	git1:set_title("git")
@@ -50,6 +52,8 @@ wezterm.on("gui-startup", function(cmd)
 	left2:send_text("crush\n")
 	right2:send_text("nn .\n")
 
+	left2:activate()
+
 	local git2 = win2:spawn_tab({ cwd = wezterm.home_dir .. "/Sites/studio-henk" })
 	git2:active_pane():send_text("git status\n")
 	git2:set_title("git")
@@ -77,6 +81,7 @@ wezterm.on("gui-startup", function(cmd)
 	})
 	left3:send_text("crush\n")
 	right3:send_text("nn ~/.wezterm.lua\n")
+	left3:activate()
 
 	-- Workspace 4: default
 	local _, _, win4 = mux.spawn_window({
@@ -100,6 +105,7 @@ wezterm.on("gui-startup", function(cmd)
 	})
 	left5:send_text("crush\n")
 	right5:send_text("nn .\n")
+	left5:activate()
 
 	local term5 = win5:spawn_tab({ cwd = wezterm.home_dir .. "/dotfiles" })
 	term5:set_title("terminal")
