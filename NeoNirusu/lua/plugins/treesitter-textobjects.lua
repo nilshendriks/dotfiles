@@ -4,8 +4,11 @@ return {
     dependencies = {
         "nvim-treesitter/nvim-treesitter",
     },
-    init = function()
-        local config = require("nvim-treesitter.configs")
+    config = function()
+        local ok, config = pcall(require, "nvim-treesitter.configs")
+        if not ok then
+            return
+        end
         config.setup({
             textobjects = {
                 select = {

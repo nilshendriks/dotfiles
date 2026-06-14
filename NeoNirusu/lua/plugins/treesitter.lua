@@ -4,7 +4,10 @@ return {
     build = ":TSUpdate",
     config = function()
         -- local configs = require("nvim-treesitter.configs")
-        local configs = require("nvim-treesitter.configs")
+        local ok, configs = pcall(require, "nvim-treesitter.configs")
+        if not ok then
+            return
+        end
 
         -- add custom parser for Liquid
         local parser_config = require("nvim-treesitter.parsers").get_parser_configs()

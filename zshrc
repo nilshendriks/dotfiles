@@ -299,3 +299,6 @@ fi
 
 # ghostty-projects layout tool
 export PATH="$HOME/dev/sh/ghostty-projects:$PATH"
+
+# Machine-specific env vars (not in git)
+[[ -f ~/.env.local ]] && source ~/.env.local

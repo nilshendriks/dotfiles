@@ -135,6 +135,10 @@ return {
                         python = {
                             analysis = {
                                 typeCheckingMode = "strict",
+                                extraPaths = (function()
+                                    local p = vim.fn.glob("/Applications/Blender.app/Contents/Resources/*/python/lib/python3.13/site-packages")
+                                    return p ~= "" and { p } or {}
+                                end)(),
                                 inlayHints = {
                                     variableTypes = true,
                                     functionReturnTypes = true,
@@ -194,7 +198,7 @@ return {
                 callback = function(args)
                     local client = vim.lsp.get_client_by_id(args.data.client_id)
                     -- if client.supports_method("textDocument/documentHighlight") then
-                    if client and vim.lsp.client.supports_method(client, "textDocument/documentHighlight") then
+                    if client and client:supports_method("textDocument/documentHighlight") then
                         vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
                             buffer = args.buf,
                             group = hl_augroup,
@@ -231,7 +235,7 @@ return {
                             -- local clients = vim.lsp.get_active_clients({ bufnr = buf })
                             local clients = vim.lsp.get_clients({ bufnr = buf })
                             local supported = vim.tbl_filter(function(c)
-                                return c.supports_method("textDocument/codeAction")
+                                return c:supports_method("textDocument/codeAction")
                             end, clients)
 
                             if #supported == 0 then
