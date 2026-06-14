@@ -133,16 +133,21 @@ unsetopt auto_list
 # Custom prompt with current directory and Git branch on the first line
 # PROMPT='%F{$(echo $NIRUSU_BLUE)}%~ %f %L
 # ❯ '
-PROMPT='%F{$(echo $NIRUSU_BLUE)}%B%~%b%f %L
+PROMPT='%F{#f7768e}%n@%m%f
+%F{$(echo $NIRUSU_BLUE)}%B%~%b%f %L
 ❯ '
 
 # Right prompt if in git directory
 git_prompt_info() {
-  # Check if inside a git repo
   if git rev-parse --is-inside-work-tree &>/dev/null; then
-    ref=$(git symbolic-ref --short HEAD 2>/dev/null)  # Get the current branch name
+    ref=$(git symbolic-ref --short HEAD 2>/dev/null)
     if [ -n "$ref" ]; then
-      echo "$ref"
+      changes=$(git status --porcelain | wc -l | tr -d " ")
+      if [[ $changes -gt 0 ]]; then
+        echo "$ref %F{yellow}${changes} changes%f"
+      else
+        echo "$ref"
+      fi
     fi
   fi
 }
@@ -157,7 +162,7 @@ function update_right_prompt() {
 
   # Update RPROMPT based on the Git status
   if [[ $RIGHT_PROMPT == true ]]; then
-    RPROMPT=' $(git_prompt_info) %F{yellow}$(git status --porcelain | wc -l | tr -d " ")%f changes'
+    RPROMPT=' $(git_prompt_info)'
   else
     RPROMPT=''  # Empty RPROMPT if not in a git repo
   fi
