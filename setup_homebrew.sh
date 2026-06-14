@@ -29,5 +29,6 @@ fi
 brew trust charmbracelet/tap 2>/dev/null || true
 brew trust shopify/shopify 2>/dev/null || true
 
-brew upgrade
-brew bundle --verbose
+brew bundle --upgrade --verbose
+# brew bundle cleanup --force 2>/dev/null || true
+# brew bundle cleanup --force
