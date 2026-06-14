@@ -86,6 +86,14 @@ wezterm.on("gui-startup", function(cmd)
         workspace = "default",
         cwd = wezterm.home_dir,
     })
+
+    local left4 = win4:active_tab():active_pane()
+    local right4 = left4:split({
+        direction = "Right",
+        size = 0.5,
+        cwd = wezterm.home_dir,
+    })
+    left4:activate()
     local tt_tab = win4:spawn_tab({ cwd = wezterm.home_dir })
     tt_tab:active_pane():send_text("tt\n")
     tt_tab:set_title("todos")
