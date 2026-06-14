@@ -116,23 +116,23 @@ wezterm.on("gui-startup", function(cmd)
     local _, _, winR = mux.spawn_window({ workspace = "henk-render" })
     local leftR = winR:active_tab():active_pane()
     leftR:send_text(
-        "ssh mini -t 'zsh -i -l -c \"cd /Users/henk3d/HENK-3D/henk-render && crush; exec $SHELL\"'"
+        "ssh mini -t 'zsh -i -l -c \"cd /Users/henk3d/HENK-3D/henk-render && exec $SHELL\"'\n"
     )
     local rightR = leftR:split({ direction = "Right", size = 0.5 })
     rightR:send_text(
-        "ssh mini -t 'zsh -i -l -c \"cd /Users/henk3d/HENK-3D/henk-render && nn .; exec $SHELL\"'"
+        "ssh mini -t 'zsh -i -l -c \"cd /Users/henk3d/HENK-3D/henk-render && exec $SHELL\"'\n"
     )
     leftR:activate()
 
     local gitR = winR:spawn_tab({})
     gitR:active_pane():send_text(
-        "ssh mini -t 'zsh -i -l -c \"cd /Users/henk3d/HENK-3D/henk-render && git status; exec $SHELL\"'"
+        "ssh mini -t 'zsh -i -l -c \"cd /Users/henk3d/HENK-3D/henk-render && exec $SHELL\"'\n"
     )
     gitR:set_title("git")
 
     local termR = winR:spawn_tab({})
     termR:active_pane():send_text(
-        "ssh mini -t 'zsh -i -l -c \"cd /Users/henk3d/HENK-3D/henk-render && exec $SHELL\"'"
+        "ssh mini -t 'zsh -i -l -c \"cd /Users/henk3d/HENK-3D/henk-render && exec $SHELL\"'\n"
     )
     termR:set_title("terminal")
 
