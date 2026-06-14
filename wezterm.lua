@@ -128,6 +128,21 @@ wezterm.on("update-status", function(window, pane)
 	}
 	local color = colors[workspace] or "#7aa2f7"
 	local time = wezterm.strftime("%H:%M")
+
+	local hostname = wezterm.hostname()
+	local user = os.getenv("USER") or ""
+	local proc = pane:get_foreground_process_name() or ""
+	local is_ssh = proc:find("ssh") ~= nil
+
+	local host_text = ""
+	if is_ssh then
+		local cmdline = table.concat(pane:get_foreground_process_info().argv or {}, " ")
+		local remote = cmdline:match("%s(%S+)%s*$") or "remote"
+		host_text = "  @" .. remote .. "  "
+	else
+		host_text = "  " .. user .. "@" .. hostname .. "  "
+	end
+
 	window:set_left_status("")
 	window:set_right_status(wezterm.format({
 		{ Foreground = { Color = "#565f89" } },
@@ -135,7 +150,14 @@ wezterm.on("update-status", function(window, pane)
 		{ Foreground = { Color = color } },
 		{ Attribute = { Intensity = "Bold" } },
 		{ Text = workspace .. "  " },
+		{ Foreground = { Color = is_ssh and "#e0af68" or "#565f89" } },
+		{ Attribute = { Intensity = is_ssh and "Bold" or "Normal" } },
+		{ Text = host_text },
 	}))
+
+	-- window:set_config_overrides(is_ssh and { color_scheme = "Aurora" } or {})
+	-- window:set_config_overrides(is_ssh and { color_scheme = "Catppuccin Mocha" } or {})
+	window:set_config_overrides(is_ssh and { color_scheme = "Fahrenheit" } or {})
 end)
 
 -- This is where you actually apply your config choices.
