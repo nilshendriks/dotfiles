@@ -18,30 +18,6 @@
       stdout: true
       stderr: true
     - command: |
-        if [ ! -d "$HOME/.config/kickstart" ]; then
-          echo "Cloning Kickstart..."
-          git clone https://github.com/nvim-lua/kickstart.nvim.git "$HOME/.config/kickstart"
-          rm -rf "$HOME/.config/kickstart/.git" "$HOME/.config/kickstart/.github" "$HOME/.config/kickstart/.gitignore"
-          echo "Kickstart installation complete."
-        else
-          echo "Kickstart already installed."
-        fi
-      stdout: true
-      stderr: true
-      quiet: true
-    - command: |
-        if [ ! -d "$HOME/dotfiles/NirusuAstro" ]; then
-          echo "Cloning Kickstart to NirusuAstro..."
-          git clone https://github.com/nvim-lua/kickstart.nvim.git "$HOME/dotfiles/NirusuAstro"
-          rm -rf "$HOME/dotfiles/NirusuAstro/.git" "$HOME/dotfiles/NirusuAstro/.github" "$HOME/dotfiles/NirusuAstro/.gitignore"
-          echo "NirusuAstro installation complete."
-        else
-          echo "NirusuAstro already installed."
-        fi
-      stdout: true
-      stderr: true
-      quiet: true
-    - command: |
         if [ ! -d "$HOME/.config/LazyVim" ]; then
           echo "Cloning LazyVim..."
           git clone https://github.com/LazyVim/starter "$HOME/.config/LazyVim"
@@ -49,30 +25,6 @@
           echo "LazyVim installation complete."
         else
           echo "LazyVim already installed."
-        fi
-      stdout: true
-      stderr: true
-      quiet: true
-    - command: |
-        if [ ! -d "$HOME/dotfiles/NirusuVim" ]; then
-          echo "Cloning NirusuVim..."
-          git clone https://github.com/LazyVim/starter "$HOME/dotfiles/NirusuVim"
-          rm -rf "$HOME/dotfiles/NirusuVim/.git" "$HOME/dotfiles/NirusuVim/.github" "$HOME/dotfiles/NirusuVim/.gitignore"
-          echo "NirusuVim installation complete."
-        else
-          echo "NirusuVim already installed."
-        fi
-      stdout: true
-      stderr: true
-      quiet: true
-    - command: |
-        if [ ! -d "$HOME/dotfiles/HENKVim" ]; then
-          echo "Cloning HENKVim..."
-          git clone https://github.com/LazyVim/starter "$HOME/dotfiles/HENKVim"
-          rm -rf "$HOME/dotfiles/HENKVim/.git" "$HOME/dotfiles/HENKVim/.github" "$HOME/dotfiles/HENKVim/.gitignore"
-          echo "HENKVim installation complete."
-        else
-          echo "HENKVim already installed."
         fi
       stdout: true
       stderr: true
@@ -101,9 +53,6 @@
     ~/.zshrc:
     ~/.zshenv:
     ~/.gitconfig:
-    ~/.config/NirusuVim: ~/dotfiles/NirusuVim
-    ~/.config/HENKVim: ~/dotfiles/HENKVim
-    ~/.config/NirusuAstro: ~/dotfiles/NirusuAstro
     ~/.config/NeoNirusu: ~/dotfiles/NeoNirusu
     "~/Library/Application Support/com.mitchellh.ghostty/config": ~/dotfiles/ghostty/config
     "~/Library/Application Support/PopClip/Extensions": ~/dotfiles/popclip/Extensions

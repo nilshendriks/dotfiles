@@ -16,11 +16,11 @@ This repository is a personal dotfiles setup managed by Dotbot. The root `instal
 - `karabiner/`, `ghostty/`, `popclip/`: app configs.
 - `wezterm.lua`: WezTerm terminal config (workspaces, keybindings, theme).
 - Neovim configs:
-  - `NirusuVim/`, `HENKVim/`, `NirusuAstro/`, `NeoNirusu/` each have `init.lua` and `lua/`.
+  - `NeoNirusu/` — primary config (alias `nn`); `LazyVim` cloned to `~/.config/LazyVim` (alias `nvim-lazy`).
 - `dotbot/`: Dotbot submodule (Python project with its own tooling).
 
 ## Install behavior and gotchas
-- `install.conf.yaml` runs several shell steps in order, including cloning Kickstart/LazyVim starter repos into `~/.config` and `~/dotfiles/*` if missing, and starting the `borders` service via `brew services`.
+- `install.conf.yaml` runs several shell steps in order, including cloning the LazyVim starter repo into `~/.config/LazyVim` if missing.
 - The config creates and links many directories under `~/.config`, `~/Library`, and `~/Pictures`.
 - `setup_homebrew.sh` installs Homebrew if missing and runs `brew bundle --verbose` (uses `Brewfile`).
 - `setup_node.sh` uses `n` and installs global npm packages (see file for list).

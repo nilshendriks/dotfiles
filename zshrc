@@ -210,10 +210,6 @@ alias tt='taskwarrior-tui'
 
 # nvim switcher
 alias nvim-lazy="NVIM_APPNAME=LazyVim nvim"
-alias nvim-nirusu="NVIM_APPNAME=NirusuVim nvim"
-alias nvim-kick="NVIM_APPNAME=kickstart nvim"
-alias nvim-henk="NVIM_APPNAME=HENKVim nvim"
-alias nvim-astro="NVIM_APPNAME=NirusuAstro nvim"
 alias nn="NVIM_APPNAME=NeoNirusu nvim"
 
 # shopify HENK
