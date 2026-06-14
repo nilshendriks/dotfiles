@@ -136,8 +136,11 @@ unsetopt auto_list
 # Custom prompt with current directory and Git branch on the first line
 # PROMPT='%F{$(echo $NIRUSU_BLUE)}%~ %f %L
 # ❯ '
+shell_level_info() {
+  [[ $SHLVL -gt 1 ]] && echo "\nsh level: $SHLVL"
+}
 PROMPT='%F{#f7768e}%n@%m%f
-%F{$(echo $NIRUSU_BLUE)}%B%~%b%f %L
+%F{$(echo $NIRUSU_BLUE)}%B%~%b%f$(shell_level_info)
 ❯ '
 
 # Right prompt if in git directory
