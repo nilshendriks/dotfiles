@@ -41,6 +41,7 @@ brew "gh"
 # Use the full path to the formula
 brew "charmbracelet/tap/crush"
 brew "glow"
+brew "charmbracelet/tap/wishlist"
 
 # Casks (Applications)
 # cask "google-chrome"

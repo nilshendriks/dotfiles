@@ -1,0 +1,4 @@
+Host mini
+  HostName henk3ds-mac-mini.tail538fc5.ts.net
+  User henk3d
+  IdentityFile ~/.ssh/id_ed25519
