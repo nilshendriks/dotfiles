@@ -110,7 +110,49 @@ wezterm.on("gui-startup", function(cmd)
 
 	win4:gui_window():maximize()
 
+	-- Workspace: henk-render (remote via SSH)
+	local _, _, winR = mux.spawn_window({ workspace = "henk-render" })
+	local leftR = winR:active_tab():active_pane()
+	leftR:send_text("ssh mini -t 'cd /Users/henk3d/HENK-3D/henk-render && crush'\n")
+	local rightR = leftR:split({ direction = "Right", size = 0.5 })
+	rightR:send_text("ssh mini -t 'cd /Users/henk3d/HENK-3D/henk-render && nn .'\n")
+
+	local gitR = winR:spawn_tab({})
+	gitR:active_pane():send_text("ssh mini -t 'cd /Users/henk3d/HENK-3D/henk-render && git status; exec $SHELL'\n")
+	gitR:set_title("git")
+
+	local termR = winR:spawn_tab({})
+	termR:active_pane():send_text("ssh mini -t 'cd /Users/henk3d/HENK-3D/henk-render && exec $SHELL'\n")
+	termR:set_title("terminal")
+
 	mux.set_active_workspace("default")
+end)
+
+wezterm.on("gui-startup", function(cmd)
+	if wezterm.hostname() ~= "HENK3Ds-Mac-mini.local" then return end
+
+	-- Workspace: henk-render
+	local _, _, win = mux.spawn_window({
+		workspace = "henk-render",
+		cwd = wezterm.home_dir .. "/HENK-3D/henk-render",
+	})
+	local left = win:active_tab():active_pane()
+	local right = left:split({
+		direction = "Right",
+		size = 0.5,
+		cwd = wezterm.home_dir .. "/HENK-3D/henk-render",
+	})
+	left:send_text("crush\n")
+	right:send_text("nn .\n")
+
+	local git_tab = win:spawn_tab({ cwd = wezterm.home_dir .. "/HENK-3D/henk-render" })
+	git_tab:active_pane():send_text("git status\n")
+	git_tab:set_title("git")
+
+	local term_tab = win:spawn_tab({ cwd = wezterm.home_dir .. "/HENK-3D/henk-render" })
+	term_tab:set_title("terminal")
+
+	mux.set_active_workspace("henk-render")
 end)
 
 -- wezterm.on("window-config-reloaded", function(window, pane)
@@ -126,6 +168,7 @@ wezterm.on("update-status", function(window, pane)
 		["HENK Shopify"] = "#e0af68",
 		["WezTerm Conf"] = "#bb9af7",
 		["Dotfiles"] = "#2ac3de",
+		["henk-render"] = "#f7768e",
 	}
 	local color = colors[workspace] or "#7aa2f7"
 	local time = wezterm.strftime("%H:%M")
@@ -230,6 +273,11 @@ config.keys = {
 		key = "5",
 		mods = "ALT",
 		action = wezterm.action.SwitchToWorkspace({ name = "Dotfiles" }),
+	},
+	{
+		key = "6",
+		mods = "ALT",
+		action = wezterm.action.SwitchToWorkspace({ name = "henk-render" }),
 	},
 	{
 		key = "k",
