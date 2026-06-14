@@ -21,9 +21,6 @@ wezterm.on("gui-startup", function(cmd)
         size = 0.5,
         cwd = wezterm.home_dir .. "/Sites/storybook-henk",
     })
-    left1:send_text("crush")
-    right1:send_text("nn")
-
     left1:activate()
 
     local git1 =
@@ -53,9 +50,6 @@ wezterm.on("gui-startup", function(cmd)
         size = 0.5,
         cwd = wezterm.home_dir .. "/Sites/studio-henk",
     })
-    left2:send_text("crush")
-    right2:send_text("nn")
-
     left2:activate()
 
     local git2 =
@@ -85,8 +79,6 @@ wezterm.on("gui-startup", function(cmd)
         size = 0.5,
         cwd = wezterm.home_dir,
     })
-    left3:send_text("crush")
-    right3:send_text("nn ~/.wezterm.lua\n")
     left3:activate()
 
     -- Workspace 4: default
@@ -109,8 +101,6 @@ wezterm.on("gui-startup", function(cmd)
         size = 0.5,
         cwd = wezterm.home_dir .. "/dotfiles",
     })
-    left5:send_text("crush")
-    right5:send_text("nn")
     left5:activate()
 
     local term5 = win5:spawn_tab({ cwd = wezterm.home_dir .. "/dotfiles" })

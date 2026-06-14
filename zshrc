@@ -293,9 +293,6 @@ export NVIM_APPNAME='NeoNirusu'
 
 export PATH="$HOME/Projects/transcribe-cli/bin:$PATH"
 
-if [[ "$(hostname -s)" == "HENK3Ds-Mac-mini" ]]; then
-    export PS1="%n@%m:%~%# "
-fi
 
 # ghostty-projects layout tool
 export PATH="$HOME/dev/sh/ghostty-projects:$PATH"
