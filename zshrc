@@ -73,6 +73,9 @@ fi
 # Set default path to ensure user binaries are included first
 export PATH="$HOME/bin:$PATH"
 
+# Python 3.13
+export PATH="/opt/homebrew/opt/python@3.13/libexec/bin:$PATH"
+
 # Include global npm binaries
 export PATH="$PATH:$HOME/.npm-global/bin"
 

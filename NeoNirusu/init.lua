@@ -1,6 +1,11 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
+local python = vim.fn.exepath("python3")
+if python ~= "" then
+	vim.g.python3_host_prog = python
+end
+
 local orig_preview = vim.lsp.util.open_floating_preview
 
 vim.lsp.util.open_floating_preview = function(contents, syntax, opts, ...)
