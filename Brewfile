@@ -52,6 +52,7 @@ cask "zed"
 # cask 1password
 # cask alfred
 cask "ghostty"
+cask "wezterm"
 cask "dash"
 cask "popclip"
 cask "pika"

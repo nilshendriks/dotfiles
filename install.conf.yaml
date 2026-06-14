@@ -110,6 +110,7 @@
     ~/Sites/.editorconfig: ~/dotfiles/.editorconfig
     ~/.config/karabiner: ~/dotfiles/karabiner
     ~/.ssh/config: ~/dotfiles/ssh_config
+    ~/.wezterm.lua: ~/dotfiles/wezterm.lua
     "~/Library/Application Support/dooit/config.py": ~/dotfiles/dooit/config.py
     ~/Pictures/wallpapers: ~/dotfiles/images/wallpapers
     "~/Library/Screen Savers/ghostty.saver": ~/dotfiles/screensavers/ghostty.saver

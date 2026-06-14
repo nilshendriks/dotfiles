@@ -14,6 +14,7 @@ This repository is a personal dotfiles setup managed by Dotbot. The root `instal
 - `install` / `install.conf.yaml`: Dotbot entrypoint + configuration.
 - `zshrc`, `zshenv`, `zprofile`: shell setup and PATH configuration.
 - `karabiner/`, `ghostty/`, `popclip/`: app configs.
+- `wezterm.lua`: WezTerm terminal config (workspaces, keybindings, theme).
 - Neovim configs:
   - `NirusuVim/`, `HENKVim/`, `NirusuAstro/`, `NeoNirusu/` each have `init.lua` and `lua/`.
 - `dotbot/`: Dotbot submodule (Python project with its own tooling).
