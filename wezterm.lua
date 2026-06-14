@@ -7,6 +7,7 @@ local config = wezterm.config_builder()
 
 -- Workspace layouts
 wezterm.on("gui-startup", function(cmd)
+	if wezterm.hostname() ~= "mac.home" then return end
 	-- Workspace 1: Storybook HENK
 	local _, _, win1 = mux.spawn_window({
 		workspace = "Storybook HENK",
