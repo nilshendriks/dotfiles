@@ -302,3 +302,8 @@ export PATH="$HOME/dev/sh/ghostty-projects:$PATH"
 
 # Machine-specific env vars (not in git)
 [[ -f ~/.env.local ]] && source ~/.env.local
+
+# tmux: attach to existing session or start new one
+if command -v tmux &>/dev/null && [[ -z "$TMUX" ]] && [[ "$TERM_PROGRAM" == "ghostty" ]]; then
+  tmux attach 2>/dev/null || tmux new-session -s main
+fi
