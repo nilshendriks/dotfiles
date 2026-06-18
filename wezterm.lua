@@ -147,6 +147,29 @@ wezterm.on("gui-startup", function(cmd)
     mux.set_active_workspace("default")
 end)
 
+-- personal laptop
+wezterm.on("gui-startup", function(cmd)
+    if wezterm.hostname() ~= "shoto" then
+        return
+    end
+
+    local _, _, win = mux.spawn_window({
+        workspace = "default",
+        cwd = wezterm.home_dir,
+    })
+
+    local leftShoto = win:active_tab():active_pane()
+    local rightShoto = leftShoto:split({
+        direction = "Right",
+        size = 0.5,
+        cwd = wezterm.home_dir,
+    })
+    -- leftShoto:send_text("crush")
+    -- rightShoto:send_text("nn")
+    win:gui_window():maximize()
+    mux.set_active_workspace("default")
+end)
+
 wezterm.on("gui-startup", function(cmd)
     if wezterm.hostname() ~= "HENK3Ds-Mac-mini.local" then
         return
@@ -163,8 +186,8 @@ wezterm.on("gui-startup", function(cmd)
         size = 0.5,
         cwd = wezterm.home_dir .. "/HENK-3D/henk-render",
     })
-    left:send_text("crush")
-    right:send_text("nn")
+    -- left:send_text("crush")
+    -- right:send_text("nn")
 
     local git_tab =
         win:spawn_tab({ cwd = wezterm.home_dir .. "/HENK-3D/henk-render" })
