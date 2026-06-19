@@ -205,6 +205,14 @@ bindkey '^[w' kill-region
 bindkey -v
 bindkey -s ^a "nvims\n"
 
+function _clear_and_tmux() {
+  clear
+  [[ -n $TMUX ]] && tmux clear-history
+  zle reset-prompt
+}
+zle -N _clear_and_tmux
+bindkey '^l' _clear_and_tmux
+
 set -o vi
 
 # Aliases
