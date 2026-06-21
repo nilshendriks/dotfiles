@@ -5,10 +5,13 @@ background-opacity = 0.98
 background-blur-radius = 30
 
 #cursor-color = 099dec
-cursor-style = bar
+# cursor-style = bar
+# cursor-style-blink = true
 
-# shell-integration-features = no-cursor
-shell-integration-features = no-title
+shell-integration-features = no-cursor
+# shell-integration-features = no-title
+cursor-style = underline
+cursor-style-blink = true
 
 font-family = "JetBrainsMono NFM"
 font-size = 20

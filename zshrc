@@ -12,7 +12,7 @@ export N_PREFIX="$HOME/.n"
 export PREFIX="$N_PREFIX"
 
 # Set terminal color capabilities (if necessary)
-export TERM=xterm-256color
+# export TERM=xterm-256color
 
 # Add zsh-completions to fpath
 fpath=($fpath ~/dotfiles/zsh/plugins/zsh-completions)
@@ -312,6 +312,18 @@ export PATH="$HOME/dev/sh/ghostty-projects:$PATH"
 [[ -f ~/.env.local ]] && source ~/.env.local
 
 # tmux: attach to existing session or start new one
-if command -v tmux &>/dev/null && [[ -z "$TMUX" ]] && [[ "$TERM_PROGRAM" == "ghostty" ]]; then
-  tmux attach 2>/dev/null || tmux new-session -s main
-fi
+# if command -v tmux &>/dev/null && [[ -z "$TMUX" ]] && [[ "$TERM_PROGRAM" == "ghostty" ]]; then
+#   tmux attach 2>/dev/null || tmux new-session -s main
+# fi
+
+# if command -v tmux &>/dev/null && [[ -z "$TMUX" ]]; then
+#   tmux attach || tmux new-session
+# fi
+
+# if [ -n "$TMUX" ]; then
+#   export TERM=tmux-256color
+# fi
+
+# if [ -z "$TMUX" ]; then
+#   export TERM=xterm-256color
+# fi
