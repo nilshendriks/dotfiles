@@ -327,3 +327,8 @@ export PATH="$HOME/dev/sh/ghostty-projects:$PATH"
 # if [ -z "$TMUX" ]; then
 #   export TERM=xterm-256color
 # fi
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/nilshendriks/.lmstudio/bin"
+# End of LM Studio CLI section
+
