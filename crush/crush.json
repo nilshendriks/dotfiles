@@ -1,0 +1,78 @@
+{
+  "$schema": "https://charm.land/crush.json",
+  "providers": {
+    "groq-clean": {
+      "type": "openai-compat",
+      "base_url": "https://api.groq.com/openai/v1",
+      "api_key": "$GROQ_API_KEY",
+      "models": [
+        {
+          "id": "llama-3.1-8b-instant",
+          "name": "Llama 3.1 8B (Higher Free Tier Limits)",
+          "context_window": 131072,
+          "default_max_tokens": 8192,
+          "can_reason": false,
+          "supports_attachments": false,
+          "cost_per_1m_in": 0.0,
+          "cost_per_1m_in_cached": 0.0,
+          "cost_per_1m_out": 0.0,
+          "cost_per_1m_out_cached": 0.0
+        }
+      ]
+    },
+    "lmstudio": {
+      "type": "openai-compat",
+      "name": "LM Studio Local",
+      "base_url": "http://localhost:1234/v1",
+      "api_key": "lm-studio",
+      "models": [
+        {
+          "id": "google/gemma-4-12b-qat",
+          "name": "Gemma 4 12B QAT (Heavy)",
+          "context_window": 16384,
+          "default_max_tokens": 4096,
+          "can_reason": true,
+          "supports_attachments": true,
+          "cost_per_1m_in": 0.0,
+          "cost_per_1m_in_cached": 0.0,
+          "cost_per_1m_out": 0.0,
+          "cost_per_1m_out_cached": 0.0
+        },
+        {
+          "id": "google/gemma-4-e4b",
+          "name": "Gemma 4 E4B (Light)",
+          "context_window": 16384,
+          "default_max_tokens": 4096,
+          "can_reason": true,
+          "supports_attachments": true,
+          "cost_per_1m_in": 0.0,
+          "cost_per_1m_in_cached": 0.0,
+          "cost_per_1m_out": 0.0,
+          "cost_per_1m_out_cached": 0.0
+        },
+        {
+          "id": "qwen3.5-9b",
+          "name": "Qwen 3.5 Local",
+          "context_window": 32768,
+          "default_max_tokens": 4096,
+          "can_reason": true,
+          "supports_attachments": true,
+          "cost_per_1m_in": 0.0,
+          "cost_per_1m_in_cached": 0.0,
+          "cost_per_1m_out": 0.0,
+          "cost_per_1m_out_cached": 0.0
+        }
+      ]
+    }
+  },
+  "models": {
+    "large": {
+      "provider": "lmstudio",
+      "model": "google/gemma-4-e4b"
+    },
+    "small": {
+      "provider": "lmstudio",
+      "model": "google/gemma-4-e4b"
+    }
+  }
+}

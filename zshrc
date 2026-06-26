@@ -239,6 +239,8 @@ alias themepull_stg='shopify theme pull -e staging --theme 191464669528 --nodele
 alias themepush_stg='shopify theme push -e staging --theme 191464669528 --nodelete'
 alias themedev_stg='shopify theme dev -e staging --theme 191464669528'
 
+alias themepull_live='shopify theme pull --live --nodelete'
+
 # npm
 alias rum='npm run'
 # alias henk-render="/Users/nilshendriks/Blender/Projects/ProductRenders/TAPER-COFFEE-TABLE/henk-render"

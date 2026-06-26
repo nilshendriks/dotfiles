@@ -18,6 +18,9 @@ return {
                         html = {
                             options = {},
                         },
+                        liquid = {
+                            options = {},
+                        },
                     },
                 },
             },

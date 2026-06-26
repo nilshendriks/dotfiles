@@ -57,6 +57,7 @@
     "~/Library/Application Support/PopClip/Extensions": ~/dotfiles/popclip/Extensions
     ~/Sites/.editorconfig: ~/dotfiles/.editorconfig
     ~/.config/karabiner: ~/dotfiles/karabiner
+    ~/.config/crush/crush.json: ~/dotfiles/crush/crush.json
     ~/.ssh/config: ~/dotfiles/ssh_config
     ~/.config/tmux/tmux.conf: ~/dotfiles/tmux/tmux.conf
     ~/.wezterm.lua: ~/dotfiles/wezterm.lua
