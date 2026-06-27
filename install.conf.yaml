@@ -4,48 +4,8 @@
 
 - clean: ["~"]
 
-- shell:
-    - command: chmod +x ./setup_homebrew.sh ./setup_node.sh ./setup_ssh.sh ./setup_finalize.sh
-      stdout: true
-      stderr: true
-    - command: ./setup_homebrew.sh
-      stdout: true
-      stderr: true
-    - command: ./setup_node.sh
-      stdout: true
-      stderr: true
-    - command: ./setup_ssh.sh
-      stdout: true
-      stderr: true
-    - command: |
-        if [ ! -d "$HOME/.config/LazyVim" ]; then
-          echo "Cloning LazyVim..."
-          git clone https://github.com/LazyVim/starter "$HOME/.config/LazyVim"
-          rm -rf "$HOME/.config/LazyVim/.git" "$HOME/.config/LazyVim/.github" "$HOME/.config/LazyVim/.gitignore"
-          echo "LazyVim installation complete."
-        else
-          echo "LazyVim already installed."
-        fi
-      stdout: true
-      stderr: true
-      quiet: true
-    - command: |
-        if [ ! -d "$HOME/dotfiles/NeoNirusu" ]; then
-          mkdir -p "$HOME/dotfiles/NeoNirusu"
-          echo "NeoNirusu installation complete."
-        else
-          echo "NeoNirusu already exists."
-        fi
-      stdout: true
-      stderr: true
-      quiet: true
-    - command: ./setup_finalize.sh
-      stdout: true
-      stderr: true
-
 - create:
   - ~/Sites
-  # - ~/Pictures/wallpapers
 
 - link:
     ~/.zprofile:
@@ -63,15 +23,3 @@
     ~/.wezterm.lua: ~/dotfiles/wezterm.lua
     ~/Pictures/wallpapers: ~/dotfiles/images/wallpapers
     "~/Library/Screen Savers/ghostty.saver": ~/dotfiles/screensavers/ghostty.saver
-
-- shell:
-    - command: |
-        if ! pgrep -x "Karabiner-Menu" > /dev/null && ! pgrep -x "Karabiner-NotificationWindow" > /dev/null; then
-          echo "Starting Karabiner-Elements..."
-          open -a "Karabiner-Elements"
-        else
-          echo "Karabiner-Elements is already running."
-        fi
-      stdout: true
-      stderr: true
-      quiet: true

@@ -45,6 +45,14 @@ brew "charmbracelet/tap/crush"
 brew "glow"
 brew "charmbracelet/tap/wishlist"
 
+# TUI Task Manager
+# tap "webstonehq/tuxedo"
+brew "tuxedo"
+
+# Herdr
+# TUI TMUX alternative
+brew "herdr"
+
 # Casks (Applications)
 # cask "google-chrome"
 # cask "alfred"
@@ -63,3 +71,4 @@ cask "pika"
 cask "font-jetbrains-mono-nerd-font"
 cask "karabiner-elements"
 cask "keyclu"
+

@@ -1,15 +1,89 @@
 #!/usr/bin/env bash
-
 set -e
+
+# 1. Clear the screen immediately for a pristine layout
+clear
 
 CONFIG="install.conf.yaml"
 DOTBOT_DIR="dotbot"
-
 DOTBOT_BIN="bin/dotbot"
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-
 cd "${BASEDIR}"
-git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
-git submodule update --init --recursive "${DOTBOT_DIR}"
 
-"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
+# 2. Beautiful Welcome Banner
+if command -v gum &>/dev/null; then
+    gum style \
+        --foreground "#089cec" --border-foreground "#067cbc" \
+        --border double --align center --width 50 --margin "1 1" \
+        "✨ NIRUSU DOTFILES BOOTSTRAPPER ✨"
+else
+    echo "=================================================="
+    echo "       ✨ NIRUSU DOTFILES BOOTSTRAPPER ✨         "
+    echo "=================================================="
+fi
+
+# 3. Quietly handle git submodules using a spinner
+if command -v gum &>/dev/null; then
+    gum spin --spinner dot --title "Synchronizing Git submodules..." -- \
+        bash -c 'git -C "'${DOTBOT_DIR}'" submodule sync --quiet --recursive && git submodule update --init --recursive "'${DOTBOT_DIR}'"'
+else
+    echo "📦 Synchronizing submodules..."
+    git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
+    git submodule update --init --recursive "${DOTBOT_DIR}"
+fi
+
+echo "" # Spacing before Dotbot
+if command -v gum &>/dev/null; then
+    gum format "🔗 **Mapping system symlinks via Dotbot...**"
+else
+    echo "🔗 Running Dotbot links..."
+fi
+
+# 4. FIXED: Turn the "All..." lines into a clean, grouped bulleted list with tight spacing
+"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}" | awk '
+  /Link exists|Path exists/ { next }
+  /All targets have been cleaned/ { printf "\n\033[32m  • %s\033[0m\n", $0; next }
+  /All paths have been set up/     { printf "\033[32m  • %s\033[0m\n", $0; next }
+  /All links have been set up/     { printf "\033[32m  • %s\033[0m\n\n", $0; next }
+  /==> All tasks executed successfully/ { printf "\033[1;32m%s\033[0m\n", $0; next }
+  { print }
+'
+
+# 5. Make all scripts executable silently
+chmod +x ./setup_homebrew.sh ./setup_node.sh ./setup_ssh.sh ./setup_finalize.sh
+
+# 6. STREAM PROGRESS NATIVELY: Full live output streaming for scripts
+echo ""
+./setup_homebrew.sh
+
+echo ""
+./setup_node.sh
+
+echo ""
+./setup_ssh.sh
+
+# Inline Vim Configurations
+if [ ! -d "$HOME/.config/LazyVim" ]; then
+    echo "📥 Cloning LazyVim Core Starter..."
+    git clone --quiet https://github.com/LazyVim/starter "$HOME/.config/LazyVim" && rm -rf "$HOME/.config/LazyVim/.git" "$HOME/.config/LazyVim/.github" "$HOME/.config/LazyVim/.gitignore"
+fi
+
+if [ ! -d "$HOME/dotfiles/NeoNirusu" ]; then
+    mkdir -p "$HOME/dotfiles/NeoNirusu"
+fi
+
+echo ""
+./setup_finalize.sh
+
+# Karabiner Engine Initialization Check
+if ! pgrep -x "Karabiner-Menu" >/dev/null && ! pgrep -x "Karabiner-NotificationWindow" >/dev/null; then
+    open -a "Karabiner-Elements"
+fi
+
+echo ""
+if command -v gum &>/dev/null; then
+    gum style --foreground "#00ff00" --bold "🏁 System environments synchronized perfectly!"
+else
+    echo "🏁 System environments synchronized perfectly!"
+fi
+echo ""

@@ -52,6 +52,9 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS' --color=fg:#e0e0e0,bg:-1,hl:#83cdf5 -
 # After sourcing fzf-tab, customize its colors
 zstyle ':fzf-tab:*' fzf-flags $(echo $FZF_DEFAULT_OPTS)
 
+# Tell FZF to use 'fd' globally for raw searches so it ignores system trash
+export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --follow --exclude .git --exclude .Trash'
+
 # Completion setup (before syntax highlighting)
 source ~/dotfiles/zsh/plugins/zsh-completions/zsh-completions.plugin.zsh
 
@@ -188,13 +191,20 @@ precmd() {
 }
 
 # fcd: change directory with fzf, exclude restricted directories like .Trash
+# function fcd() {
+#   local dirs=("$HOME/Sites" "$HOME/dotfiles" "$HOME/.config")  # Add your folders here
+#   local dir
+#   dir=$(find "${dirs[@]}" -mindepth 1 -maxdepth 2 -type d \( ! -path '*/.Trash/*' \) \
+#     -not \( -path '*/.git' -prune -or -path '*/.github' -prune -or -path '*/.idea' -prune -or -path '*/.vscode' -prune -or -path '*/.zed' -prune -or -path '*/.nova' -prune -or -path '*/.next' -prune \) \
+#     2>/dev/null | fzf)  # Exclude .git, .github, .idea, .vscode, .zed, .nova
+#   cd "$dir" && clear
+# }
 function fcd() {
-  local dirs=("$HOME/Sites" "$HOME/dotfiles" "$HOME/.config")  # Add your folders here
+  local dirs=("$HOME/Sites" "$HOME/dotfiles" "$HOME/.config")
   local dir
-  dir=$(find "${dirs[@]}" -mindepth 1 -maxdepth 2 -type d \( ! -path '*/.Trash/*' \) \
-    -not \( -path '*/.git' -prune -or -path '*/.github' -prune -or -path '*/.idea' -prune -or -path '*/.vscode' -prune -or -path '*/.zed' -prune -or -path '*/.nova' -prune -or -path '*/.next' -prune \) \
-    2>/dev/null | fzf)  # Exclude .git, .github, .idea, .vscode, .zed, .nova
-  cd "$dir" && clear
+  # fd naturally ignores .git, node_modules, etc. --hidden is needed so it can see .config
+  dir=$(fd --mindepth 1 --maxdepth 2 --type d --hidden --exclude .Trash "${dirs[@]}" | fzf)
+  [[ -n "$dir" ]] && cd "$dir" && clear
 }
 
 # Keybindings and Editor Configurations
@@ -220,17 +230,19 @@ set -o vi
 alias ls='eza -lahF --git'
 alias trail='<<<${(F)path}'
 # alias rm=trash
-alias tt='taskwarrior-tui'
+# alias tt='taskwarrior-tui'
 
 # nvim switcher
 alias nvim-lazy="NVIM_APPNAME=LazyVim nvim"
 alias nn="NVIM_APPNAME=NeoNirusu nvim"
 
-# shopify HENK
-# alias themepull='shopify theme pull --environment=surf-turf-2-0 --nodelete'
-# alias themepush='shopify theme push --environment=surf-turf-2-0 --nodelete'
-# alias themedev='shopify theme dev --environment=surf-turf-2-0'
+# Quick alias to reload the profile
+alias src="source ~/.zshrc && echo '🚀 Zsh profile reloaded!'"
 
+# Bind Alt + R to automatically run the 'src' alias
+bindkey -s '^[r' "src\n"
+
+# shopify HENK
 alias themepull_dev='shopify theme pull -e develop --theme 191464702296 --nodelete'
 alias themepush_dev='shopify theme push -e develop --theme 191464702296 --nodelete'
 alias themedev_dev='shopify theme dev -e develop --theme 191464702296'
@@ -265,7 +277,8 @@ function nvims() {
 }
 
 # z directory jumper
-alias cd="z"
+# alias cd="z"
+eval "$(zoxide init zsh --cmd cd)"
 
 # Change directory and update kitty tab title
 # function cd() {
@@ -334,3 +347,9 @@ export PATH="$HOME/dev/sh/ghostty-projects:$PATH"
 export PATH="$PATH:/Users/nilshendriks/.lmstudio/bin"
 # End of LM Studio CLI section
 
+# Tuxedo Task Manager Configuration
+export TODO_DIR="$HOME/dotfiles/tuxedo"
+export TODO_FILE="$TODO_DIR/todo.txt"
+export DONE_FILE="$TODO_DIR/done.txt"
+
+alias tux="tuxedo ~/dotfiles/tuxedo/todo.txt"

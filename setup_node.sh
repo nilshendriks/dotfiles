@@ -1,42 +1,55 @@
 #!/usr/bin/env zsh
 
-echo "\n<<< Starting Node Setup >>>\n"
+source ~/.zshenv  # for 'exists' function or define it here if you prefer
 
-# Node versions are managed with n, which is in the brewfile.
-# See zshrc for N_Prefix variable and addition to PATH.
-
-if exists node; then
-  echo "Node $(node --version) & NPM $(npm --version) already installed"
+# 1. Elegant Node Header Banner
+if command -v gum &>/dev/null; then
+    gum style \
+        --foreground "#089cec" --border-foreground "#067cbc" \
+        --border rounded --align center --width 50 --margin "1 1" \
+        "📦 STARTING NODE SETUP 📦"
 else
-  echo "Installing Node & NPM with n..."
-  n latest
+    echo "<<< Starting Node Setup >>>"
 fi
 
-# Install Global NPM Packages - if needed
-# npm install --global json-server
-# npm install --global http-server
-# npm install --global trash-cli
-# npm install --global @mermaid-js/mermaid-cli
+# 2. Colorized Node & NPM Status Verification
+if exists node; then
+    printf "  \033[32m✔\033[0m Node \033[1m%s\033[0m & NPM \033[1m%s\033[0m are up to date.\n" "$(node --version)" "$(npm --version)"
+else
+    printf "  ⏳ \033[1;33mNode environment not found. Installing latest via n...\033[0m\n"
+    n latest
+fi
 
-# List of global npm packages to install
+# 3. Target Global Packages array
 packages=(
-  json-server
-  http-server
-  trash-cli
-  @mermaid-js/mermaid-cli
-  caniuse-cmd
-  ntl
+    json-server
+    http-server
+    trash-cli
+    @mermaid-js/mermaid-cli
+    caniuse-cmd
+    ntl
 )
 
-# Install each package if not already installed
+# 4. Silent Verification Loop (Only speaks if it is actively installing something)
 for pkg in "${packages[@]}"; do
-  if ! npm list -g --depth=0 "$pkg" >/dev/null 2>&1; then
-    echo "Installing $pkg..."
-    npm install --global "$pkg"
-  else
-    echo "$pkg is already installed."
-  fi
+    if ! npm list -g --depth=0 "$pkg" >/dev/null 2>&1; then
+        printf "  🚀 \033[1;33mInstalling global package: %s...\033[0m\n" "$pkg"
+        npm install --global "$pkg" >/dev/null 2>&1
+    fi
 done
 
-echo "Global NPM Packages Installed:"
-npm list --global --depth=0
+# 5. Visual Summary Translator: Turns the raw npm list tree into clean bullet points
+printf "\n\033[1mGlobal NPM Packages Installed:\033[0m"
+
+npm list --global --depth=0 2>/dev/null | awk '
+  # Format the system directory path layout subtly
+  /lib$/ { printf "\n  \033[90m📍 Environment: %s\033[0m\n", $0; next }
+
+  # Strip out the ugly tree branches and format into clean green bullets
+  /├──|└──/ {
+      sub(/^[├└]──[ \t]*/, "");
+      printf "    \033[32m•\033[0m %s\n", $0;
+      next
+  }
+  { next }
+'
