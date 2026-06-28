@@ -1,0 +1,27 @@
+{
+  "providers": {
+    "lmstudio": {
+      "baseUrl": "http://localhost:1234/v1",
+      "api": "openai-completions",
+      "apiKey": "lmstudio-local",
+      "compat": {
+        "supportsDeveloperRole": false,
+        "supportsReasoningEffort": false
+      },
+      "models": [
+        {
+          "id": "qwen/qwen3.5-9b",
+          "name": "Qwen 3.5 9B"
+        },
+        {
+          "id": "google/gemma-4-12b-qat",
+          "name": "Gemma 4 12B QAT"
+        },
+        {
+          "id": "google/gemma-4-e4b",
+          "name": "Gemma 4 4B"
+        }
+      ]
+    }
+  }
+}

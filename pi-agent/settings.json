@@ -1,0 +1,10 @@
+{
+  "packages": [
+    "npm:pi-permission-system",
+    "npm:@wierdbytes/pi-tokyo-night"
+  ],
+  "lastChangelogVersion": "0.80.2",
+  "theme": "tokyo-night-moon",
+  "defaultProvider": "lmstudio",
+  "defaultModel": "qwen/qwen3.5-9b"
+}

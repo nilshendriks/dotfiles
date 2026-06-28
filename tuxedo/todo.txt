@@ -13,12 +13,11 @@ x 2026-06-26 2026-06-26 try fzf again +workflow
 x 2026-06-27 2026-06-26 try zi, zoxide and fzf together +workflow
 (B) 2026-06-26 update EETKAMERBANK blend file with new NC model and fixed frame for? +henk-render due:2026-06-30
 x 2026-06-28 2026-06-26 render Layer sofas +henk-render
-(A) 2026-06-26 render Slant sofas +henk-render due:2026-06-28
-2026-06-26 check if tailscale is in dotfiles. its a must! +dotfiles
+x 2026-06-28 2026-06-26 render Slant sofas +henk-render due:2026-06-28
 2026-06-26 try fabric on the video for herdr +workflow
 2026-06-26 find a good notes app +workflow
 2026-06-26 try out just tool for taskrunners? +workflow
-2026-06-27 add actions and projects plugin to herdr +workflow +dotfiles
+(B) 2026-06-27 add actions and projects plugin to herdr +workflow +dotfiles
 x 2026-06-27 2026-06-27 try pi with a local model? https://pi.dev/ +workflow
 x 2026-06-27 2026-06-27 push develop to staging for jira-554 and 556, samples order and 40 limit +studio-henk
 x 2026-06-27 2026-06-27 create dotfiles workspace in herdr +workflow +dotfiles
@@ -28,16 +27,18 @@ x 2026-06-27 2026-06-27 create PR +studio-henk
 x 2026-06-27 2026-06-27 move tuxedo into default workspace in herdr +workflow
 x 2026-06-27 2026-06-27 herdr has no cool status bar thing? +workflow
 x 2026-06-27 2026-06-27 merge dotfiles feature into main and push +dotfiles
-2026-06-27 add quick action to run ./install +workflow +dotfiles
-2026-06-28 pi: add theme plugin and set theme +workflow
+(B) 2026-06-27 add quick action to run ./install +workflow +dotfiles
+x 2026-06-28 2026-06-28 pi: add theme plugin and set theme +workflow
 (A) 2026-06-28 sh: check PR and live theme +studio-henk due:2026-06-28
 2026-06-28 pi: check other plugins +workflow
 2026-06-28 herdr: check plugins ie skills etc +workflow
 (A) 2026-06-28 pdp: sofa conf on EN not working. ID different? +studio-henk
 (A) 2026-06-28 pdp: faq block, specs etc, translations +studio-henk
-(B) 2026-06-28 remove stuff from brewfile etc? +dotfiles due:2026-06-28
+x 2026-06-28 2026-06-28 remove stuff from brewfile etc? +dotfiles due:2026-06-28
 2026-06-28 nvim from scratch, 0.12, native stuff +workflow
 2026-06-28 add colorpicker, brew install +workflow
-2026-06-28 add pi to dotfiles +dotfiles
+(A) 2026-06-28 add pi to dotfiles +dotfiles
 x 2026-06-28 2026-06-28 herds: ctrl a prefix? +workflow
 x 2026-06-28 2026-06-28 add herdr to dotfiles +workflow +dotfiles
+2026-06-28 add bro pages or cheat for man pages +workflow
+2026-06-28 for ai and nvim panes, make a sh script to show a run X now? +dotfiles
