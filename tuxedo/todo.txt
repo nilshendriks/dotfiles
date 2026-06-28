@@ -14,7 +14,6 @@ x 2026-06-27 2026-06-26 try zi, zoxide and fzf together +workflow
 (B) 2026-06-26 update EETKAMERBANK blend file with new NC model and fixed frame for? +henk-render due:2026-06-30
 x 2026-06-28 2026-06-26 render Layer sofas +henk-render
 x 2026-06-28 2026-06-26 render Slant sofas +henk-render due:2026-06-28
-2026-06-26 try fabric on the video for herdr +workflow
 2026-06-26 find a good notes app +workflow
 2026-06-26 try out just tool for taskrunners? +workflow
 (B) 2026-06-27 add actions and projects plugin to herdr +workflow +dotfiles
@@ -36,9 +35,9 @@ x 2026-06-28 2026-06-28 pi: add theme plugin and set theme +workflow
 (A) 2026-06-28 pdp: faq block, specs etc, translations +studio-henk
 x 2026-06-28 2026-06-28 remove stuff from brewfile etc? +dotfiles due:2026-06-28
 2026-06-28 nvim from scratch, 0.12, native stuff +workflow
-2026-06-28 add colorpicker, brew install +workflow
-(A) 2026-06-28 add pi to dotfiles +dotfiles
+x 2026-06-28 2026-06-28 add pi to dotfiles +dotfiles
 x 2026-06-28 2026-06-28 herds: ctrl a prefix? +workflow
 x 2026-06-28 2026-06-28 add herdr to dotfiles +workflow +dotfiles
-2026-06-28 add bro pages or cheat for man pages +workflow
-2026-06-28 for ai and nvim panes, make a sh script to show a run X now? +dotfiles
+x 2026-06-28 2026-06-28 for ai and nvim panes, make a sh script to show a run X now? +dotfiles +workflow
+2026-06-28 try syncthing to keep blend files in sync? also check synctui and stui for it +henk-render
+2026-06-28 move lm studio to dotfiles? use cli, not app? +workflow

@@ -1,7 +1,8 @@
 {
   "packages": [
     "npm:pi-permission-system",
-    "npm:@wierdbytes/pi-tokyo-night"
+    "npm:@wierdbytes/pi-tokyo-night",
+    "npm:pi-lens"
   ],
   "lastChangelogVersion": "0.80.2",
   "theme": "tokyo-night-moon",

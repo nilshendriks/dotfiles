@@ -24,3 +24,4 @@
     ~/Pictures/wallpapers: ~/dotfiles/images/wallpapers
     "~/Library/Screen Savers/ghostty.saver": ~/dotfiles/screensavers/ghostty.saver
     ~/.config/herdr/config.toml: ~/dotfiles/herdr/config.toml
+    ~/.pi/agent: ~/dotfiles/pi-agent

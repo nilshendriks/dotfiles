@@ -45,10 +45,8 @@ brew "glow"
 brew "charmbracelet/tap/wishlist"
 
 # TUI Task Manager
-# tap "webstonehq/tuxedo"
 brew "tuxedo"
 
-# Herdr
 # TUI TMUX alternative
 brew "herdr"
 
