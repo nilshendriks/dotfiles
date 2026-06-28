@@ -63,9 +63,9 @@ cask "ghostty"
 cask "dash"
 cask "popclip"
 cask "pika"
+cask "karabiner-elements"
+cask "keyclu"
 
 # Fonts
 cask "font-jetbrains-mono-nerd-font"
-cask "karabiner-elements"
-cask "keyclu"
 

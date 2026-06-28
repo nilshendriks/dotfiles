@@ -20,6 +20,6 @@
     ~/.config/crush/crush.json: ~/dotfiles/crush/crush.json
     ~/.ssh/config: ~/dotfiles/ssh_config
     ~/.config/tmux/tmux.conf: ~/dotfiles/tmux/tmux.conf
-    ~/.wezterm.lua: ~/dotfiles/wezterm.lua
     ~/Pictures/wallpapers: ~/dotfiles/images/wallpapers
     "~/Library/Screen Savers/ghostty.saver": ~/dotfiles/screensavers/ghostty.saver
+    ~/.config/herdr/config.toml: ~/dotfiles/herdr/config.toml

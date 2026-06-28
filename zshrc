@@ -213,7 +213,7 @@ bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 bindkey '^[w' kill-region
 bindkey -v
-bindkey -s ^a "nvims\n"
+# bindkey -s ^a "nvims\n"
 
 function _clear_and_tmux() {
   clear
@@ -264,17 +264,17 @@ baselinecss() {
   npx doiuse --browsers "extends browserslist-config-baseline/2023" "$1" --json | jq -r ".message"
 }
 
-function nvims() {
-  items=("default" "kickstart" "LazyVim" "NirusuVim" "HENKVim" "NirusuAstro" "NeoNirusu")
-  config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config  " --height=~50% --layout=reverse --border --exit-0)
-  if [[ -z $config ]]; then
-    echo "Nothing selected"
-    return 0
-  elif [[ $config == "default" ]]; then
-    config=""
-  fi
-  NVIM_APPNAME=$config nvim $@
-}
+# function nvims() {
+#   items=("default" "kickstart" "LazyVim" "NirusuVim" "HENKVim" "NirusuAstro" "NeoNirusu")
+#   config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config  " --height=~50% --layout=reverse --border --exit-0)
+#   if [[ -z $config ]]; then
+#     echo "Nothing selected"
+#     return 0
+#   elif [[ $config == "default" ]]; then
+#     config=""
+#   fi
+#   NVIM_APPNAME=$config nvim $@
+# }
 
 # z directory jumper
 # alias cd="z"

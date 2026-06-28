@@ -1,7 +1,7 @@
 x 2026-06-26 2026-06-26 Review tuxedo nvim plugin config +tuxedo @coding due:2026-06-26
 x 2026-06-26 2026-06-26 deal with You have 16 outdated formulae and 3 outdated casks installed. +dotfiles @install-script
 2026-06-26 how to deal with secrets and syncing? Like .env.local ? Different for different machines +workflow
-2026-06-26 open menu, click outside on wrong element, must be inner +studio-henk @jira-xxxx due:2026-07-01
+(C) 2026-06-26 open menu, click outside on wrong element, must be inner +studio-henk @jira-xxxx due:2026-07-01
 x 2026-06-26 2026-06-26 add tuxedo nvim plugin +dotfiles
 2026-06-26 sudo pmset -a sleep 0 displaysleep 0 disksleep 0 powerbutton 0 ttyskeepawake 1 autorestart 1 @office +workflow
 x 2026-06-27 2026-06-26 try herdr for tmux alt, check if has zoom pane too +workflow
@@ -11,9 +11,9 @@ x 2026-06-26 2026-06-26 try yazi again +workflow
 x 2026-06-27 2026-06-26 make install script ui nicer +workflow
 x 2026-06-26 2026-06-26 try fzf again +workflow
 x 2026-06-27 2026-06-26 try zi, zoxide and fzf together +workflow
-2026-06-26 update EETKAMERBANK blend file with new NC model and fixed frame for? +henk-render due:2026-06-30
+(B) 2026-06-26 update EETKAMERBANK blend file with new NC model and fixed frame for? +henk-render due:2026-06-30
 x 2026-06-28 2026-06-26 render Layer sofas +henk-render
-2026-06-26 render Slant sofas +henk-render due:2026-06-28
+(A) 2026-06-26 render Slant sofas +henk-render due:2026-06-28
 2026-06-26 check if tailscale is in dotfiles. its a must! +dotfiles
 2026-06-26 try fabric on the video for herdr +workflow
 2026-06-26 find a good notes app +workflow
@@ -30,11 +30,14 @@ x 2026-06-27 2026-06-27 herdr has no cool status bar thing? +workflow
 x 2026-06-27 2026-06-27 merge dotfiles feature into main and push +dotfiles
 2026-06-27 add quick action to run ./install +workflow +dotfiles
 2026-06-28 pi: add theme plugin and set theme +workflow
-2026-06-28 sh: check PR and live theme +studio-henk due:2026-06-28
+(A) 2026-06-28 sh: check PR and live theme +studio-henk due:2026-06-28
 2026-06-28 pi: check other plugins +workflow
 2026-06-28 herdr: check plugins ie skills etc +workflow
-2026-06-28 pdp: sofa conf on EN not working. ID different? +studio-henk
-2026-06-28 pdp: faq block, specs etc, translations +studio-henk
-2026-06-28 remove stuff from brewfile etc? +dotfiles due:2026-06-28
+(A) 2026-06-28 pdp: sofa conf on EN not working. ID different? +studio-henk
+(A) 2026-06-28 pdp: faq block, specs etc, translations +studio-henk
+(B) 2026-06-28 remove stuff from brewfile etc? +dotfiles due:2026-06-28
 2026-06-28 nvim from scratch, 0.12, native stuff +workflow
 2026-06-28 add colorpicker, brew install +workflow
+2026-06-28 add pi to dotfiles +dotfiles
+x 2026-06-28 2026-06-28 herds: ctrl a prefix? +workflow
+x 2026-06-28 2026-06-28 add herdr to dotfiles +workflow +dotfiles
