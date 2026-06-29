@@ -215,14 +215,6 @@ bindkey '^[w' kill-region
 bindkey -v
 # bindkey -s ^a "nvims\n"
 
-function _clear_and_tmux() {
-  clear
-  [[ -n $TMUX ]] && tmux clear-history
-  zle reset-prompt
-}
-zle -N _clear_and_tmux
-bindkey '^l' _clear_and_tmux
-
 set -o vi
 
 # Aliases
@@ -325,23 +317,6 @@ export PATH="$HOME/dev/sh/ghostty-projects:$PATH"
 
 # Machine-specific env vars (not in git)
 [[ -f ~/.env.local ]] && source ~/.env.local
-
-# tmux: attach to existing session or start new one
-# if command -v tmux &>/dev/null && [[ -z "$TMUX" ]] && [[ "$TERM_PROGRAM" == "ghostty" ]]; then
-#   tmux attach 2>/dev/null || tmux new-session -s main
-# fi
-
-# if command -v tmux &>/dev/null && [[ -z "$TMUX" ]]; then
-#   tmux attach || tmux new-session
-# fi
-
-# if [ -n "$TMUX" ]; then
-#   export TERM=tmux-256color
-# fi
-
-# if [ -z "$TMUX" ]; then
-#   export TERM=xterm-256color
-# fi
 
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/Users/nilshendriks/.lmstudio/bin"

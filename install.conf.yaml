@@ -1,6 +1,7 @@
 - defaults:
     link:
       relink: true
+      force: true
 
 - clean: ["~"]
 
@@ -20,7 +21,6 @@
     ~/.config/karabiner: ~/dotfiles/karabiner
     ~/.config/crush/crush.json: ~/dotfiles/crush/crush.json
     ~/.ssh/config: ~/dotfiles/ssh_config
-    ~/.config/tmux/tmux.conf: ~/dotfiles/tmux/tmux.conf
     ~/Pictures/wallpapers: ~/dotfiles/images/wallpapers
     "~/Library/Screen Savers/ghostty.saver": ~/dotfiles/screensavers/ghostty.saver
     ~/.config/herdr/config.toml: ~/dotfiles/herdr/config.toml

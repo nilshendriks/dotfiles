@@ -11,6 +11,7 @@ auto_switch = false
 delivery = "herdr"
 
 [keys]
+clear_pane = "cmd+k"
 prefix = "ctrl+a"
 
 focus_pane_left = ["prefix+h", "ctrl+alt+h"]

@@ -16,8 +16,6 @@ brew "tmux"
 brew "php@8.3"
 brew "ruby"
 brew "python@3.13"
-tap "shopify/shopify"
-brew "shopify-cli"
 brew "fastfetch"
 
 # Image tools for conversion & optimization
