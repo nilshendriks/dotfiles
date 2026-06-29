@@ -14,7 +14,7 @@ x 2026-06-27 2026-06-26 try zi, zoxide and fzf together +workflow
 (B) 2026-06-26 update EETKAMERBANK blend file with new NC model and fixed frame for? +henk-render due:2026-06-30
 x 2026-06-28 2026-06-26 render Layer sofas +henk-render
 x 2026-06-28 2026-06-26 render Slant sofas +henk-render due:2026-06-28
-2026-06-26 find a good notes app +workflow
+(B) 2026-06-26 find a good notes app +workflow
 2026-06-26 try out just tool for taskrunners? +workflow
 (B) 2026-06-27 add actions and projects plugin to herdr +workflow +dotfiles
 x 2026-06-27 2026-06-27 try pi with a local model? https://pi.dev/ +workflow
