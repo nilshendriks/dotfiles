@@ -80,6 +80,53 @@ if ! pgrep -x "Karabiner-Menu" >/dev/null && ! pgrep -x "Karabiner-NotificationW
     open -a "Karabiner-Elements"
 fi
 
+# ==============================================================================
+# 🪨 LOCAL AI BACKEND PROVISIONING (Headless LM Studio)
+# ==============================================================================
+echo ""
+export PATH="$HOME/.lmstudio/bin:$PATH"
+
+# Only run the install script if the physical binary file is missing
+if [ ! -f "$HOME/.lmstudio/bin/lms" ]; then
+    if command -v gum &>/dev/null; then
+        gum spin --spinner dot --title "Installing headless LM Studio daemon..." -- \
+            bash -c 'curl -fsSL https://lmstudio.ai/install.sh | bash'
+    else
+        echo "📥 Installing headless LM Studio daemon..."
+        curl -fsSL https://lmstudio.ai/install.sh | bash
+    fi
+fi
+
+# Wake up the core headless runtime engine
+lms daemon up
+
+# Pull and set up the Qwen coding model if missing
+if ! lms ls | grep -qi "^qwen/qwen3\.5-9b"; then
+    echo "🤖 Fetching Qwen Model..."
+    lms get qwen/qwen3.5-9b
+fi
+
+# # 💡 Fixed: Explicitly pre-load the model into memory with the correct context allocation
+if ! lms ps | grep -q "^qwen/qwen3\.5-9b"; then
+    echo "🧠 Loading Qwen with 32k context window..."
+    lms load qwen/qwen3.5-9b \
+        --context-length 32768 \
+        --identifier "qwen/qwen3.5-9b"
+else
+    echo "🧠 Qwen already loaded."
+fi
+
+# Force-bind the server to the specific local port natively so it anchors and stays up
+# lms server start --port 1234
+# Start the API server if it isn't already listening
+if ! lsof -iTCP:1234 -sTCP:LISTEN >/dev/null 2>&1; then
+    echo "🚀 Starting LM Studio server..."
+    lms server start --port 1234
+else
+    echo "🚀 LM Studio server already running."
+fi
+# ==============================================================================
+
 echo ""
 if command -v gum &>/dev/null; then
     gum style --foreground "#00ff00" --bold "🏁 System environments synchronized perfectly!"

@@ -28,6 +28,7 @@ packages=(
     @mermaid-js/mermaid-cli
     caniuse-cmd
     ntl
+    @earendil-works/pi-coding-agent
 )
 
 # 4. Silent Verification Loop (Only speaks if it is actively installing something)

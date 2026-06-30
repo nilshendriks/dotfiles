@@ -227,6 +227,7 @@ alias trail='<<<${(F)path}'
 # nvim switcher
 alias nvim-lazy="NVIM_APPNAME=LazyVim nvim"
 alias nn="NVIM_APPNAME=NeoNirusu nvim"
+alias nl='NVIM_APPNAME=NeoLab nvim'
 
 # Quick alias to reload the profile
 alias src="source ~/.zshrc && echo '🚀 Zsh profile reloaded!'"
@@ -318,13 +319,12 @@ export PATH="$HOME/dev/sh/ghostty-projects:$PATH"
 # Machine-specific env vars (not in git)
 [[ -f ~/.env.local ]] && source ~/.env.local
 
-# Added by LM Studio CLI (lms)
-export PATH="$PATH:/Users/nilshendriks/.lmstudio/bin"
-# End of LM Studio CLI section
-
 # Tuxedo Task Manager Configuration
 export TODO_DIR="$HOME/dotfiles/tuxedo"
 export TODO_FILE="$TODO_DIR/todo.txt"
 export DONE_FILE="$TODO_DIR/done.txt"
 
 alias tux="tuxedo ~/dotfiles/tuxedo/todo.txt"
+
+# Added by LM Studio CLI tool (lms)
+export PATH="$HOME/.lmstudio/bin:$PATH"
