@@ -40,3 +40,4 @@ x 2026-06-28 2026-06-28 for ai and nvim panes, make a sh script to show a run X 
 2026-06-28 try syncthing to keep blend files in sync? also check synctui and stui for it +henk-render
 x 2026-07-01 2026-06-28 move lm studio to dotfiles? use cli, not app? +workflow
 2026-07-01 test syncthing for Documents/Notes +workflow
+2026-07-01 try better keybinds for workspace swithing and pane switching? +workflow
