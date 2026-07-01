@@ -8,6 +8,7 @@
   ],
   "lastChangelogVersion": "0.80.3",
   "theme": "tokyo-night-moon",
-  "defaultProvider": "lmstudio",
-  "defaultModel": "qwen/qwen3.5-9b"
+  "defaultProvider": "openai-codex",
+  "defaultModel": "gpt-5.5",
+  "defaultThinkingLevel": "medium"
 }

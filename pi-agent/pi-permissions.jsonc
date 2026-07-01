@@ -1,0 +1,26 @@
+{
+  "defaultPolicy": {
+    "tools": "ask",
+    "bash": "ask",
+    "mcp": "ask",
+    "skills": "ask",
+    "special": "ask",
+  },
+
+  "tools": {
+    "read": "allow",
+    "ls": "allow",
+    "find": "allow",
+    "grep": "allow",
+  },
+
+  "bash": {
+    "git status": "allow",
+    "git diff*": "allow",
+    "git log*": "allow",
+  },
+
+  "special": {
+    "doom_loop": "deny",
+  },
+}

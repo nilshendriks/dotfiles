@@ -330,6 +330,6 @@ alias tux="tuxedo ~/dotfiles/tuxedo/todo.txt"
 export PATH="$HOME/.lmstudio/bin:$PATH"
 
 # Only launch herdr if we are NOT already inside a herdr session
-if [ -z "$HERDR_ENV" ]; then
-    herdr
-fi
+# if [ -z "$HERDR_ENV" ]; then
+#     herdr
+# fi
