@@ -3,9 +3,10 @@
     "npm:pi-permission-system",
     "npm:@wierdbytes/pi-tokyo-night",
     "npm:pi-lens",
-    "npm:pi-web-access"
+    "npm:pi-web-access",
+    "npm:@gordonb/pi-notational"
   ],
-  "lastChangelogVersion": "0.80.2",
+  "lastChangelogVersion": "0.80.3",
   "theme": "tokyo-night-moon",
   "defaultProvider": "lmstudio",
   "defaultModel": "qwen/qwen3.5-9b"

@@ -328,3 +328,8 @@ alias tux="tuxedo ~/dotfiles/tuxedo/todo.txt"
 
 # Added by LM Studio CLI tool (lms)
 export PATH="$HOME/.lmstudio/bin:$PATH"
+
+
+if [[ -z "$HERDR" ]]; then
+  herdr
+fi
