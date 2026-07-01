@@ -4,7 +4,8 @@
     "npm:@wierdbytes/pi-tokyo-night",
     "npm:pi-lens",
     "npm:pi-web-access",
-    "npm:@gordonb/pi-notational"
+    "npm:@gordonb/pi-notational",
+    "npm:@senad-d/commitme"
   ],
   "lastChangelogVersion": "0.80.3",
   "theme": "tokyo-night-moon",
