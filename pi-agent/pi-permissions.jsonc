@@ -4,23 +4,21 @@
     "bash": "ask",
     "mcp": "ask",
     "skills": "ask",
-    "special": "ask",
+    "special": "ask"
   },
-
   "tools": {
     "read": "allow",
     "ls": "allow",
     "find": "allow",
     "grep": "allow",
+    "fetch_content": "allow"
   },
-
   "bash": {
     "git status": "allow",
     "git diff*": "allow",
-    "git log*": "allow",
+    "git log*": "allow"
   },
-
   "special": {
-    "doom_loop": "deny",
-  },
+    "doom_loop": "deny"
+  }
 }

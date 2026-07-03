@@ -20,6 +20,10 @@ return {
             -- css = { "biomjs" },
             -- typescript = { "oxlint" },
             -- javascript = { "oxlint" },
+            -- javascript = { "oxlint" },
+            -- javascriptreact = { "oxlint" },
+            -- typescript = { "oxlint" },
+            -- typescriptreact = { "oxlint" },
             liquid = { "markuplint" },
         }
 
