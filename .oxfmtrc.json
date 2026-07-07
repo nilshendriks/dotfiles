@@ -4,7 +4,7 @@
   "useTabs": false,
   "semi": true,
   "singleQuote": false,
-  "trailingComma": "all",
+  "trailingComma": "none",
   "ignorePatterns": ["**/*.min.js"],
   "sortImports": true,
   "sortTailwindcss": false,
@@ -17,7 +17,7 @@
       }
     },
     {
-      "files": ["*.json", "*.jsonc"],
+      "files": ["*.json"],
       "options": {
         "trailingComma": "none"
       }
