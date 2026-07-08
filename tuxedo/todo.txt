@@ -10,7 +10,6 @@ x 2026-06-26 2026-06-26 try yazi again +workflow
 x 2026-06-27 2026-06-26 make install script ui nicer +workflow
 x 2026-06-26 2026-06-26 try fzf again +workflow
 x 2026-06-27 2026-06-26 try zi, zoxide and fzf together +workflow
-x 2026-07-02 2026-06-26 update EETKAMERBANK blend file with new NC model and fixed frame for? +henk-render due:2026-06-30
 x 2026-06-28 2026-06-26 render Layer sofas +henk-render
 x 2026-06-28 2026-06-26 render Slant sofas +henk-render due:2026-06-28
 x 2026-07-01 2026-06-26 find a good notes app +workflow
@@ -27,9 +26,9 @@ x 2026-06-27 2026-06-27 merge dotfiles feature into main and push +dotfiles
 x 2026-06-28 2026-06-28 pi: add theme plugin and set theme +workflow
 x 2026-07-02 2026-06-28 sh: check PR and live theme +studio-henk due:2026-06-28
 x 2026-07-01 2026-06-28 pi: check other plugins +workflow
-2026-06-28 herdr: check plugins ie skills etc +workflow
 x 2026-07-02 2026-06-28 pdp: sofa conf on EN not working. ID different? +studio-henk
 x 2026-07-02 2026-06-28 pdp: faq block, specs etc, translations +studio-henk
+x 2026-07-01 2026-06-28 pi: check other plugins +workflow
 x 2026-06-28 2026-06-28 remove stuff from brewfile etc? +dotfiles due:2026-06-28
 x 2026-07-01 2026-06-28 nvim from scratch, 0.12, native stuff +workflow
 x 2026-06-28 2026-06-28 add pi to dotfiles +dotfiles
@@ -39,4 +38,13 @@ x 2026-06-28 2026-06-28 for ai and nvim panes, make a sh script to show a run X 
 2026-06-28 try syncthing to keep blend files in sync? also check synctui and stui for it +henk-render
 x 2026-07-01 2026-06-28 move lm studio to dotfiles? use cli, not app? +workflow
 2026-07-01 test syncthing for Documents/Notes +workflow
-2026-07-01 try better keybinds for workspace swithing and pane switching? +workflow
+x 2026-07-07 2026-07-01 try better keybinds for workspace swithing and pane switching? +workflow
+2026-07-02 herdr plugin: https://github.com/andrewchng/herdr-sessionizer +workflow
+(C) 2026-07-04 Generate variable WOFF2 from JetBrains Mono variable TTF. +nilshendriks.com
+2026-07-06 dash-docs cli for pi agent and TUI for humans +dash-docs
+2026-07-06 research exe.dev for vm etc +workflow
+(C) 2026-07-06 nvim/tmux like status bar +nilshendriks.com
+2026-07-06 connect pi to use tuxedo for todos, tasks etc +workflow +dotfiles
+(C) 2026-07-06 add UI for theme switching +nilshendriks.com
+x 2026-07-07 2026-07-06 better content -> About page? +nilshendriks.com
+2026-07-07 model-viewer element +nilshendriks.com

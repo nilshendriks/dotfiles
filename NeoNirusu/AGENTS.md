@@ -1,76 +1,238 @@
 # AGENTS.md
 
 ## Scope
-This repository is a Neovim configuration (Lua). There are no build/test scripts or CI configs in the repo; behavior is driven by Neovim runtime and plugins.
 
-## Essential commands
-- Launch Neovim with this config:
-  - `nvim`
+This repository contains my personal Neovim configuration ("NeoNirusu"), written in Lua and managed with Lazy.nvim.
 
-> No Makefile, package.json, or CI workflows were found, so no build/test/lint commands are defined in-repo.
+Always prefer understanding the existing architecture before introducing new plugins, abstractions, or duplicate functionality.
 
-## Entry points and structure
-- `init.lua` is the entry point. It:
-  - Overrides `vim.lsp.util.open_floating_preview` to strip base64 images and unescape some Markdown before showing LSP floats.
-  - Loads configuration modules: `config.lazy`, `config.filetype`, `config.options`, `config.keymaps`, `config.autocmds`.
-- `lua/config/*.lua` contains core editor settings (options, keymaps, autocmds, filetype additions).
-- `lua/plugins/*.lua` contains Lazy.nvim plugin specs and plugin-specific configuration.
-- `lua/utils/*.lua` contains utilities (e.g., custom Astro formatter, diagnostic helpers).
+---
 
-## Plugin system
-- `lua/config/lazy.lua` bootstraps **lazy.nvim** and imports plugin specs from `lua/plugins/`.
-- Plugins are configured as Lazy specs returning tables (see `lua/plugins/*.lua`).
+# Architecture
 
-## Formatting
-- Formatting is handled by **conform.nvim** (`lua/plugins/conform.lua`).
-- `format_on_save` is enabled with a 2s timeout.
-- Notable formatter mappings (per filetype):
-  - `prettier`/`prettierd` for web files, `black`+`isort` for Python, `stylua` for Lua.
-  - SVG files use Prettier with `--parser html`.
-- Keymap: `<leader>cf` formats the current buffer.
+## Entry point
 
-## Linting & diagnostics
-- **nvim-lint** is configured in `lua/plugins/linting.lua`:
-  - `markuplint` runs for `html` and `liquid` filetypes.
-  - Linting triggers on `BufEnter` and `BufWritePost`.
-- A shared diagnostics namespace is set up in `lua/utils/diagnostics.lua`.
+- `init.lua`
 
-## LSP setup
-- **mason.nvim** and **mason-lspconfig** install/enable servers in `lua/plugins/lsp.lua`.
-- Servers ensured: `lua_ls`, `html`, `cssls`, `basedpyright`, `vtsls`, `shopify_theme_ls`, `gopls`.
-- LSP is configured using `vim.lsp.config()` + `vim.lsp.enable()` (Neovim 0.10+ API).
-- LSP inlay hints are auto-enabled on attach if the server supports them.
+It loads:
 
-## Treesitter
-- **nvim-treesitter** is configured in `lua/plugins/treesitter.lua`.
-- Custom Liquid parser is installed from `https://github.com/hankthetank27/tree-sitter-liquid`.
+- `config.lazy`
+- `config.options`
+- `config.keymaps`
+- `config.autocmds`
+- `config.filetype`
 
-## Filetypes & autocmds
-- Additional filetype detection: `mdx` is registered in `lua/config/filetype.lua`.
-- Autocmds in `lua/config/autocmds.lua`:
-  - Disable conceal for JSON/Markdown.
-  - Set `.env` files to `env` filetype and disable diagnostics for that filetype.
-  - Force line numbers on `FileType` (to avoid them disappearing).
-  - Liquid commentstring is set to `{% comment %} %s {% endcomment %}`.
+Core editor behavior belongs in `lua/config`.
 
-## Keymap patterns
-- Core keymaps live in `lua/config/keymaps.lua`.
-- Terminal toggle: `<C-/>` opens/closes a bottom split terminal.
-- Navigation keymaps keep search jumps centered (`n`, `N`, `<C-d>`, `<C-u>`).
+Plugin configuration belongs in `lua/plugins`.
 
-## UI & UX specifics
-- **snacks.nvim** provides dashboard, picker, explorer, notifier, and more (`lua/plugins/snacks.lua`).
-  - Explorer replaces netrw.
-  - Dashboard header is custom ASCII art.
-  - Extensive picker keymaps are defined in this file.
+Reusable helper functions belong in `lua/utils`.
 
-## Style & formatting conventions
-- `.editorconfig`:
-  - Default indent: 4 spaces.
-  - 2-space indentation for web/markdown formats.
-  - Markdown/MDX keeps trailing whitespace.
+---
 
-## Gotchas
-- LSP floating previews are modified to strip base64 images and unescape some Markdown; if you need raw LSP text, check `init.lua`.
-- LSP configuration uses the newer `vim.lsp.config` + `vim.lsp.enable` APIs rather than `lspconfig.setup`.
-- Liquid Treesitter parser comes from a non-default repo; updates may require rebuilding parsers via `:TSUpdate`.
+# Plugin Manager
+
+Plugins are managed with **Lazy.nvim**.
+
+Each file in:
+
+```
+lua/plugins/
+```
+
+returns a Lazy.nvim plugin specification.
+
+Do not introduce alternative plugin-loading patterns.
+
+---
+
+# LSP Architecture
+
+This configuration uses the **Neovim 0.11+ native LSP API**.
+
+Use:
+
+```lua
+vim.lsp.config(...)
+vim.lsp.enable(...)
+```
+
+Do **not** use legacy:
+
+```lua
+require("lspconfig").XYZ.setup(...)
+```
+
+unless absolutely required for compatibility.
+
+## Responsibilities
+
+### mason.nvim
+
+Only installs binaries.
+
+It does **not** configure or start language servers.
+
+### mason-lspconfig.nvim
+
+Automatically enables installed language servers by default using:
+
+```lua
+vim.lsp.enable(...)
+```
+
+Therefore:
+
+- installed ≠ configured
+- configured ≠ attached
+
+Many servers do not need explicit entries in `lsp.lua`.
+
+### lsp.lua
+
+`lua/plugins/lsp.lua` exists primarily for:
+
+- custom settings
+- capabilities
+- root_dir overrides
+- on_attach logic
+- server-specific configuration
+
+Avoid adding a server here unless customization is required.
+
+---
+
+# Formatting
+
+Formatting is handled by **conform.nvim**.
+
+Responsibilities:
+
+- formatter selection
+- format on save
+- manual formatting
+
+Do not use LSP formatting when Conform already formats that filetype.
+
+Avoid duplicate formatters.
+
+---
+
+# Diagnostics
+
+Diagnostics may originate from:
+
+- LSP
+- nvim-lint
+
+These are separate systems.
+
+Avoid configuring both for the same tool unless intentional.
+
+Example:
+
+Good:
+
+- oxlint LSP
+- markuplint via nvim-lint
+
+Bad:
+
+- oxlint LSP
+- oxlint via nvim-lint
+
+because diagnostics become duplicated.
+
+---
+
+# Treesitter
+
+Treesitter provides parsing and highlighting.
+
+It is **not** responsible for:
+
+- formatting
+- linting
+- LSP
+
+Keep these concerns separate.
+
+---
+
+# Project philosophy
+
+Prefer:
+
+- native Neovim APIs
+- small focused plugins
+- explicit configuration
+- simple architecture
+
+Avoid:
+
+- unnecessary abstraction
+- duplicate tooling
+- overlapping plugins
+- magic unless it clearly simplifies maintenance
+
+---
+
+# Coding style
+
+When modifying this configuration:
+
+- preserve existing formatting
+- prefer descriptive variable names
+- keep modules focused
+- avoid unnecessary helper functions
+- avoid introducing global state
+
+When adding new functionality:
+
+- integrate with the existing architecture
+- reuse utilities where appropriate
+- keep configuration consistent with neighboring files
+
+---
+
+# Debugging
+
+When investigating issues, first determine which subsystem is responsible.
+
+Typical order:
+
+1. filetype detection
+2. LSP
+3. formatter (Conform)
+4. linter (nvim-lint)
+5. Treesitter
+6. plugin interaction
+
+Do not assume a problem belongs to LSP until verified.
+
+---
+
+# Important distinctions
+
+These terms are different:
+
+- Installed
+- Registered
+- Enabled
+- Attached
+
+For LSPs:
+
+Installed
+→ Mason downloaded the binary.
+
+Registered
+→ `vim.lsp.config.<server>` exists.
+
+Enabled
+→ `vim.lsp.enable("<server>")` has been called.
+
+Attached
+→ The server is active for the current buffer.
+
+Understanding these distinctions is essential when debugging.

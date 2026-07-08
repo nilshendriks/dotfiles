@@ -5,7 +5,10 @@
     "npm:pi-lens",
     "npm:pi-web-access",
     "npm:@gordonb/pi-notational",
-    "npm:@senad-d/commitme"
+    "npm:@senad-d/commitme",
+    "npm:pi-mcp-adapter",
+    "npm:@narumitw/pi-chrome-devtools",
+    "npm:pi-lmstudio"
   ],
   "lastChangelogVersion": "0.80.3",
   "theme": "tokyo-night-moon",
