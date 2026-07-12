@@ -3,16 +3,17 @@
     "npm:pi-permission-system",
     "npm:@wierdbytes/pi-tokyo-night",
     "npm:pi-lens",
-    "npm:pi-web-access",
-    "npm:@gordonb/pi-notational",
-    "npm:@senad-d/commitme",
-    "npm:pi-mcp-adapter",
-    "npm:@narumitw/pi-chrome-devtools",
-    "npm:pi-lmstudio"
+    {
+      "source": "npm:pi-lmstudio",
+      "extensions": [
+        "+extensions/pi-lmstudio/index.ts"
+      ]
+    }
   ],
-  "lastChangelogVersion": "0.80.3",
-  "theme": "tokyo-night-moon",
+  "lastChangelogVersion": "0.80.6",
   "defaultProvider": "lmstudio",
   "defaultModel": "qwen/qwen3.5-9b",
-  "defaultThinkingLevel": "medium"
+  "defaultThinkingLevel": "off",
+  "hideThinkingBlock": true,
+  "theme": "tokyo-night-moon"
 }

@@ -38,9 +38,23 @@ x 2026-07-07 2026-07-01 try better keybinds for workspace swithing and pane swit
 2026-07-02 herdr plugin: https://github.com/andrewchng/herdr-sessionizer +workflow
 (C) 2026-07-04 Generate variable WOFF2 from JetBrains Mono variable TTF. +nilshendriks.com
 2026-07-06 dash-docs cli for pi agent and TUI for humans +dash-docs
-2026-07-06 research exe.dev for vm etc +workflow
+x 2026-07-09 2026-07-06 research exe.dev for vm etc +workflow
 (C) 2026-07-06 nvim/tmux like status bar +nilshendriks.com
-2026-07-06 connect pi to use tuxedo for todos, tasks etc +workflow +dotfiles
 (C) 2026-07-06 add UI for theme switching +nilshendriks.com
 x 2026-07-07 2026-07-06 better content -> About page? +nilshendriks.com
-2026-07-07 model-viewer element +nilshendriks.com
+x 2026-07-07 2026-07-07 model-viewer element +nilshendriks.com
+x 2026-07-11 2026-07-09 day theme: menu active item color contrast? +nilshendriks.com
+2026-07-09 check caniuse-cmd ? or remove from package.json? +nilshendriks.com
+2026-07-09 setup_node.sh in dotfiles -> guard for node tools? so no install everytime +dotfiles
+x 2026-07-11 2026-07-09 posts -> images too high? like rising post +nilshendriks.com
+2026-07-09 kmm animated logo, show component not image in list? +nilshendriks.com
+2026-07-09 ThemeSwitcher UI: new worktree or branch? +nilshendriks.com
+2026-07-09 show ai photo of plant and diagnose, maybe move to bed room or bathroom? +personal
+x 2026-07-09 2026-07-09 Nh render article screenshots TUI for in article and on home? +nilshendriks.com
+2026-07-09 use glb chair to render wireframe image for homepage? +nilshendriks.com
+2026-07-09 test 3d coat textura? or if demo try amourpaint? +3d
+x 2026-07-10 2026-07-09 remove illustration from home? +nilshendriks.com
+2026-07-11 redo all lineheights and margins for headings with vars +nilshendriks.com
+x 2026-07-11 2026-07-11 add colors to scrollbar for posts +nilshendriks.com
+x 2026-07-11 2026-07-11 figma widget iumage too large. https://nilshendriks.com/.netlify/images?url=_astro%2Fwidget.BC59HUst.jpeg&fm=avif&w=3860&h=2248&dpl=6a5299900c5a8e000831b9c3 +nilshendriks.com
+x 2026-07-11 2026-07-11 dialog post code examples also auto day night theme? +nilshendriks.com
