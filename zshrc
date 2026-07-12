@@ -333,3 +333,9 @@ export PATH="$HOME/.lmstudio/bin:$PATH"
 # if [ -z "$HERDR_ENV" ]; then
 #     herdr
 # fi
+
+# Work-specific AI helpers
+if [[ -d "$HOME/Sites/studio-henk" ]]; then
+  # source ~/.config/zsh/git-pr-title.zsh
+  source ~/.config/zsh/git-feature-jira.zsh
+fi
