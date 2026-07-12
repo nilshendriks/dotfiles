@@ -250,10 +250,6 @@ alias themepull_live='shopify theme pull --live --nodelete'
 alias rum='npm run'
 
 
-baselinecss() {
-  npx doiuse --browsers "extends browserslist-config-baseline/2023" "$1" --json | jq -r ".message"
-}
-
 # function nvims() {
 #   items=("default" "kickstart" "LazyVim" "NirusuVim" "HENKVim" "NirusuAstro" "NeoNirusu")
 #   config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config  " --height=~50% --layout=reverse --border --exit-0)
