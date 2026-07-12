@@ -26,7 +26,6 @@ packages=(
     http-server
     trash-cli
     @mermaid-js/mermaid-cli
-    caniuse-cmd
     ntl
     @earendil-works/pi-coding-agent
 )

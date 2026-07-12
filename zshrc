@@ -248,10 +248,7 @@ alias themepull_live='shopify theme pull --live --nodelete'
 
 # npm
 alias rum='npm run'
-# alias henk-render="/Users/nilshendriks/Blender/Projects/ProductRenders/TAPER-COFFEE-TABLE/henk-render"
 
-# caniuse css baseline
-alias canuse="npx caniuse -C ~/dotfiles/.caniuse.json"
 
 baselinecss() {
   npx doiuse --browsers "extends browserslist-config-baseline/2023" "$1" --json | jq -r ".message"

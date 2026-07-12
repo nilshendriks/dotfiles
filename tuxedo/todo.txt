@@ -44,7 +44,7 @@ x 2026-07-07 2026-07-01 try better keybinds for workspace swithing and pane swit
 2026-07-06 dash-docs cli for pi agent and TUI for humans +dash-docs
 x 2026-07-09 2026-07-06 research exe.dev for vm etc +workflow
 (C) 2026-07-06 nvim/tmux like status bar +nilshendriks.com
-(C) 2026-07-06 add UI for theme switching +nilshendriks.com
+2026-07-06 add UI for theme switching +nilshendriks.com
 x 2026-07-07 2026-07-06 better content -> About page? +nilshendriks.com
 x 2026-07-07 2026-07-07 model-viewer element +nilshendriks.com
 x 2026-07-11 2026-07-09 day theme: menu active item color contrast? +nilshendriks.com
