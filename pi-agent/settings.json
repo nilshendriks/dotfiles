@@ -1,0 +1,19 @@
+{
+  "packages": [
+    "npm:pi-permission-system",
+    "npm:@wierdbytes/pi-tokyo-night",
+    "npm:pi-lens",
+    {
+      "source": "npm:pi-lmstudio",
+      "extensions": [
+        "+extensions/pi-lmstudio/index.ts"
+      ]
+    }
+  ],
+  "lastChangelogVersion": "0.80.6",
+  "defaultProvider": "lmstudio",
+  "defaultModel": "qwen/qwen3.5-9b",
+  "defaultThinkingLevel": "off",
+  "hideThinkingBlock": true,
+  "theme": "tokyo-night-moon"
+}

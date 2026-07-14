@@ -61,6 +61,25 @@ return {
                 html = {
                     filetypes = { "html" },
                 },
+                emmet_language_server = {
+                    -- Add your settings here if needed
+                    filetypes = {
+                        "html",
+                        "css",
+                        "javascript",
+                        "typescriptreact",
+                        "javascriptreact",
+                        "liquid",
+                    },
+                    init_options = {
+                        html = {
+                            options = {},
+                        },
+                        liquid = {
+                            options = {},
+                        },
+                    },
+                },
                 cssls = {
                     cmd = { "vscode-css-language-server", "--stdio" }, -- optional if different
                     filetypes = { "css", "scss", "less" }, -- optional if needed
@@ -136,7 +155,9 @@ return {
                             analysis = {
                                 typeCheckingMode = "strict",
                                 extraPaths = (function()
-                                    local p = vim.fn.glob("/Applications/Blender.app/Contents/Resources/*/python/lib/python3.13/site-packages")
+                                    local p = vim.fn.glob(
+                                        "/Applications/Blender.app/Contents/Resources/*/python/lib/python3.13/site-packages"
+                                    )
                                     return p ~= "" and { p } or {}
                                 end)(),
                                 inlayHints = {

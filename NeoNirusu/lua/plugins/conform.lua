@@ -1,3 +1,4 @@
+-- local formatter = require("utils.formatter")
 return {
     "stevearc/conform.nvim",
     lazy = false,
@@ -14,24 +15,32 @@ return {
     },
     opts = {
         formatters_by_ft = {
-            -- good
-            html = { "prettier", "injected", stop_after_first = false },
-            css = { "prettier", lsp_format = "never" },
+            -- oxfmt
+            html = { "oxfmt", lsp_format = "never" },
+            -- html = { "oxfmt", "injected", stop_after_first = false },
+            css = { "oxfmt", lsp_format = "never" },
+            markdown = { "oxfmt", lsp_format = "never" },
+            javascript = { "oxfmt", lsp_format = "never" },
+            typescript = { "oxfmt", lsp_format = "never" },
+            vue = { "oxfmt", lsp_format = "never" },
+            -- typescript = { "oxfmt", "injected", lsp_format = "never", stop_after_first = false },
+            json = { "oxfmt", lsp_format = "never" },
+            jsonc = { "oxfmt", lsp_format = "never" },
+            yaml = { "oxfmt", lsp_format = "never" },
+            toml = { "oxfmt", lsp_format = "never" },
+
+            -- prettier
             astro = { "prettier", lsp_format = "never" },
-            -- astro = { "prettier", "injected", stop_after_first = false },
-            javascript = { "prettier", lsp_format = "never" },
-            typescript = { "prettier", "injected", lsp_format = "never", stop_after_first = false },
-            python = { "isort", "black" },
-            lua = { "stylua" },
-            -- dubious
-            -- markdown = { "prettierd", lsp_format = "never" },
-            markdown = { "prettier", lsp_format = "never" },
             svg = { "prettier", lsp_format = "never", stop_after_first = true },
-            json = { "prettier", lsp_format = "fallback" },
-            jsonc = { "prettier", lsp_format = "fallback" },
             liquid = { "prettier", lsp_format = "fallback" },
-            -- NOTE: astro is formatted by LSP (prettier plugin sucks balls)
-            -- also runs custom function to format style and script tags with 2 spaces
+            -- javascript = { "prettier", lsp_format = "never" },
+            -- typescript = { "prettier", "injected", lsp_format = "never", stop_after_first = false },
+            -- json = formatter.json,
+            -- jsonc = formatter.jsonc,
+
+            -- other
+            lua = { "stylua" },
+            python = { "isort", "black" },
         },
         -- Set default options
         default_format_opts = {
@@ -47,6 +56,12 @@ return {
         },
         -- customize formatters
         formatters = {
+            -- oxfmt = {
+            --     prepend_args = {
+            --         "--config",
+            --         vim.fn.expand("~/dotfiles/oxfmt/oxfmt.json"),
+            --     },
+            -- },
             injected = {
                 options = {
                     -- Set individual option values

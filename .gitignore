@@ -11,3 +11,6 @@ lazy-lock.json
 # homebrew
 Brewfile.lock.json
 blender/
+pi-agent/sessions/
+
+node_modules/

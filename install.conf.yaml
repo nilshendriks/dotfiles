@@ -1,52 +1,13 @@
 - defaults:
     link:
       relink: true
+      force: true
 
 - clean: ["~"]
 
-- shell:
-    - command: chmod +x ./setup_homebrew.sh ./setup_node.sh ./setup_ssh.sh ./setup_finalize.sh
-      stdout: true
-      stderr: true
-    - command: ./setup_homebrew.sh
-      stdout: true
-      stderr: true
-    - command: ./setup_node.sh
-      stdout: true
-      stderr: true
-    - command: ./setup_ssh.sh
-      stdout: true
-      stderr: true
-    - command: |
-        if [ ! -d "$HOME/.config/LazyVim" ]; then
-          echo "Cloning LazyVim..."
-          git clone https://github.com/LazyVim/starter "$HOME/.config/LazyVim"
-          rm -rf "$HOME/.config/LazyVim/.git" "$HOME/.config/LazyVim/.github" "$HOME/.config/LazyVim/.gitignore"
-          echo "LazyVim installation complete."
-        else
-          echo "LazyVim already installed."
-        fi
-      stdout: true
-      stderr: true
-      quiet: true
-    - command: |
-        if [ ! -d "$HOME/dotfiles/NeoNirusu" ]; then
-          mkdir -p "$HOME/dotfiles/NeoNirusu"
-          echo "NeoNirusu installation complete."
-        else
-          echo "NeoNirusu already exists."
-        fi
-      stdout: true
-      stderr: true
-      quiet: true
-    - command: ./setup_finalize.sh
-      stdout: true
-      stderr: true
-
 - create:
   - ~/Sites
-  - ~/Library/Application Support/dooit
-  # - ~/Pictures/wallpapers
+  - ~/.pi
 
 - link:
     ~/.zprofile:
@@ -54,24 +15,14 @@
     ~/.zshenv:
     ~/.gitconfig:
     ~/.config/NeoNirusu: ~/dotfiles/NeoNirusu
+    ~/.config/NeoLab: ~/dotfiles/NeoLab
     "~/Library/Application Support/com.mitchellh.ghostty/config": ~/dotfiles/ghostty/config
     "~/Library/Application Support/PopClip/Extensions": ~/dotfiles/popclip/Extensions
     ~/Sites/.editorconfig: ~/dotfiles/.editorconfig
     ~/.config/karabiner: ~/dotfiles/karabiner
+    ~/.config/crush/crush.json: ~/dotfiles/crush/crush.json
     ~/.ssh/config: ~/dotfiles/ssh_config
-    ~/.wezterm.lua: ~/dotfiles/wezterm.lua
-    "~/Library/Application Support/dooit/config.py": ~/dotfiles/dooit/config.py
     ~/Pictures/wallpapers: ~/dotfiles/images/wallpapers
     "~/Library/Screen Savers/ghostty.saver": ~/dotfiles/screensavers/ghostty.saver
-
-- shell:
-    - command: |
-        if ! pgrep -x "Karabiner-Menu" > /dev/null && ! pgrep -x "Karabiner-NotificationWindow" > /dev/null; then
-          echo "Starting Karabiner-Elements..."
-          open -a "Karabiner-Elements"
-        else
-          echo "Karabiner-Elements is already running."
-        fi
-      stdout: true
-      stderr: true
-      quiet: true
+    ~/.config/herdr/config.toml: ~/dotfiles/herdr/config.toml
+    ~/.pi/agent: ~/dotfiles/pi-agent

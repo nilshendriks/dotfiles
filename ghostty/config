@@ -5,10 +5,13 @@ background-opacity = 0.98
 background-blur-radius = 30
 
 #cursor-color = 099dec
-cursor-style = bar
+# cursor-style = bar
+# cursor-style-blink = true
 
-# shell-integration-features = no-cursor
-shell-integration-features = no-title
+shell-integration-features = no-cursor
+# shell-integration-features = no-title
+cursor-style = underline
+cursor-style-blink = true
 
 font-family = "JetBrainsMono NFM"
 font-size = 20
@@ -58,6 +61,12 @@ maximize = true
 # keybind = zellij/catch_all=deactivate_key_table
 # keybind = cmd+option+z=activate_key_table_once:zellij
 # keybind = cmd+k=text:\x0c
+# keybind = super+k=clear_screen
+keybind = super+k=text:\x0c
 keybind = alt+left=unbind
 keybind = alt+right=unbind
 keybind = global:cmd+backquote=toggle_quick_terminal
+# keybind = super+k=text:\x1b[2J\x1b[3J\x1b[H
+
+# Run herdr
+# command = herdr

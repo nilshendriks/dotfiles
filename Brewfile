@@ -5,18 +5,17 @@ brew "eza"
 brew "fzf"
 brew "zoxide"
 brew "neovim"
+brew "git"
 brew "lazygit"
 brew "n"
 brew "ripgrep"
 brew "fd"
-brew "task"
-brew "taskwarrior-tui"
-brew "dooit"
+brew "tmux"
+# brew "task"
+# brew "taskwarrior-tui"
 brew "php@8.3"
 brew "ruby"
 brew "python@3.13"
-tap "shopify/shopify"
-brew "shopify-cli"
 brew "fastfetch"
 
 # Image tools for conversion & optimization
@@ -29,7 +28,6 @@ brew "chafa"
 brew "ghostscript"      # provides `gs` – needed to render PDF files
 brew "tectonic"         # OR use pdflatex via MacTeX, but tectonic is simpler
 brew "wget"
-# brew "python"
 brew "go"
 brew "tree-sitter-cli"
 brew "gum"
@@ -44,6 +42,12 @@ brew "charmbracelet/tap/crush"
 brew "glow"
 brew "charmbracelet/tap/wishlist"
 
+# TUI Task Manager
+brew "tuxedo"
+
+# TUI TMUX alternative
+brew "herdr"
+
 # Casks (Applications)
 # cask "google-chrome"
 # cask "alfred"
@@ -51,14 +55,13 @@ cask "firefox@developer-edition"
 cask "google-chrome@canary"
 cask "zed"
 # cask 1password
-# cask alfred
 cask "ghostty"
-cask "wezterm"
 cask "dash"
 cask "popclip"
 cask "pika"
+cask "karabiner-elements"
+cask "keyclu"
 
 # Fonts
 cask "font-jetbrains-mono-nerd-font"
-cask "karabiner-elements"
-cask "keyclu"
+

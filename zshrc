@@ -12,7 +12,7 @@ export N_PREFIX="$HOME/.n"
 export PREFIX="$N_PREFIX"
 
 # Set terminal color capabilities (if necessary)
-export TERM=xterm-256color
+# export TERM=xterm-256color
 
 # Add zsh-completions to fpath
 fpath=($fpath ~/dotfiles/zsh/plugins/zsh-completions)
@@ -51,6 +51,9 @@ source ~/dotfiles/zsh/plugins/fzf-tab/fzf-tab.plugin.zsh
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS' --color=fg:#e0e0e0,bg:-1,hl:#83cdf5 --color=fg+:#ffffff,bg+:#089cec,hl+:#f2ff00 --color=info:#83cdf5,prompt:#83cdf5,pointer:#089cec --color=marker:#f2ff00,spinner:#ff5e00,header:#089cec,border:#83cdf5'
 # After sourcing fzf-tab, customize its colors
 zstyle ':fzf-tab:*' fzf-flags $(echo $FZF_DEFAULT_OPTS)
+
+# Tell FZF to use 'fd' globally for raw searches so it ignores system trash
+export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --follow --exclude .git --exclude .Trash'
 
 # Completion setup (before syntax highlighting)
 source ~/dotfiles/zsh/plugins/zsh-completions/zsh-completions.plugin.zsh
@@ -188,13 +191,20 @@ precmd() {
 }
 
 # fcd: change directory with fzf, exclude restricted directories like .Trash
+# function fcd() {
+#   local dirs=("$HOME/Sites" "$HOME/dotfiles" "$HOME/.config")  # Add your folders here
+#   local dir
+#   dir=$(find "${dirs[@]}" -mindepth 1 -maxdepth 2 -type d \( ! -path '*/.Trash/*' \) \
+#     -not \( -path '*/.git' -prune -or -path '*/.github' -prune -or -path '*/.idea' -prune -or -path '*/.vscode' -prune -or -path '*/.zed' -prune -or -path '*/.nova' -prune -or -path '*/.next' -prune \) \
+#     2>/dev/null | fzf)  # Exclude .git, .github, .idea, .vscode, .zed, .nova
+#   cd "$dir" && clear
+# }
 function fcd() {
-  local dirs=("$HOME/Sites" "$HOME/dotfiles" "$HOME/.config")  # Add your folders here
+  local dirs=("$HOME/Sites" "$HOME/dotfiles" "$HOME/.config")
   local dir
-  dir=$(find "${dirs[@]}" -mindepth 1 -maxdepth 2 -type d \( ! -path '*/.Trash/*' \) \
-    -not \( -path '*/.git' -prune -or -path '*/.github' -prune -or -path '*/.idea' -prune -or -path '*/.vscode' -prune -or -path '*/.zed' -prune -or -path '*/.nova' -prune -or -path '*/.next' -prune \) \
-    2>/dev/null | fzf)  # Exclude .git, .github, .idea, .vscode, .zed, .nova
-  cd "$dir" && clear
+  # fd naturally ignores .git, node_modules, etc. --hidden is needed so it can see .config
+  dir=$(fd --mindepth 1 --maxdepth 2 --type d --hidden --exclude .Trash "${dirs[@]}" | fzf)
+  [[ -n "$dir" ]] && cd "$dir" && clear
 }
 
 # Keybindings and Editor Configurations
@@ -203,7 +213,7 @@ bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 bindkey '^[w' kill-region
 bindkey -v
-bindkey -s ^a "nvims\n"
+# bindkey -s ^a "nvims\n"
 
 set -o vi
 
@@ -212,17 +222,20 @@ set -o vi
 alias ls='eza -lahF --git'
 alias trail='<<<${(F)path}'
 # alias rm=trash
-alias tt='taskwarrior-tui'
+# alias tt='taskwarrior-tui'
 
 # nvim switcher
 alias nvim-lazy="NVIM_APPNAME=LazyVim nvim"
 alias nn="NVIM_APPNAME=NeoNirusu nvim"
+alias nl='NVIM_APPNAME=NeoLab nvim'
+
+# Quick alias to reload the profile
+alias src="source ~/.zshrc && echo '🚀 Zsh profile reloaded!'"
+
+# Bind Alt + R to automatically run the 'src' alias
+bindkey -s '^[r' "src\n"
 
 # shopify HENK
-# alias themepull='shopify theme pull --environment=surf-turf-2-0 --nodelete'
-# alias themepush='shopify theme push --environment=surf-turf-2-0 --nodelete'
-# alias themedev='shopify theme dev --environment=surf-turf-2-0'
-
 alias themepull_dev='shopify theme pull -e develop --theme 191464702296 --nodelete'
 alias themepush_dev='shopify theme push -e develop --theme 191464702296 --nodelete'
 alias themedev_dev='shopify theme dev -e develop --theme 191464702296'
@@ -231,31 +244,27 @@ alias themepull_stg='shopify theme pull -e staging --theme 191464669528 --nodele
 alias themepush_stg='shopify theme push -e staging --theme 191464669528 --nodelete'
 alias themedev_stg='shopify theme dev -e staging --theme 191464669528'
 
+alias themepull_live='shopify theme pull --live --nodelete'
+
 # npm
 alias rum='npm run'
-# alias henk-render="/Users/nilshendriks/Blender/Projects/ProductRenders/TAPER-COFFEE-TABLE/henk-render"
 
-# caniuse css baseline
-alias canuse="npx caniuse -C ~/dotfiles/.caniuse.json"
 
-baselinecss() {
-  npx doiuse --browsers "extends browserslist-config-baseline/2023" "$1" --json | jq -r ".message"
-}
-
-function nvims() {
-  items=("default" "kickstart" "LazyVim" "NirusuVim" "HENKVim" "NirusuAstro" "NeoNirusu")
-  config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config  " --height=~50% --layout=reverse --border --exit-0)
-  if [[ -z $config ]]; then
-    echo "Nothing selected"
-    return 0
-  elif [[ $config == "default" ]]; then
-    config=""
-  fi
-  NVIM_APPNAME=$config nvim $@
-}
+# function nvims() {
+#   items=("default" "kickstart" "LazyVim" "NirusuVim" "HENKVim" "NirusuAstro" "NeoNirusu")
+#   config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config  " --height=~50% --layout=reverse --border --exit-0)
+#   if [[ -z $config ]]; then
+#     echo "Nothing selected"
+#     return 0
+#   elif [[ $config == "default" ]]; then
+#     config=""
+#   fi
+#   NVIM_APPNAME=$config nvim $@
+# }
 
 # z directory jumper
-alias cd="z"
+# alias cd="z"
+eval "$(zoxide init zsh --cmd cd)"
 
 # Change directory and update kitty tab title
 # function cd() {
@@ -302,3 +311,24 @@ export PATH="$HOME/dev/sh/ghostty-projects:$PATH"
 
 # Machine-specific env vars (not in git)
 [[ -f ~/.env.local ]] && source ~/.env.local
+
+# Tuxedo Task Manager Configuration
+export TODO_DIR="$HOME/dotfiles/tuxedo"
+export TODO_FILE="$TODO_DIR/todo.txt"
+export DONE_FILE="$TODO_DIR/done.txt"
+
+alias tux="tuxedo ~/dotfiles/tuxedo/todo.txt"
+
+# Added by LM Studio CLI tool (lms)
+export PATH="$HOME/.lmstudio/bin:$PATH"
+
+# Only launch herdr if we are NOT already inside a herdr session
+# if [ -z "$HERDR_ENV" ]; then
+#     herdr
+# fi
+
+# Work-specific AI helpers
+if [[ -d "$HOME/Sites/studio-henk" ]]; then
+  # source ~/.config/zsh/git-pr-title.zsh
+  source ~/.config/zsh/git-feature-jira.zsh
+fi
