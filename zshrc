@@ -332,3 +332,6 @@ if [[ -d "$HOME/Sites/studio-henk" ]]; then
   # source ~/.config/zsh/git-pr-title.zsh
   source ~/.config/zsh/git-feature-jira.zsh
 fi
+
+# Added by LM Studio CLI tool (lms)
+export PATH="$PATH:/Users/henk3d/.lmstudio/bin"
