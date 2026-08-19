@@ -339,3 +339,7 @@ if [[ -d "$HOME/Sites/studio-henk" ]]; then
   # source ~/.config/zsh/git-pr-title.zsh
   source ~/.config/zsh/git-feature-jira.zsh
 fi
+
+export PATH="$HOME/Projects/cli-tools/blender-export-glb:$PATH"
+
+. "$HOME/.local/bin/env"

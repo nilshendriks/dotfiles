@@ -112,3 +112,6 @@ vim.keymap.set({ "n", "t" }, "<C-/>", function()
         vim.cmd("startinsert")
     end
 end, { desc = "Toggle Bottom Terminal" })
+
+vim.keymap.set("n", "]t", "vat<Esc>", { desc = "Jump to end of tag" })
+vim.keymap.set("n", "[t", "vato<Esc>", { desc = "Jump to start of tag" })

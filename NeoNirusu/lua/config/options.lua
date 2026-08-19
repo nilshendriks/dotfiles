@@ -51,20 +51,22 @@ vim.opt.writebackup = false
 vim.opt.swapfile = false
 vim.opt.undofile = true
 
--- clipboard
-if os.getenv("SSH_TTY") then
-	vim.g.clipboard = {
-		name = "OSC 52",
-		copy = {
-			["+"] = require("vim.ui.clipboard.osc52").copy("+"),
-			["*"] = require("vim.ui.clipboard.osc52").copy("*"),
-		},
-		paste = {
-			["+"] = require("vim.ui.clipboard.osc52").paste("+"),
-			["*"] = require("vim.ui.clipboard.osc52").paste("*"),
-		},
-	}
+-- Fast, local-friendly clipboard config
+if os.getenv("SSH_TTY") or os.getenv("HERDR_ENV") then
+    vim.g.clipboard = {
+        name = "OSC 52 (Copy) + Native (Paste)",
+        copy = {
+            ["+"] = require("vim.ui.clipboard.osc52").copy("+"),
+            ["*"] = require("vim.ui.clipboard.osc52").copy("*"),
+        },
+        paste = {
+            -- Use pbpaste or empty fallback so it NEVER queries the terminal via OSC 52
+            ["+"] = vim.fn.executable("pbpaste") == 1 and { "pbpaste" } or { "true" },
+            ["*"] = vim.fn.executable("pbpaste") == 1 and { "pbpaste" } or { "true" },
+        },
+    }
 end
+
 vim.opt.clipboard:append("unnamedplus")
 
 vim.opt.encoding = "UTF-8"
