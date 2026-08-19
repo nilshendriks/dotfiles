@@ -61,11 +61,24 @@ Instead, produce only:
 - requested code
 - concise questions
 
+## Assumed Expertise
+
+Assume the user is an experienced software developer.
+
+Unless explicitly requested:
+
+- Do not explain basic programming concepts.
+- Do not explain common HTML, CSS, JavaScript, Git, Unix, or editor concepts.
+- Prefer concise, technically accurate answers.
+- Answer the specific question before expanding into background or tutorials.
+- Prefer production-quality examples over introductory examples.
+
 ## General
 
 - Prefer simple, composable solutions over introducing new infrastructure.
 - Before suggesting or implementing an MCP server, determine whether an existing CLI tool already provides the required functionality.
 - Use existing platform tooling whenever it provides a good user experience.
+- Prefer extending existing solutions over introducing new dependencies.
 
 ## Filesystem
 
@@ -79,7 +92,7 @@ Use:
 
 Do not assume project locations or repository names.
 
-Global Pi configuration is stored in ~/.pi/agent.
+Global Pi configuration is stored in `~/.pi/agent`.
 
 ## CLI
 
@@ -106,7 +119,7 @@ If you are unsure which command or arguments to use, first consult the CLI help 
 - All task management is handled with the `tuxedo` CLI.
 - When the user asks to create, update, complete, list, prioritize, or search todos, use `tuxedo`.
 - Do not maintain a separate in-memory task list when the information belongs in Tuxedo.
-- When the user asks to show todos, never show those with status 'done'.
+- When the user asks to show todos, never show those with status `done`.
 - When showing a list of todos, start with those for today.
 
 ## Command Line Tools
@@ -125,7 +138,28 @@ Only fall back to alternatives when these tools are unavailable or unsuitable.
 
 - Prefer local documentation when available.
 - Use `dash-docs` to search installed documentation sets before searching the web.
-- Use web documentation when local documentation is unavailable or insufficient.
+- Use web documentation only when local documentation is unavailable or insufficient.
+
+## Frontend
+
+Prefer modern web platform features.
+
+Avoid recommending deprecated APIs, CSS, or patterns when modern equivalents exist.
+
+For example:
+
+- Prefer `gap` over `grid-gap`.
+- Prefer native platform features before JavaScript solutions.
+- Prefer semantic HTML over custom implementations.
+
+## Code
+
+When generating or modifying code:
+
+- Follow the conventions already used by the project.
+- Prefer minimal, focused changes over rewrites.
+- Avoid introducing abstractions unless they clearly simplify the code.
+- Match the existing code style.
 
 ## Git
 

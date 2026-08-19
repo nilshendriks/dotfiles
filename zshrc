@@ -248,14 +248,7 @@ alias themepull_live='shopify theme pull --live --nodelete'
 
 # npm
 alias rum='npm run'
-# alias henk-render="/Users/nilshendriks/Blender/Projects/ProductRenders/TAPER-COFFEE-TABLE/henk-render"
 
-# caniuse css baseline
-alias canuse="npx caniuse -C ~/dotfiles/.caniuse.json"
-
-baselinecss() {
-  npx doiuse --browsers "extends browserslist-config-baseline/2023" "$1" --json | jq -r ".message"
-}
 
 # function nvims() {
 #   items=("default" "kickstart" "LazyVim" "NirusuVim" "HENKVim" "NirusuAstro" "NeoNirusu")
@@ -329,17 +322,13 @@ alias tux="tuxedo ~/dotfiles/tuxedo/todo.txt"
 # Added by LM Studio CLI tool (lms)
 export PATH="$HOME/.lmstudio/bin:$PATH"
 
-# Only launch herdr if we are NOT already inside a herdr session
-# if [ -z "$HERDR_ENV" ]; then
-#     herdr
-# fi
-
 # Work-specific AI helpers
 if [[ -d "$HOME/Sites/studio-henk" ]]; then
   # source ~/.config/zsh/git-pr-title.zsh
   source ~/.config/zsh/git-feature-jira.zsh
 fi
 
+# Blender export tool
 export PATH="$HOME/Projects/cli-tools/blender-export-glb:$PATH"
 
 . "$HOME/.local/bin/env"
