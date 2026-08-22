@@ -51,21 +51,52 @@ vim.opt.writebackup = false
 vim.opt.swapfile = false
 vim.opt.undofile = true
 
--- clipboard
-if os.getenv("SSH_TTY") then
+-- Non-blocking clipboard for Herdr / SSH
+if os.getenv("SSH_TTY") or os.getenv("HERDR_ENV") then
     vim.g.clipboard = {
-        name = "OSC 52",
+        name = "OSC 52 (Copy Only)",
         copy = {
             ["+"] = require("vim.ui.clipboard.osc52").copy("+"),
             ["*"] = require("vim.ui.clipboard.osc52").copy("*"),
         },
         paste = {
-            ["+"] = require("vim.ui.clipboard.osc52").paste("+"),
-            ["*"] = require("vim.ui.clipboard.osc52").paste("*"),
+            -- NEVER query the terminal for OSC 52 paste over SSH/Herdr
+            -- Returning an empty array prevents Neovim from locking up the TTY
+            ["+"] = function()
+                if vim.fn.executable("pbpaste") == 1 then
+                    return vim.fn.systemlist("pbpaste")
+                end
+                return {}
+            end,
+            ["*"] = function()
+                if vim.fn.executable("pbpaste") == 1 then
+                    return vim.fn.systemlist("pbpaste")
+                end
+                return {}
+            end,
         },
     }
 end
+
 vim.opt.clipboard:append("unnamedplus")
+
+-- Fast, local-friendly clipboard config
+-- if os.getenv("SSH_TTY") or os.getenv("HERDR_ENV") then
+--     vim.g.clipboard = {
+--         name = "OSC 52 (Copy) + Native (Paste)",
+--         copy = {
+--             ["+"] = require("vim.ui.clipboard.osc52").copy("+"),
+--             ["*"] = require("vim.ui.clipboard.osc52").copy("*"),
+--         },
+--         paste = {
+--             -- Use pbpaste or empty fallback so it NEVER queries the terminal via OSC 52
+--             ["+"] = vim.fn.executable("pbpaste") == 1 and { "pbpaste" } or { "true" },
+--             ["*"] = vim.fn.executable("pbpaste") == 1 and { "pbpaste" } or { "true" },
+--         },
+--     }
+-- end
+--
+-- vim.opt.clipboard:append("unnamedplus")
 
 vim.opt.encoding = "UTF-8"
 
