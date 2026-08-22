@@ -65,6 +65,9 @@ vim.keymap.set("v", "<", "<gv", { desc = "Outdent and stay in visual mode" })
 -- Reindent whole file under leader+c=
 vim.keymap.set("n", "<leader>c=", "gg=G", { desc = "Reindent whole file" })
 
+-- Rename symbol
+-- vim.keymap.set("n", "grn", vim.lsp.buf.rename, { desc = "Rename symbol" })
+
 -- vim.keymap.set("n", "<leader>cf", function()
 --     local ft = vim.bo.filetype
 --     local bufnr = vim.api.nvim_get_current_buf()

@@ -1,7 +1,7 @@
 # General Setup
 # Disable login text
 if [[ -o login ]]; then
-  touch ~/.hushlogin
+	touch ~/.hushlogin
 fi
 
 # SET VARIABLES
@@ -41,8 +41,8 @@ autoload -Uz cdablevars
 # Define custom colors (hex values)
 NIRUSU_BLUE="#089cec"
 NIRUSU_BLUE_DARK="#067cbc"
-COLOR_2="#FFA500"  # Orange
-COLOR_3="#FFFFFF"  # White
+COLOR_2="#FFA500" # Orange
+COLOR_3="#FFFFFF" # White
 
 source ~/dotfiles/zsh/plugins/fzf-tab/fzf-tab.plugin.zsh
 
@@ -65,11 +65,11 @@ source ~/dotfiles/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # export PATH="/opt/homebrew/bin:$PATH"
 # Check architecture and add the appropriate Homebrew path
 if [[ $(uname -m) == "arm64" ]]; then
-  # Apple Silicon (M1/M2)
-  export PATH="/opt/homebrew/bin:$PATH"
+	# Apple Silicon (M1/M2)
+	export PATH="/opt/homebrew/bin:$PATH"
 else
-  # Intel Mac
-  export PATH="/usr/local/bin:$PATH"
+	# Intel Mac
+	export PATH="/usr/local/bin:$PATH"
 fi
 
 # ADD LOCATIONS TO $PATH VARIABLE
@@ -140,7 +140,7 @@ unsetopt auto_list
 # PROMPT='%F{$(echo $NIRUSU_BLUE)}%~ %f %L
 # ❯ '
 shell_level_info() {
-  [[ $SHLVL -gt 1 ]] && echo "\nsh level: $SHLVL"
+	[[ $SHLVL -gt 1 ]] && echo "\nsh level: $SHLVL"
 }
 PROMPT='%F{#f7768e}%n@%m%f
 %F{$(echo $NIRUSU_BLUE)}%B%~%b%f$(shell_level_info)
@@ -148,38 +148,38 @@ PROMPT='%F{#f7768e}%n@%m%f
 
 # Right prompt if in git directory
 git_prompt_info() {
-  if git rev-parse --is-inside-work-tree &>/dev/null; then
-    ref=$(git symbolic-ref --short HEAD 2>/dev/null)
-    if [ -n "$ref" ]; then
-      changes=$(git status --porcelain | wc -l | tr -d " ")
-      if [[ $changes -gt 0 ]]; then
-        echo "$ref %F{yellow}${changes} changes%f"
-      else
-        echo "$ref"
-      fi
-    fi
-  fi
+	if git rev-parse --is-inside-work-tree &>/dev/null; then
+		ref=$(git symbolic-ref --short HEAD 2>/dev/null)
+		if [ -n "$ref" ]; then
+			changes=$(git status --porcelain | wc -l | tr -d " ")
+			if [[ $changes -gt 0 ]]; then
+				echo "$ref %F{yellow}${changes} changes%f"
+			else
+				echo "$ref"
+			fi
+		fi
+	fi
 }
 
 # Define variable for right prompt visibility
 function update_right_prompt() {
-  if git rev-parse --is-inside-work-tree &>/dev/null; then
-    RIGHT_PROMPT=true
-  else
-    RIGHT_PROMPT=false
-  fi
+	if git rev-parse --is-inside-work-tree &>/dev/null; then
+		RIGHT_PROMPT=true
+	else
+		RIGHT_PROMPT=false
+	fi
 
-  # Update RPROMPT based on the Git status
-  if [[ $RIGHT_PROMPT == true ]]; then
-    RPROMPT=' $(git_prompt_info)'
-  else
-    RPROMPT=''  # Empty RPROMPT if not in a git repo
-  fi
+	# Update RPROMPT based on the Git status
+	if [[ $RIGHT_PROMPT == true ]]; then
+		RPROMPT=' $(git_prompt_info)'
+	else
+		RPROMPT='' # Empty RPROMPT if not in a git repo
+	fi
 }
 
 # Update RPROMPT when changing directories
 chpwd() {
-  update_right_prompt  # Call the function when the directory changes
+	update_right_prompt # Call the function when the directory changes
 }
 
 # Update RPROMPT initially when the shell starts
@@ -187,8 +187,12 @@ update_right_prompt
 
 # Add a newline after the command output
 precmd() {
-  print ''  # Print an empty line after the command output
+	print '' # Print an empty line after the command output
 }
+
+if [[ -n "$IN_NIX_SHELL" ]]; then
+	PROMPT="❄️ $PROMPT"
+fi
 
 # fcd: change directory with fzf, exclude restricted directories like .Trash
 # function fcd() {
@@ -200,11 +204,11 @@ precmd() {
 #   cd "$dir" && clear
 # }
 function fcd() {
-  local dirs=("$HOME/Sites" "$HOME/dotfiles" "$HOME/.config")
-  local dir
-  # fd naturally ignores .git, node_modules, etc. --hidden is needed so it can see .config
-  dir=$(fd --mindepth 1 --maxdepth 2 --type d --hidden --exclude .Trash "${dirs[@]}" | fzf)
-  [[ -n "$dir" ]] && cd "$dir" && clear
+	local dirs=("$HOME/Sites" "$HOME/dotfiles" "$HOME/.config")
+	local dir
+	# fd naturally ignores .git, node_modules, etc. --hidden is needed so it can see .config
+	dir=$(fd --mindepth 1 --maxdepth 2 --type d --hidden --exclude .Trash "${dirs[@]}" | fzf)
+	[[ -n "$dir" ]] && cd "$dir" && clear
 }
 
 # Keybindings and Editor Configurations
@@ -248,7 +252,6 @@ alias themepull_live='shopify theme pull --live --nodelete'
 
 # npm
 alias rum='npm run'
-
 
 # function nvims() {
 #   items=("default" "kickstart" "LazyVim" "NirusuVim" "HENKVim" "NirusuAstro" "NeoNirusu")
@@ -305,7 +308,6 @@ export NVIM_APPNAME='NeoNirusu'
 
 export PATH="$HOME/Projects/transcribe-cli/bin:$PATH"
 
-
 # ghostty-projects layout tool
 export PATH="$HOME/dev/sh/ghostty-projects:$PATH"
 
@@ -329,6 +331,6 @@ export PATH="$HOME/.lmstudio/bin:$PATH"
 
 # Work-specific AI helpers
 if [[ -d "$HOME/Sites/studio-henk" ]]; then
-  # source ~/.config/zsh/git-pr-title.zsh
-  source ~/.config/zsh/git-feature-jira.zsh
+	# source ~/.config/zsh/git-pr-title.zsh
+	source ~/.config/zsh/git-feature-jira.zsh
 fi

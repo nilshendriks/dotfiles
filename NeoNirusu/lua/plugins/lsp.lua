@@ -25,6 +25,7 @@ return {
     {
         "neovim/nvim-lspconfig",
         dependencies = {
+            "SmiteshP/nvim-navic",
             "WhoIsSethDaniel/mason-tool-installer.nvim",
 
             -- Useful status updates for LSP.
@@ -46,6 +47,15 @@ return {
             if ok_cmp then
                 capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
             end
+
+            local navic = require("nvim-navic")
+
+            -- navic setup for lualine context
+            navic.setup({
+                separator = " > ",
+                highlight = true,
+                depth_limit = 5,
+            })
 
             -- List of servers with per-server settings (extend later if needed)
             local servers = {
@@ -192,6 +202,10 @@ return {
                     local client = vim.lsp.get_client_by_id(args.data.client_id)
                     if not client then
                         return
+                    end
+
+                    if client:supports_method("textDocument/documentSymbol") then
+                        navic.attach(client, args.buf)
                     end
 
                     if client.server_capabilities.inlayHintProvider then

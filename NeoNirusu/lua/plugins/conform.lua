@@ -17,6 +17,7 @@ return {
         formatters_by_ft = {
             -- oxfmt
             html = { "oxfmt", lsp_format = "never" },
+            gohtml = {},
             -- html = { "oxfmt", "injected", stop_after_first = false },
             css = { "oxfmt", lsp_format = "never" },
             markdown = { "oxfmt", lsp_format = "never" },

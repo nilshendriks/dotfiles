@@ -9,6 +9,8 @@ return {
             return
         end
 
+        vim.treesitter.language.register("html", "gohtml")
+
         -- add custom parser for Liquid
         local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
 
